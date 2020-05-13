@@ -25,11 +25,10 @@ export default {
                                 sortable: false
                             },
                             {
-                                class: 'ht.ui.Column',
+                                class: 'ht.uieditor.ResourceColumn',
                                 displayName: '图标',
                                 name: 'icon',
                                 editable: true,
-                                editorClass: 'ht.ui.editor.StringEditor',
                                 sortable: false
                             },
                             {

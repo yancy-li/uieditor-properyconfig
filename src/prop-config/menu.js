@@ -15,11 +15,10 @@ export default {
                 editorParams: {
                     columns: [
                         {
-                            class: 'ht.ui.Column',
+                            class: 'ht.uieditor.ResourceColumn',
                             name: 'icon',
                             editable: true,
-                            accessType: 'attr',
-                            editorClass: 'ht.ui.editor.StringEditor',
+                            accessType: 'attr'
                         },
                         {
                             class: 'ht.ui.EnumColumn',
