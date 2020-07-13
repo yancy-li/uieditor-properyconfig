@@ -1,135 +1,152 @@
-export default {
-    rule: 'ht.ui.SplitLayout',
-    categories: [
-        {
-            name: '基本属性',
-            extends: [
-                {
-                    rule: 'ht.ui.View',
-                    categoryId: 'basic'
-                }
-            ]
-        },
-        {
-            name: 'SplitLayout',
-            properties: [
-                {
-                    name: 'orientation',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [{
-                            text: 'horizontal',
-                            value: 'h'
-                        },
-                        {
-                            text: 'vertical',
-                            value: 'v'
-                        }]
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.SplitLayout',
+        categories: [
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [
+                    {
+                        rule: 'ht.ui.View',
+                        categoryId: 'basic'
                     }
-                },
-                {
-                    name: 'position',
-                    type: 'number'
-                },
-                {
-                    name: 'positionType',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [{
-                            text: 'percentage',
-                            value: 'percentage'
-                        },
-                        {
-                            text: 'absoluteFirst',
-                            value: 'absoluteFirst'
-                        },
-                        {
-                            text: 'absoluteSecond',
-                            value: 'absoluteSecond'
-                        }
-                        ]
-                    }
-                },
-                {
-                    name: 'is:splitterVisible',
-                    displayName: 'splitterVisible',
-                    type: 'boolean'
-                },
-                {
-                    name: 'splitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverSplitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeSplitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'splitterSize',
-                    type: 'int'
-                },
-                {
-                    name: 'splitterHitSize',
-                    type: 'int'
-                },
-                {
-                    name: 'is:resizable',
-                    type: 'resizable',
-                    type: 'boolean'
-                },
-                {
-                    name: 'resizeHintBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'is:toggleVisible',
-                    displayName: 'toggleVisible',
-                    type: 'boolean'
-                },
-                {
-                    name: 'toggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverToggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeToggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'toggleSize',
-                    type: 'int'
-                },
-                {
-                    name: 'collapseRegion',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [
-                            {
-                                text: '无',
-                                value: ''
+                ]
+            },
+            {
+                displayName: uiEditor.getString('toolkit.splitlayout'),
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.orientation'),
+                        name: 'orientation',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.property.horizontal'),
+                                value: 'h'
                             },
                             {
-                            text: 'first',
-                            value: 'first'
-                        },
-                        {
-                            text: 'second',
-                            value: 'second'
-                        }]
+                                text: uiEditor.getString('editor.property.vertical'),
+                                value: 'v'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.position'),
+                        name: 'position',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.positiontype'),
+                        name: 'positionType',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.property.percentage'),
+                                value: 'percentage'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.absolutefirst'),
+                                value: 'absoluteFirst'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.absolutesecond'),
+                                value: 'absoluteSecond'
+                            }
+                            ]
+                        }
+                    },
+                    {
+                        name: 'is:splitterVisible',
+                        displayName: uiEditor.getString('editor.property.splittervisible'),
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splitter'),
+                        name: 'splitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoversplitter'),
+                        name: 'hoverSplitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activesplitter'),
+                        name: 'activeSplitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splittersize'),
+                        name: 'splitterSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splitterhitsize'),
+                        name: 'splitterHitSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.resizable'),
+                        name: 'is:resizable',
+                        type: 'resizable',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.resizehintbackground'),
+                        name: 'resizeHintBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.togglevisible'),
+                        name: 'is:toggleVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.toggle'),
+                        name: 'toggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovertoggle'),
+                        name: 'hoverToggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activetoggle'),
+                        name: 'activeToggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.togglesize'),
+                        name: 'toggleSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.collapseregion'),
+                        name: 'collapseRegion',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [
+                                {
+                                    text: uiEditor.getString('editor.property.nothing'),
+                                    value: ''
+                                },
+                                {
+                                text: uiEditor.getString('editor.property.first'),
+                                value: 'first'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.second'),
+                                value: 'second'
+                            }]
+                        }
+                    },
+                    {
+                        name: 'is:continuous',
+                        displayName: uiEditor.getString('editor.property.continuous'),
+                        type: 'boolean'
                     }
-                },
-                {
-                    name: 'is:continuous',
-                    displayName: 'continuous',
-                    type: 'boolean'
-                }
-            ]
-        }
-    ]
+                ]
+            }
+        ]
+    }
 }

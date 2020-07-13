@@ -1,56 +1,66 @@
-export default {
-    rule: 'ht.ui.ToggleButton',
-    categories: [
-        {
-            name: '基本属性',
-            extends: [
-                {
-                    rule: 'ht.ui.View',
-                    categoryId: 'basic'
-                }
-            ]
-        },
-        {
-            name: 'ToggleButton',
-            properties: [
-                {
-                    name: 'background',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'disabledBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'selectBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'selectHoverBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'selectActiveBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'selectDisabledBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'is:selected',
-                    dis0layName: 'selected',
-                    type: 'boolean'
-                }
-            ]
-        }
-    ]
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.ToggleButton',
+        categories: [
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [
+                    {
+                        rule: 'ht.ui.View',
+                        categoryId: 'basic'
+                    }
+                ]
+            },
+            {
+                displayName: uiEditor.getString('toolkit.togglebutton'),
+                properties: [
+                    {
+                        name: 'background',
+                        displayName: uiEditor.getString('editor.property.background'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'hoverBackground',
+                        displayName: uiEditor.getString('editor.property.hoverbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeBackground',
+                        displayName: uiEditor.getString('editor.property.activebackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'disabledBackground',
+                        displayName: uiEditor.getString('editor.property.disabledbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectBackground',
+                        displayName: uiEditor.getString('editor.property.selectbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectHoverBackground',
+                        displayName: uiEditor.getString('editor.property.selecthoverbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectActiveBackground',
+                        displayName: uiEditor.getString('editor.property.selectactivebackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectDisabledBackground',
+                        displayName: uiEditor.getString('editor.property.selectdisabledbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'is:selected',
+                        displayName: uiEditor.getString('editor.property.selected'),
+                        type: 'boolean'
+                    }
+                ]
+            }
+        ]
+    }
 }

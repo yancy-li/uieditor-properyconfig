@@ -1,4 +1,6 @@
-export default {
-    rule: 'ht.ui.Button',
-    events: ['click']
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.Button',
+        events: ['click']
+    }
 }

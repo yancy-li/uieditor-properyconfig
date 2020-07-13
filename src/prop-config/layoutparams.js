@@ -1,4 +1,5 @@
-export default {
+export default function(uiEditor) {
+    return {
         name: 'layoutParams',
         properties: [
             {
@@ -431,3 +432,4 @@ export default {
             }
         ]
     }
+}

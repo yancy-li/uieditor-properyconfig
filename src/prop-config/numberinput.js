@@ -1,80 +1,92 @@
-export default {
-    rule: 'ht.ui.NumberInput',
-    categories: [
-        {
-            id: 'basic',
-            name: '基本属性',
-            extends: [{
-                rule: 'ht.ui.View',
-                categoryId: 'basic',
-                replace: [
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.NumberInput',
+        categories: [
+            {
+                id: 'basic',
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [{
+                    rule: 'ht.ui.View',
+                    categoryId: 'basic',
+                    replace: [
+                        {
+                            name: 'border',
+                            type: 'border',
+                            editorParams: {
+                                'focusLineBorderVisible': true,
+                            }
+                        }
+                    ]
+                }]
+            },
+            {
+    
+                id: 'NumberInput',
+                displayName: uiEditor.getString('toolkit.numberinput'),
+                extends: [
                     {
-                        name: 'border',
-                        type: 'border',
+                        rule: 'ht.ui.TextField',
+                        categoryId: 'TextField',
+                        filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'is:instant']
+                    }
+                ],
+                properties: [
+                    {
+                        name: 'step',
+                        displayName: uiEditor.getString('editor.property.step'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'max',
+                        displayName: uiEditor.getString('editor.property.max'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'min',
+                        displayName: uiEditor.getString('editor.property.min'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'increaseIcon',
+                        displayName: uiEditor.getString('editor.property.increaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'hoverIncreaseIcon',
+                        displayName: uiEditor.getString('editor.property.hoverincreaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeIncreaseIcon',
+                        displayName: uiEditor.getString('editor.property.activeincreaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'decreaseIcon',
+                        displayName: uiEditor.getString('editor.property.decreaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'hoverDecreaseIcon',
+                        displayName: uiEditor.getString('editor.property.hoverdecreaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeDecreaseIcon',
+                        displayName: uiEditor.getString('editor.property.activedecreaseicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'iconPosition',
+                        displayName: uiEditor.getString('editor.property.iconposition'),
+                        type: 'enum', 
                         editorParams: {
-                            'focusLineBorderVisible': true
+                            datas: ['left', 'right'],
+                            readOnly: true
                         }
                     }
                 ]
-            }]
-        },
-        {
-
-            id: 'NumberInput',
-            name: 'NumberInput',
-            extends: [
-                {
-                    rule: 'ht.ui.TextField',
-                    categoryId: 'TextField',
-                    filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'is:instant']
-                }
-            ],
-            properties: [
-                {
-                    name: 'step',
-                    type: 'int'
-                },
-                {
-                    name: 'max',
-                    type: 'int'
-                },
-                {
-                    name: 'min',
-                    type: 'int'
-                },
-                {
-                    name: 'increaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverIncreaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeIncreaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'decreaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverDecreaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeDecreaseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'iconPosition',
-                    type: 'enum', 
-                    editorParams: {
-                        datas: ['left', 'right'],
-                        readOnly: true
-                    }
-                }
-            ]
-        }
-    ]
+            }
+        ]
+    }
 }

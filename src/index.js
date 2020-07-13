@@ -1,3 +1,4 @@
+import viewProperties from './prop-config/view.js';
 import buttonProperties from './prop-config/button.js';
 import labelProperties from './prop-config/label.js';
 import toggleButtonProperties from './prop-config/togglebutton.js';
@@ -9,7 +10,6 @@ import colorPickerProperties from './prop-config/colorpicker';
 import dateTimePickerProperties from './prop-config/datetimepicker';
 import dateRangePickerProperties from './prop-config/daterangepicker';
 import sliderProperties from './prop-config/slider';
-import viewProperties from './prop-config/view.js';
 import textFieldProperties from './prop-config/textfield';
 import textAreaProperties from './prop-config/textarea';
 import linkButtonProperties from './prop-config/linkbutton';
@@ -39,45 +39,47 @@ import layoutParams from './prop-config/layoutParams';
 // 事件列表 
 import buttonEvents from './event-config/button'
 
-var properties = [];
-properties.push(viewProperties);
-properties.push(buttonProperties);
-properties.push(linkButtonProperties);
-properties.push(menuButtonProperties);
-properties.push(labelProperties);
-properties.push(toggleButtonProperties);
-properties.push(checkBoxProperties);
-properties.push(radioButtonProperties);
-properties.push(listProperties);
-properties.push(treeProperties);
-properties.push(sliderProperties);
-properties.push(textFieldProperties);
-properties.push(textAreaProperties);
-properties.push(numberInputProperties);
-properties.push(comboBoxProperties);
-properties.push(colorPickerProperties);
-properties.push(dateTimePickerProperties);
-properties.push(dateRangePickerProperties);
-properties.push(hBoxLayoutProperties);
-properties.push(vBoxLayoutProperties);
-properties.push(tabLayoutProperties);
-properties.push(flowLayoutProperties);
-properties.push(tablePaneProperties);
-properties.push(treeTablePaneProperties);
-properties.push(propertyPaneProperties);
-properties.push(breadcrumbProperties);
-properties.push(progressBarProperties);
-properties.push(menuProperties);
-properties.push(panelProperties);
-properties.push(borderLayoutProperties);
-properties.push(splitLayoutProperties);
-properties.push(relativeLayoutProperties);
-properties.push(gridLayoutProperties);
-properties.push(echartPropeties);
 
+window.uiEditorPropertyConfig = function(uiEditor) {
+    var properties = [];
+    properties.push(viewProperties(uiEditor));
+    properties.push(buttonProperties(uiEditor));
+    properties.push(linkButtonProperties(uiEditor));
+    properties.push(menuButtonProperties(uiEditor));
+    properties.push(labelProperties(uiEditor));
+    properties.push(toggleButtonProperties(uiEditor));
+    properties.push(checkBoxProperties(uiEditor));
+    properties.push(radioButtonProperties(uiEditor));
+    properties.push(listProperties(uiEditor));
+    properties.push(treeProperties(uiEditor));
+    properties.push(sliderProperties(uiEditor));
+    properties.push(textFieldProperties(uiEditor));
+    properties.push(textAreaProperties(uiEditor));
+    properties.push(numberInputProperties(uiEditor));
+    properties.push(comboBoxProperties(uiEditor));
+    properties.push(colorPickerProperties(uiEditor));
+    properties.push(dateTimePickerProperties(uiEditor));
+    properties.push(dateRangePickerProperties(uiEditor));
+    properties.push(hBoxLayoutProperties(uiEditor));
+    properties.push(vBoxLayoutProperties(uiEditor));
+    properties.push(tabLayoutProperties(uiEditor));
+    properties.push(flowLayoutProperties(uiEditor));
+    properties.push(tablePaneProperties(uiEditor));
+    properties.push(treeTablePaneProperties(uiEditor));
+    properties.push(propertyPaneProperties(uiEditor));
+    properties.push(breadcrumbProperties(uiEditor));
+    properties.push(progressBarProperties(uiEditor));
+    properties.push(menuProperties(uiEditor));
+    properties.push(panelProperties(uiEditor));
+    properties.push(borderLayoutProperties(uiEditor));
+    properties.push(splitLayoutProperties(uiEditor));
+    properties.push(relativeLayoutProperties(uiEditor));
+    properties.push(gridLayoutProperties(uiEditor));
+    properties.push(echartPropeties(uiEditor));
 
-window.uieditorPropertyConfig = {
-    properties: properties,
-    layoutParams: layoutParams,
-    events: [buttonEvents]
-}
+    return {
+        properties: properties,
+        layoutParams: layoutParams(uiEditor),
+        events: [buttonEvents(uiEditor)]
+    }
+} 

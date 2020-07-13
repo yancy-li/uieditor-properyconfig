@@ -1,51 +1,58 @@
-export default {
-    rule: 'ht.ui.View',
-    categories: [
-        {
+export default function (uiEditor) {
+    return {
+        rule: 'ht.ui.View',
+        categories: [{
             id: 'basic',
-            name: '基础属性',
-            properties: [
-                {
+            name: uiEditor.getString('editor.property.baseproperty'),
+            properties: [{
                     name: 'id',
+                    displayName: uiEditor.getString('editor.id'),
                     type: 'string',
-                    desc: '唯一标识'
+                    desc: uiEditor.getString('editor.id')
                 },
                 {
                     name: 'background',
                     type: 'drawable',
-                    desc: '组件背景'
+                    displayName: uiEditor.getString('editor.property.background'),
+                    desc: uiEditor.getString('editor.property.background')
                 },
                 {
                     name: 'border',
+                    displayName: uiEditor.getString('editor.property.border'),
                     type: 'border',
-                    desc: '组件边框，请先选择边框类型再调节边框参数'
+                    desc: uiEditor.getString('editor.property.desc.border'),
                 },
                 {
                     name: 'Padding',
+                    displayName: uiEditor.getString('editor.property.padding'),
                     type: 'padding',
-                    desc: '组件内边距；可以使用一个数字统一指定四边内边距；<br>也可以使用,分割分别指定上、右、下、左内边距，如：2,2,0,0'
+                    desc: uiEditor.getString('editor.property.desc.padding'),
                 },
                 {
                     name: 'zIndex',
+                    displayName: uiEditor.getString('editor.property.zindex'),
                     type: 'int',
-                    desc: '层级，数字越大越靠近上层显示'
+                    desc: uiEditor.getString('editor.property.desc.zindex'),
                 },
                 {
                     name: 'borderRadius',
+                    displayName: uiEditor.getString('editor.property.borderradius'),
                     type: 'int'
                 },
                 {
                     name: 'overflow',
+                    displayName: uiEditor.getString('editor.property.overflow'),
                     type: 'simpleEnum',
                     editorParams: {
                         datas: [{
-                            text: 'hidden',
-                            value: 'hidden'
-                        },
-                        {
-                            text: 'visible',
-                            value: 'visible'
-                        }]
+                                text: uiEditor.getString('editor.property.hidden'),
+                                value: 'hidden'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.visible'),
+                                value: 'visible'
+                            }
+                        ]
                     },
                     isVisible: function (views) {
                         var visible = true;
@@ -60,6 +67,6 @@ export default {
                     }
                 }
             ]
-        }
-    ]
+        }]
+    }
 }

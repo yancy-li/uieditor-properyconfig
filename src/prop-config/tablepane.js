@@ -1,324 +1,327 @@
 
-export default {
-    rule: 'ht.ui.TablePane',
-    categories: [
-        {
-            name: '基本属性',
-            extends: [{
-                rule: 'ht.ui.View',
-                categoryId: 'basic'
-            }],
-        },
-        {
-            id: 'TableHeader',
-            name: 'TableHeader',
-            getValue: function (view, property) {
-                var tableHeader = view.getTableHeader();
-                return tableHeader[ht.Default.prefixGetter(property.name)]();
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.TablePane',
+        categories: [
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [{
+                    rule: 'ht.ui.View',
+                    categoryId: 'basic'
+                }],
             },
-            setValue: function (view, value, property) {
-                var tableHeader = view.getTableHeader();
-                return tableHeader[ht.Default.prefixSetter(property.name)](value);
-            },
-            properties: [{
-                    displayName: 'height',
-                    name: 'height',
-                    type: 'int',
-                    getValue: function (view, property) {
-                        return view.getTableHeader().getPreferredSize().height;
+            {
+                id: 'TableHeader',
+                displayName: uiEditor.getString('toolkit.tableheader'),
+                getValue: function (view, property) {
+                    var tableHeader = view.getTableHeader();
+                    return tableHeader[ht.Default.prefixGetter(property.name)]();
+                },
+                setValue: function (view, value, property) {
+                    var tableHeader = view.getTableHeader();
+                    return tableHeader[ht.Default.prefixSetter(property.name)](value);
+                },
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.height'),
+                        name: 'height',
+                        type: 'int',
+                        getValue: function (view, property) {
+                            return view.getTableHeader().getPreferredSize().height;
+                        },
+                        setValue: function (view, value, property) {
+                            view.getTableHeader().setPreferredSize(1, value);
+                        }
                     },
-                    setValue: function (view, value, property) {
-                        view.getTableHeader().setPreferredSize(1, value);
+                    {
+                        displayName: uiEditor.getString('editor.property.checkicon'),
+                        name: 'checkIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.uncheckicon'),
+                        name: 'uncheckIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.indeterminateicon'),
+                        name: 'indeterminateIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.descicon'),
+                        name: 'sortDescIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.ascicon'),
+                        name: 'sortAscIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'labelColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelfont'),
+                        name: 'labelFont',
+                        type: 'font'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconwidth'),
+                        name: 'iconWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconheight'),
+                        name: 'iconHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnpaddingleft'),
+                        name: 'columnPaddingLeft',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnpaddingright'),
+                        name: 'columnPaddingRight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.movable'),
+                        name: 'movable',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.movebackground'),
+                        name: 'moveBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.insertline'),
+                        name: 'insertLine',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinevisible'),
+                        name: 'columnLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinecolor'),
+                        name: 'columnLineColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.resizable'),
+                        name: 'resizable',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkmode'),
+                        name: 'checkMode',
+                        type: 'enum',
+                        editorParams: {
+                            datas: [uiEditor.getString('editor.property.all'), uiEditor.getString('editor.property.indeterminate'),  uiEditor.getString('editor.property.nothing')]
+                        }
                     }
+                ]
+            },
+            {
+                id: 'TableView',
+                displayName: uiEditor.getString('toolkit.tableview'),
+                getValue: function (view, property) {
+                    var tableView = view.getTableView();
+                    return tableView[ht.Default.prefixGetter(property.name)]();
                 },
-                {
-                    displayName: 'checkIcon',
-                    name: 'checkIcon',
-                    type: 'drawable'
+                setValue: function (view, value, property) {
+                    var tableView = view.getTableView();
+                    return tableView[ht.Default.prefixSetter(property.name)](value);
                 },
-                {
-                    displayName: 'uncheckIcon',
-                    name: 'uncheckIcon',
-                    type: 'drawable'
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.columns'),
+                        name: 'columnDatas',
+                        type: 'columns'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.listdatas'),
+                        name: 'listDatas',
+                        type: 'datas'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'labelColor',
+                        type: 'color',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoverlabelcolor'),
+                        name: 'hoverLabelColor',
+                        type: 'color',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectlabelcolor'),
+                        name: 'selectLabelColor',
+                        type: 'color',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.sortmode'),
+                        name: 'sortMode',
+                        type: 'enum',
+                        editorParams: {
+                            datas: [uiEditor.getString('editor.property.nothing'), uiEditor.getString('editor.property.bistate'), uiEditor.getString('editor.property.tristate')]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowheight'),
+                        name: 'rowHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinevisible'),
+                        name: 'rowLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinecolor'),
+                        name: 'rowLineColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinevisible'),
+                        name: 'columnLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinecolor'),
+                        name: 'columnLineColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.automakevisible'),
+                        name: 'is:autoMakeVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowbackground'),
+                        name: 'rowBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoverrowbackground'),
+                        name: 'hoverRowBackground',
+                        type: 'drawable',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectrowbackground'),
+                        name: 'selectRowBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.focusrowbackground'),
+                        name: 'focusRowBackground',
+                        type: 'drawable',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconwidth'),
+                        name: 'iconWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconheight'),
+                        name: 'iconHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkicon'),
+                        name: 'checkIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.uncheckicon'),
+                        name: 'uncheckIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.radioonicon'),
+                        name: 'radioOnIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.radioofficon'),
+                        name: 'radioOffIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.dragenabled'),
+                        name: 'dragEnabled',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.dropenabled'),
+                        name: 'dropEnabled',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.droplinecolor'),
+                        name: 'dropLineColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelfont'),
+                        name: 'labelFont',
+                        type: 'font'
+                    },
+                ]
+            },
+            {
+                id: 'TableFooter',
+                displayName: uiEditor.getString('toolkit.tablefooter'),
+                getValue: function (view, property) {
+                    var footer = view.getTableFooter();
+                    return footer[ht.Default.prefixGetter(property.name)]();
                 },
-                {
-                    displayName: 'indeterminateIcon',
-                    name: 'indeterminateIcon',
-                    type: 'drawable'
+                setValue: function (view, value, property) {
+                    var footer = view.getTableFooter();
+                    return footer[ht.Default.prefixGetter(property.name)](value);
                 },
-                {
-                    displayName: 'sortDescIcon',
-                    name: 'sortDescIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'sortAscIcon',
-                    name: 'sortAscIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'labelColor',
-                    name: 'labelColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'labelFont',
-                    name: 'labelFont',
-                    type: 'font'
-                },
-                {
-                    displayName: 'iconWidth',
-                    name: 'iconWidth',
-                    type: 'int'
-                },
-                {
-                    displayName: 'iconHeight',
-                    name: 'iconHeight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'columnPaddingLeft',
-                    name: 'columnPaddingLeft',
-                    type: 'int'
-                },
-                {
-                    displayName: 'columnPaddingRight',
-                    name: 'columnPaddingRight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'movable',
-                    name: 'movable',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'moveBackground',
-                    name: 'moveBackground',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'insertLine',
-                    name: 'insertLine',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'columnLineVisible',
-                    name: 'columnLineVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'columnLineColor',
-                    name: 'columnLineColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'resizable',
-                    name: 'resizable',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'checkMode',
-                    name: 'checkMode',
-                    type: 'enum',
-                    editorParams: {
-                        datas: ['all', 'indeterminate', 'none']
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.visible'),
+                        name: 'visible',
+                        type: 'boolean',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'labelColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelfont'),
+                        name: 'labelFont',
+                        type: 'font'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnpaddingleft'),
+                        name: 'columnPaddingLeft',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnpaddingright'),
+                        name: 'columnPaddingRight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinevisible'),
+                        name: 'columnLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinecolor'),
+                        name: 'columnLineColor',
+                        type: 'color'
                     }
-                }
-            ]
-        },
-        {
-            id: 'TableView',
-            name: 'TableView',
-            getValue: function (view, property) {
-                var tableView = view.getTableView();
-                return tableView[ht.Default.prefixGetter(property.name)]();
-            },
-            setValue: function (view, value, property) {
-                var tableView = view.getTableView();
-                return tableView[ht.Default.prefixSetter(property.name)](value);
-            },
-            properties: [{
-                    displayName: 'columns',
-                    name: 'columnDatas',
-                    type: 'columns'
-                },
-                {
-                    displayName: 'listDatas',
-                    name: 'listDatas',
-                    type: 'datas'
-                },
-                {
-                    displayName: 'labelColor',
-                    name: 'labelColor',
-                    type: 'color',
-                },
-                {
-                    displayName: 'hoverLabelColor',
-                    name: 'hoverLabelColor',
-                    type: 'color',
-                },
-                {
-                    displayName: 'selectLabelColor',
-                    name: 'selectLabelColor',
-                    type: 'color',
-                },
-                {
-                    displayName: 'sortMode',
-                    name: 'sortMode',
-                    type: 'enum',
-                    editorParams: {
-                        datas: ['none', 'bistate', 'tristate']
-                    }
-                },
-                {
-                    displayName: 'rowHeight',
-                    name: 'rowHeight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'rowLineVisible',
-                    name: 'rowLineVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'rowLineColor',
-                    name: 'rowLineColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'columnLineVisible',
-                    name: 'columnLineVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'columnLineColor',
-                    name: 'columnLineColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'autoMakeVisible',
-                    name: 'is:autoMakeVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'rowBackground',
-                    name: 'rowBackground',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'hoverRowBackground',
-                    name: 'hoverRowBackground',
-                    type: 'drawable',
-                },
-                {
-                    displayName: 'selectRowBackground',
-                    name: 'selectRowBackground',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'focusRowBackground',
-                    name: 'focusRowBackground',
-                    type: 'drawable',
-                },
-                {
-                    displayName: 'iconWidth',
-                    name: 'iconWidth',
-                    type: 'int'
-                },
-                {
-                    displayName: 'iconHeight',
-                    name: 'iconHeight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'checkIcon',
-                    name: 'checkIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'uncheckIcon',
-                    name: 'uncheckIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'radioOnIcon',
-                    name: 'radioOnIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'radioOffIcon',
-                    name: 'radioOffIcon',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'dragEnabled',
-                    name: 'dragEnabled',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'dropEnabled',
-                    name: 'dropEnabled',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'dropLineColor',
-                    name: 'dropLineColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'labelFont',
-                    name: 'labelFont',
-                    type: 'font'
-                },
-            ]
-        },
-        {
-            id: 'TableFooter',
-            name: 'TableFooter',
-            getValue: function (view, property) {
-                var footer = view.getTableFooter();
-                return footer[ht.Default.prefixGetter(property.name)]();
-            },
-            setValue: function (view, value, property) {
-                var footer = view.getTableFooter();
-                return footer[ht.Default.prefixGetter(property.name)](value);
-            },
-            properties: [{
-                    displayName: 'visible',
-                    name: 'visible',
-                    type: 'boolean',
-                },
-                {
-                    displayName: 'labelColor',
-                    name: 'labelColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'labelFont',
-                    name: 'labelFont',
-                    type: 'font'
-                },
-                {
-                    displayName: 'columnPaddingLeft',
-                    name: 'columnPaddingLeft',
-                    type: 'int'
-                },
-                {
-                    displayName: 'columnPaddingRight',
-                    name: 'columnPaddingRight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'columnLineVisible',
-                    name: 'columnLineVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'columnLineColor',
-                    name: 'columnLineColor',
-                    type: 'color'
-                }
-            ]
-        }
-    ]
+                ]
+            }
+        ]
+    }
+
 }

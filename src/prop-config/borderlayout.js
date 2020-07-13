@@ -1,115 +1,131 @@
-export default {
-    rule: 'ht.ui.BorderLayout',
-    categories: [
-        {
-            name: '基本属性',
-            extends: [
-                {
-                    rule: 'ht.ui.View',
-                    categoryId: 'basic'
-                }
-            ]
-        },
-        {
-            name: 'BorderLayout',
-            properties: [
-                {
-                    name: 'is:splitterVisible',
-                    displayName: 'splitterVisible',
-                    type: 'boolean'
-                },
-                {
-                    name: 'splitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverSplitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeSplitter',
-                    type: 'drawable'
-                },
-                {
-                    name: 'splitterSize',
-                    type: 'int'
-                },
-                {
-                    name: 'splitterHitSize',
-                    type: 'int'
-                },
-                {
-                    name: 'is:resizable',
-                    type: 'resizable',
-                    type: 'boolean'
-                },
-                {
-                    name: 'resizeHintBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'is:toggleVisible',
-                    displayName: 'toggleVisible',
-                    type: 'boolean'
-                },
-                {
-                    name: 'toggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverToggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeToggle',
-                    type: 'drawable'
-                },
-                {
-                    name: 'toggleSize',
-                    type: 'int'
-                },
-                {
-                    name: 'leftWidth',
-                    type: 'int'
-                },
-                {
-                    name: 'rightWidth',
-                    type: 'int'
-                },
-                {
-                    name: 'topHeight',
-                    type: 'int'
-                },
-                {
-                    name: 'bottomHeight',
-                    type: 'int'
-                },
-                {
-                    name: 'is:leftExpanded',
-                    displayName: 'leftExpanded',
-                    type: 'boolean'
-                },
-                {
-                    name: 'is:rightExpanded',
-                    displayName: 'rightExpanded',
-                    type: 'boolean'
-                },
-                {
-                    name: 'is:topExpanded',
-                    displayName: 'topExpanded',
-                    type: 'boolean'
-                },
-                {
-                    name: 'is:bottomExpanded',
-                    displayName: 'bottomExpanded',
-                    type: 'boolean'
-                },
-                {
-                    name: 'is:continuous',
-                    displayName: 'continuous',
-                    type: 'boolean'
-                }
-            ]
-        }
-    ]
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.BorderLayout',
+        categories: [
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [
+                    {
+                        rule: 'ht.ui.View',
+                        categoryId: 'basic'
+                    }
+                ]
+            },
+            {
+                displayName: uiEditor.getString('toolkit.borderlayout'),
+                properties: [
+                    {
+                        name: 'is:splitterVisible',
+                        displayName: uiEditor.getString('editor.property.splittervisible'),
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splitter'),
+                        name: 'splitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoversplitter'),
+                        name: 'hoverSplitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activesplitter'),
+                        name: 'activeSplitter',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splittersize'),
+                        name: 'splitterSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.splitterhitsize'),
+                        name: 'splitterHitSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.resizable'),
+                        name: 'is:resizable',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.resizehintbackground'),
+                        name: 'resizeHintBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'is:toggleVisible',
+                        displayName: uiEditor.getString('editor.property.togglevisible'),
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.toggle'),
+                        name: 'toggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovertoggle'),
+                        name: 'hoverToggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activetoggle'),
+                        name: 'activeToggle',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.togglesize'),
+                        name: 'toggleSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.leftwidth'),
+                        name: 'leftWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rightwidth'),
+                        name: 'rightWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.topheight'),
+                        name: 'topHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.bottomheight'),
+                        name: 'bottomHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.leftexpanded'),
+                        name: 'is:leftExpanded',
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:rightExpanded',
+                        displayName: uiEditor.getString('editor.property.rightexpanded'),
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:topExpanded',
+                        displayName: uiEditor.getString('editor.property.topexpanded'),
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:bottomExpanded',
+                        displayName: uiEditor.getString('editor.property.bottomexpanded'),
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:continuous',
+                        displayName: uiEditor.getString('editor.property.continuous'),
+                        type: 'boolean'
+                    }
+                ]
+            }
+        ]
+    };
 }

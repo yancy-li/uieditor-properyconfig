@@ -1,137 +1,138 @@
-export default {
-    rule: 'ht.ui.PropertyPane',
-    categories: [{
-            name: '基本属性',
-            extends: [{
-                rule: 'ht.ui.View',
-                categoryId: 'basic'
-            }]
-        },
-        {
-            name: 'header',
-            properties: [{
-                    displayName: 'toolbarHeight',
-                    name: 'toolbarHeight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'height',
-                    name: 'headerHeight',
-                    type: 'int'
-                },
-                {
-                    displayName: 'headerBackground',
-                    name: 'headerBackground',
-                    type: 'drawable'
-                },
-                {
-                    displayName: 'headerLabelColor',
-                    name: 'headerLabelColor',
-                    type: 'color'
-                },
-                {
-                    displayName: 'headerLabelFont',
-                    name: 'headerLabelFont',
-                    type: 'font'
-                },
-                {
-                    displayName: 'headerLabelAlign',
-                    name: 'headerLabelAlign',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [{
-                            text: 'left',
-                            value: 'left'
-                        },
-                        {
-                            text: 'center',
-                            value: 'center'
-                        },
-                        {
-                            text: 'right',
-                            value: 'right'
-                        }]
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.PropertyPane',
+        categories: [{
+            displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [{
+                    rule: 'ht.ui.View',
+                    categoryId: 'basic'
+                }]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.propertyheader'),
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.toolbarheight'),
+                        name: 'toolbarHeight',
+                        type: 'int',
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.height'),
+                        name: 'headerHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.background'),
+                        name: 'headerBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'headerLabelColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelfont'),
+                        name: 'headerLabelFont',
+                        type: 'font'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.align'),
+                        name: 'headerLabelAlign',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: 'left'
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: 'center'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
                     }
-                }
-            ]
-        },
-        {
-            name: 'PropertyView',
-            getValue: function (view, property) {
-                var propertyView = view.getPropertyView();
-                return propertyView[ht.Default.prefixGetter(property.name)]();
-            },
-            setValue: function (view, value, property) {
-                var propertyView = view.getPropertyView();
-                return propertyView[ht.Default.prefixSetter(property.name)](value);
-            },
-            extends: [{
-                rule: 'ht.ui.TreeView',
-                categoryId: 'TreeView',
-                filter: ['labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont', 'expandIcon', 'collapseIcon',
-                    'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowBackground', 'hoverRowBackground', 'selectRowBackground'
                 ]
-            }],
-            properties: [{
-                    displayName: 'properties',
-                    name: 'propertyDatas',
-                    type: 'properties'
+            },
+            {
+                displayName: uiEditor.getString('toolkit.propertyview'),
+                getValue: function (view, property) {
+                    var propertyView = view.getPropertyView();
+                    return propertyView[ht.Default.prefixGetter(property.name)]();
                 },
-                {
-                    displayName: 'indentBackground',
-                    name: 'indentBackground',
-                    type: 'drawable'
+                setValue: function (view, value, property) {
+                    var propertyView = view.getPropertyView();
+                    return propertyView[ht.Default.prefixSetter(property.name)](value);
                 },
-                {
-                    displayName: 'nameAlign',
-                    name: 'nameAlign',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [{
-                            text: 'left',
-                            value: 'left'
-                        },
-                        {
-                            text: 'center',
-                            value: 'center'
-                        },
-                        {
-                            text: 'right',
-                            value: 'right'
-                        }]
+                extends: [{
+                    rule: 'ht.ui.TreeView',
+                    categoryId: 'TreeView',
+                    filter: ['labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont', 'expandIcon', 'collapseIcon',
+                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowBackground', 'hoverRowBackground', 'selectRowBackground'
+                    ]
+                }],
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.propertydatas'),
+                        name: 'propertyDatas',
+                        type: 'properties'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.indentbackground'),
+                        name: 'indentBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.namealign'),
+                        name: 'nameAlign',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: 'left'
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: 'center'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.valuealign'),
+                        name: 'valueAlign',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: 'left'
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: 'center'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinevisible'),
+                        name: 'columnLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnlinecolor'),
+                        name: 'columnLineColor',
+                        type: 'color'
                     }
-                },
-                {
-                    displayName: 'valueAlign',
-                    name: 'valueAlign',
-                    type: 'enum',
-                    type: 'simpleEnum',
-                    editorParams: {
-                        datas: [{
-                            text: 'left',
-                            value: 'left'
-                        },
-                        {
-                            text: 'center',
-                            value: 'center'
-                        },
-                        {
-                            text: 'right',
-                            value: 'right'
-                        }]
-                    }
-                },
-                {
-                    displayName: 'columnLineVisible',
-                    name: 'columnLineVisible',
-                    type: 'boolean'
-                },
-                {
-                    displayName: 'columnLineColor',
-                    name: 'columnLineColor',
-                    type: 'color'
-                }
-            ]
-        }
-    ]
+                ]
+            }
+        ]
+    }
 }

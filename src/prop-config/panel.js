@@ -1,117 +1,141 @@
-export default {
-    rule: 'ht.ui.Panel',
-    categories: [
-        {
-            name: '基本属性',
-            extends: [
-                {
-                    rule: 'ht.ui.View',
-                    categoryId: 'basic'
-                }
-            ]
-        },
-        {
-            name: 'Panel',
-            properties: [
-                {
-                    name: 'headerHeight',
-                    type: 'int'
-                },
-                {
-                    name: 'is:headerVisible',
-                    type: 'boolean'
-                },
-                {
-                    name: 'headerBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverHeaderBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeHeaderBackground',
-                    type: 'drawable'
-                },
-                {
-                    name: 'title',
-                    type: 'string'
-                },
-                {
-                    name: 'titleFont',
-                    type: 'font'
-                },
-                {
-                    name: 'titleColor',
-                    type: 'color'
-                },
-                {
-                    name: 'hoverTitleColor',
-                    type: 'color'
-                },
-                {
-                    name: 'activeTitleColor',
-                    type: 'color'
-                },
-                {
-                    name: 'icon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'iconWidth',
-                    type: 'int'
-                },
-                {
-                    name: 'iconHeight',
-                    type: 'int'
-                },
-                {
-                    name: 'tools',
-                    type: 'panelTools'
-                },
-                {
-                    name: 'toolWidth',
-                    type: 'int'
-                },
-                {
-                    name: 'toolHeight',
-                    type: 'int'
-                },
-                {
-                    name: 'contentPadding',
-                    type: 'padding'
-                },
-                {
-                    displayName: 'collapsable',
-                    name: 'is:collapsable',
-                    type: 'boolean'
-                },
-                {
-                    name: 'expandIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverExpandIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeExpandIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'collapseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'hoverCollapseIcon',
-                    type: 'drawable'
-                },
-                {
-                    name: 'activeCollapseIcon',
-                    type: 'drawable'
-                }
-            ]
-        }
-    ]
-
+export default function(uiEditor) {
+    return {
+        rule: 'ht.ui.Panel',
+        categories: [
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [
+                    {
+                        rule: 'ht.ui.View',
+                        categoryId: 'basic'
+                    }
+                ]
+            },
+            {
+                displayName: uiEditor.getString('toolkit.panel'),
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.headerheight'),
+                        name: 'headerHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.headervisible'),
+                        name: 'is:headerVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.headerbackground'),
+                        name: 'headerBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoverheaderbackground'),
+                        name: 'hoverHeaderBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activeheaderbackground'),
+                        name: 'activeHeaderBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.title'),
+                        name: 'title',
+                        type: 'string'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.titlefont'),
+                        name: 'titleFont',
+                        type: 'font'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.titlecolor'),
+                        name: 'titleColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovertitlecolor'),
+                        name: 'hoverTitleColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activetitlecolor'),
+                        name: 'activeTitleColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.icon'),
+                        name: 'icon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconwidth'),
+                        name: 'iconWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconheight'),
+                        name: 'iconHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.tools'),
+                        name: 'tools',
+                        type: 'panelTools'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.toolwidth'),
+                        name: 'toolWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.toolheight'),
+                        name: 'toolHeight',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.contentpadding'),
+                        name: 'contentPadding',
+                        type: 'padding'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.collapsable'),
+                        name: 'is:collapsable',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.expandicon'),
+                        name: 'expandIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoverexpandicon'),
+                        name: 'hoverExpandIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activeexpandicon'),
+                        name: 'activeExpandIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.collapseicon'),
+                        name: 'collapseIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovercollapseicon'),
+                        name: 'hoverCollapseIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activecollapseicon'),
+                        name: 'activeCollapseIcon',
+                        type: 'drawable'
+                    }
+                ]
+            }
+        ]
+    }
 }
