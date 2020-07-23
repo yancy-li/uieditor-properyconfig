@@ -7,7 +7,19 @@ export default function(uiEditor) {
                 extends: [{
                     rule: 'ht.ui.View',
                     categoryId: 'basic'
-                }]
+                }],
+                properties: [
+                    {
+                        name: 'translateX',
+                        displayName: uiEditor.getString('editor.property.translatex'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'translateY',
+                        displayName: uiEditor.getString('editor.property.translatey'),
+                        type: 'int'
+                    }
+                ]
             },
             {
                 id: 'ListView',
@@ -127,6 +139,7 @@ export default function(uiEditor) {
                     },
                     {
                         displayName: uiEditor.getString('editor.property.iconstretch'),
+                        name: 'iconStretch',
                         type: 'enum',
                         editorParams: {
                             datas: [uiEditor.getString('editor.property.stretch.fill'), uiEditor.getString('editor.property.stretch.uniform'),

@@ -9,6 +9,18 @@ export default function(uiEditor) {
                         rule: 'ht.ui.View',
                         categoryId: 'basic'
                     }
+                ],
+                properties: [
+                    {
+                        name: 'translateX',
+                        displayName: uiEditor.getString('editor.property.translatex'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'translateY',
+                        displayName: uiEditor.getString('editor.property.translatey'),
+                        type: 'int'
+                    }
                 ]
             },
             {
