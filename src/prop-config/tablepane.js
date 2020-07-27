@@ -9,6 +9,34 @@ export default function(uiEditor) {
                     rule: 'ht.ui.View',
                     categoryId: 'basic'
                 }],
+                properties: [
+                    {
+                        name: 'translateX',
+                        displayName: uiEditor.getString('editor.property.translatex'),
+                        type: 'int',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    },
+                    {
+                        name: 'translateY',
+                        displayName: uiEditor.getString('editor.property.translatey'),
+                        type: 'int',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    }
+                ]
             },
             {
                 id: 'TableHeader',

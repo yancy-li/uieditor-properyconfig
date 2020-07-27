@@ -6,7 +6,22 @@ export default function(uiEditor) {
                 extends: [{
                     rule: 'ht.ui.View',
                     categoryId: 'basic'
-                }]
+                }],
+                properties: [
+                    {
+                        name: 'translateY',
+                        displayName: uiEditor.getString('editor.property.translatey'),
+                        type: 'int',
+                        getValue: function (view, property) {
+                            var pv = view.getPropertyView();
+                            return pv[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var pv = view.getPropertyView();
+                            return pv[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    }
+                ]
             },
             {
                 displayName: uiEditor.getString('editor.property.propertyheader'),
