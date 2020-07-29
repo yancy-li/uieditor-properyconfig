@@ -60,6 +60,15 @@ export default function(uiEditor) {
                         type: 'boolean'
                     }
                 ]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     }

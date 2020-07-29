@@ -20,6 +20,15 @@ export default function(uiEditor) {
                         categoryId: 'Button'
                     }
                 ]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     }

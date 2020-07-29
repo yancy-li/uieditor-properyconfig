@@ -51,6 +51,15 @@ export default function(uiEditor) {
                         invalidateDesigner: true
                     }
                 ]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     }

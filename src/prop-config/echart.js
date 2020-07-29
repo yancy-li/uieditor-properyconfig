@@ -10,6 +10,15 @@ export default function(uiEditor) {
                         categoryId: 'basic'
                     }
                 ]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     }

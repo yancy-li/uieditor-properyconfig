@@ -17,6 +17,15 @@ export default function(uiEditor) {
                     categoryId: 'TextField',
                     filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'maxLength', 'is:instant', 'maskRe']
                 }]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     };

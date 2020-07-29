@@ -1,4 +1,5 @@
 import viewProperties from './prop-config/view.js';
+import contextmenuProperties from './prop-config/contextmenu';
 import buttonProperties from './prop-config/button.js';
 import labelProperties from './prop-config/label.js';
 import toggleButtonProperties from './prop-config/togglebutton.js';
@@ -45,6 +46,7 @@ import buttonEvents from './event-config/button'
 window.uiEditorPropertyConfig = function(uiEditor) {
     var properties = [];
     properties.push(viewProperties(uiEditor));
+    properties.push(contextmenuProperties(uiEditor));
     properties.push(buttonProperties(uiEditor));
     properties.push(linkButtonProperties(uiEditor));
     properties.push(menuButtonProperties(uiEditor));

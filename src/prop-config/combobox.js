@@ -53,6 +53,15 @@ export default function(uiEditor) {
                         filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly']
                     }
                 ]
+            },
+            {
+                displayName: uiEditor.getString('editor.property.contextmenu'),
+                extends: [
+                    {
+                        rule: 'ContextMenuForViews',
+                        categoryId: 'contextmenu'
+                    }
+                ]
             }
         ]
     }
