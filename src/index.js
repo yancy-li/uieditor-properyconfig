@@ -32,6 +32,8 @@ import splitLayoutProperties from './prop-config/splitlayout';
 import relativeLayoutProperties from './prop-config/relativelayout';
 import gridLayoutProperties from './prop-config/gridlayout';
 import echartPropeties from './prop-config/echart';
+import rateProperties from './prop-config/rate';
+import paletteProperties from './prop-config/palette';
 
 // 布局属性
 import layoutParams from './prop-config/layoutParams';
@@ -76,6 +78,8 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(relativeLayoutProperties(uiEditor));
     properties.push(gridLayoutProperties(uiEditor));
     properties.push(echartPropeties(uiEditor));
+    properties.push(rateProperties(uiEditor));
+    properties.push(paletteProperties(uiEditor));
 
     return {
         properties: properties,
