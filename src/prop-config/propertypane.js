@@ -150,6 +150,7 @@ export default function(uiEditor) {
             },
             {
                 displayName: uiEditor.getString('editor.property.contextmenu'),
+                collapse: true,
                 extends: [
                     {
                         rule: 'ContextMenuForViews',
