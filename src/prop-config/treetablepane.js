@@ -51,7 +51,7 @@ export default function(uiEditor) {
                     categoryId: 'TableView',
                     replace: [
                         {
-                            displayName: uiEditor.getString('editor.property.tableview'),
+                            displayName: uiEditor.getString('editor.property.listdatas'),
                             name: 'listDatas',
                             type: 'datas',
                             editorParams: {
