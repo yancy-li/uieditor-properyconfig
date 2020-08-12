@@ -36,6 +36,7 @@ import echartPropeties from './prop-config/echart';
 import rateProperties from './prop-config/rate';
 import paletteProperties from './prop-config/palette';
 import carouselProperties from './prop-config/carousel';
+import gridPaneProperties from './prop-config/gridpane';
 
 // 布局属性
 import layoutParams from './prop-config/layoutParams';
@@ -84,6 +85,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(rateProperties(uiEditor));
     properties.push(paletteProperties(uiEditor));
     properties.push(carouselProperties(uiEditor));
+    properties.push(gridPaneProperties(uiEditor));
 
     return {
         properties: properties,
