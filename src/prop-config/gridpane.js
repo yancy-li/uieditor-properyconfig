@@ -156,6 +156,34 @@ export default function(uiEditor) {
                 ]
             },
             {
+                id: 'RowHeader',
+                displayName: uiEditor.getString('toolkit.rowheader'),
+                getValue: function (view, property) {
+                    var rowHeader = view.getRowHeader();
+                    return rowHeader[ht.Default.prefixGetter(property.name)]();
+                },
+                setValue: function (view, value, property) {
+                    var rowHeader = view.getRowHeader();
+                    return rowHeader[ht.Default.prefixSetter(property.name)](value);
+                },
+                properties: [{
+                    displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'labelColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinevisible'),
+                        name: 'rowLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinecolor'),
+                        name: 'rowLineColor',
+                        type: 'color'
+                    }
+                ]
+            },
+            {
                 id: 'TableView',
                 displayName: uiEditor.getString('toolkit.tableview'),
                 getValue: function (view, property) {
