@@ -204,6 +204,122 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.columns'),
                         name: 'columnDatas',
                         type: 'columns',
+                        editorParams: {
+                            columns: [
+                                {
+                                    displayName: uiEditor.getString('editor.property.displayname'),
+                                    name: 'displayName',
+                                    editable: true,
+                                    editorClass: 'ht.ui.editor.StringEditor',
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.EnumColumn',
+                                    datas: [{
+                                            label: 'Property',
+                                            value: null
+                                        },
+                                        {
+                                            label: 'Attr',
+                                            value: 'attr'
+                                        },
+                                        {
+                                            label: 'Style',
+                                            value: 'style'
+                                        }
+                                    ],
+                                    readOnly: true,
+                                    editable: true,
+                                    displayName: uiEditor.getString('editor.property.accesstype'),
+                                    valueField: 'value',
+                                    name: 'accessType',
+                                    sortable: false,
+                                    strict: false,
+                                    's:editorViewProperties': {
+                                        strict: false
+                                    }
+                                },
+                                {
+                                    className: 'ht.ui.EnumColumn',
+                                    datas: [uiEditor.getString('editor.int'), uiEditor.getString('editor.number'), uiEditor.getString('editor.color'), uiEditor.getString('editor.boolean'), uiEditor.getString('editor.string')],
+                                    readOnly: true,
+                                    editable: true,
+                                    displayName: uiEditor.getString('editor.property.valuetype'),
+                                    name: 'valueType',
+                                    sortable: false,
+                                },
+                                {
+                                    displayName: uiEditor.getString('editor.property.visible'),
+                                    name: 'visible',
+                                    valueType: 'boolean',
+                                    editable: true,
+                                    getValue: function (data, column) {
+                                        if (data.a('visible') !== false) return true;
+                                        else return false;
+                                    },
+                                    sortable: false,
+                                },
+                                {
+                                    displayName: uiEditor.getString('editor.property.sortable'),
+                                    name: 'sortable',
+                                    valueType: 'boolean',
+                                    editable: true,
+                                    getValue: function (data, column) {
+                                        if (data.a('sortable') !== false) return true;
+                                        else return false;
+                                    },
+                                    sortable: false,
+                                },
+                                {
+                                    displayName: uiEditor.getString('editor.property.width'),
+                                    name: 'width',
+                                    valueType: 'int',
+                                    editable: true,
+                                    editorClass: 'ht.ui.editor.IntEditor',
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.EnumColumn',
+                                    displayName: uiEditor.getString('editor.property.fixedposition'),
+                                    name: 'fixed',
+                                    editable: true,
+                                    valueField: 'value',
+                                    readOnly: true,
+                                    datas: [{
+                                            label: uiEditor.getString('editor.left'),
+                                            value: 'left'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.right'),
+                                            value: 'right'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.nothing'),
+                                            value: null
+                                        }
+                                    ],
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.EnumColumn',
+                                    displayName: uiEditor.getString('editor.property.filterclass'),
+                                    name: 'a:filterClass',
+                                    editable: true,
+                                    valueField: 'value',
+                                    readOnly: true,
+                                    datas: [{
+                                            label: uiEditor.getString('editor.property.filter.textfilter'),
+                                            value: 'ht.ui.tablefilter.TextFilter'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.nothing'),
+                                            value: null
+                                        }
+                                    ],
+                                    sortable: false,
+                                }
+                            ]
+                        },
                         setValue: function(view, value, property) {
                             var tableView = view.getTableView();
                             if (typeof value === 'string') {
