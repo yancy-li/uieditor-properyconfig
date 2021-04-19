@@ -28,6 +28,7 @@ import breadcrumbProperties from './prop-config/breadcrumb';
 import progressBarProperties from './prop-config/progressbar';
 import menuProperties from './prop-config/menu';
 import panelProperties from './prop-config/panel';
+import dialogProperties from './prop-config/dialog';
 import borderLayoutProperties from './prop-config/borderlayout';
 import splitLayoutProperties from './prop-config/splitlayout';
 import relativeLayoutProperties from './prop-config/relativelayout';
@@ -77,6 +78,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(progressBarProperties(uiEditor));
     properties.push(menuProperties(uiEditor));
     properties.push(panelProperties(uiEditor));
+    properties.push(dialogProperties(uiEditor));
     properties.push(borderLayoutProperties(uiEditor));
     properties.push(splitLayoutProperties(uiEditor));
     properties.push(relativeLayoutProperties(uiEditor));

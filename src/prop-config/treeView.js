@@ -39,14 +39,15 @@ export default function(uiEditor) {
                             name: 'listDatas',
                             type: 'datas',
                             editorParams: {
-                                'columns': [{
-                                        class: 'ht.ui.Column',
-                                        displayName: uiEditor.getString('editor.property.name'),
-                                        name: 'name',
-                                        editable: true,
-                                        editorClass: 'ht.ui.editor.StringEditor',
-                                        sortable: false
-                                    },
+                                'columns': [
+                                    // {
+                                    //     class: 'ht.ui.Column',
+                                    //     displayName: uiEditor.getString('editor.property.name'),
+                                    //     name: 'name',
+                                    //     editable: true,
+                                    //     editorClass: 'ht.ui.editor.StringEditor',
+                                    //     sortable: false
+                                    // },
                                     {
                                         class: 'ht.uieditor.ResourceColumn',
                                         displayName: uiEditor.getString('editor.property.icon'),
