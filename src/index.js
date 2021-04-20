@@ -38,6 +38,7 @@ import rateProperties from './prop-config/rate';
 import paletteProperties from './prop-config/palette';
 import carouselProperties from './prop-config/carousel';
 import gridPaneProperties from './prop-config/gridpane';
+import refViewGroupProperties from './prop-config/refviewgroup';
 
 // 布局属性
 import layoutParams from './prop-config/layoutParams';
@@ -88,6 +89,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(paletteProperties(uiEditor));
     properties.push(carouselProperties(uiEditor));
     properties.push(gridPaneProperties(uiEditor));
+    properties.push(refViewGroupProperties(uiEditor));
 
     return {
         properties: properties,
