@@ -65,6 +65,34 @@ export default function (uiEditor) {
                         }
                         return visible;
                     }
+                },
+                {
+                    name: 'routerName',
+                    displayName: uiEditor.getString('editor.property.routername'),
+                    type: 'string',
+
+                    setValue: function(view, value, property) {
+                        if (value) {
+                            view.a('routerName', value);
+                        }
+                        else {
+                            view.a('routerName', null);
+                        }
+                    },
+                    getValue: function(view, property) {
+                        return view.a('routerName');
+                    },
+                    isVisible: function (views) {
+                        var visible = true;
+                        for (var i = 0, length = views.length; i < length; i++) {
+                            var view = views[i];
+                            if (!(view.getClassName() === 'ht.ui.View' && view.a('routerView'))) {
+                                visible = false;
+                                break;
+                            }
+                        }
+                        return visible;
+                    }
                 }
             ]
         }]

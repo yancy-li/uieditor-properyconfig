@@ -17,6 +17,22 @@ export default function (uiEditor) {
                         name: 'translateY',
                         displayName: uiEditor.getString('editor.property.translatey'),
                         type: 'int'
+                    },
+                    {
+                        name: 'tabrouter',
+                        displayName: uiEditor.getString('editor.property.tabrouter'),
+                        type: 'boolean',
+                        setValue: function(view, value, property) {
+                            if (value) {
+                                view.a('routerView', 'tab');
+                            }
+                            else {
+                                view.a('routerView', null);
+                            }
+                        },
+                        getValue: function(view, property) {
+                            return !!view.a('routerView');
+                        }
                     }
                 ]
             },
