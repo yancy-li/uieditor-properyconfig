@@ -39,6 +39,11 @@ import paletteProperties from './prop-config/palette';
 import carouselProperties from './prop-config/carousel';
 import gridPaneProperties from './prop-config/gridpane';
 import refViewGroupProperties from './prop-config/refviewgroup';
+import uigraphviewProperties from './prop-config/uigraphview';
+import uivectorviewProperties from './prop-config/uivectorview';
+import uigraph3dviewProperties from './prop-config/uigraph3dview';
+import sidebarProperties from './prop-config/sidebar';
+
 
 // 布局属性
 import layoutParams from './prop-config/layoutParams';
@@ -90,6 +95,10 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(carouselProperties(uiEditor));
     properties.push(gridPaneProperties(uiEditor));
     properties.push(refViewGroupProperties(uiEditor));
+    properties.push(uigraphviewProperties(uiEditor));
+    properties.push(uigraph3dviewProperties(uiEditor));
+    properties.push(sidebarProperties(uiEditor));
+    properties.push(uivectorviewProperties(uiEditor));
 
     return {
         properties: properties,

@@ -203,7 +203,7 @@ export default function (uiEditor) {
                 },
                 {
                     name: 'radioOffIcon',
-                    displayName: uiEditor.getString('editor.property.radioOffIcon'),
+                    displayName: uiEditor.getString('editor.property.radioofficon'),
                     type: 'drawable'
                 },
                 {
