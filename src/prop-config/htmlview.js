@@ -1,15 +1,13 @@
 export default function(uiEditor) {
     return {
-        rule: 'ht.ui.GridLayout',
-        categories: [
-            {
+        rule: 'ht.ui.HtmlView',
+        categories: [{
+                id: 'basic',
                 displayName: uiEditor.getString('editor.property.baseproperty'),
-                extends: [
-                    {
-                        rule: 'ht.ui.View',
-                        categoryId: 'basic'
-                    }
-                ],
+                extends: [{
+                    rule: 'ht.ui.View',
+                    categoryId: 'basic'
+                }],
                 properties: [
                     {
                         name: 'translateX',
@@ -59,31 +57,47 @@ export default function(uiEditor) {
                 ]
             },
             {
-                displayName: uiEditor.getString('toolkit.gridlayout'),
+                id: 'HtmlView',
+                displayName: uiEditor.getString('toolkit.htmlview'),
                 properties: [
                     {
-                        name: 'gridHeight',
-                        displayName: uiEditor.getString('editor.property.gridheight'),
-                        type: 'int',
-                        invalidateDesigner: true
+                        name: 'content',
+                        displayName: uiEditor.getString('editor.property.htmlcontent'),
+                        type: 'code',
+                        editorParams: {
+                            language: 'html'
+                        }
                     },
                     {
-                        name: 'columnCount',
-                        type: 'int',
-                        displayName: uiEditor.getString('editor.property.columncount'),
-                        invalidateDesigner: true
+                        name: 'contentFont',
+                        displayName: uiEditor.getString('editor.property.contentfont'),
+                        type: 'font'
                     },
                     {
-                        name: 'gridGap',
-                        type: 'int',
-                        displayName: uiEditor.getString('editor.property.gridgap'),
-                        invalidateDesigner: true
+                        name: 'contentColor',
+                        displayName: uiEditor.getString('editor.property.contentcolor'),
+                        type: 'color'
                     },
                     {
-                        name: 'is:autoFlow',
-                        type: 'boolean',
-                        displayName: uiEditor.getString('editor.property.autoflow'),
-                        invalidateDesigner: true
+                        name: 'overflow',
+                        displayName: uiEditor.getString('editor.property.overflow'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                    text: uiEditor.getString('editor.property.hidden'),
+                                    value: 'hidden'
+                                },
+                                {
+                                    text: uiEditor.getString('editor.property.visible'),
+                                    value: 'visible'
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        name: 'is:autoRefreshPreferredSize',
+                        displayName: uiEditor.getString('editor.property.autorefreshpreferredsize'),
+                        type: 'boolean'
                     }
                 ]
             },
@@ -98,5 +112,5 @@ export default function(uiEditor) {
                 ]
             }
         ]
-    }
+    };
 }

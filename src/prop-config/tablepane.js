@@ -35,6 +35,65 @@ export default function(uiEditor) {
                             var tableView = view.getTableView();
                             return tableView[ht.Default.prefixSetter(property.name)](value);
                         },
+                    },
+                    {
+                        name: 'scrollBarMode',
+                        displayName: uiEditor.getString('editor.property.scrollbarmode'),
+                        type: 'enum',
+                        editorParams: {
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.auto'),
+                                    value: 'auto'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.on'),
+                                value: 'on'
+                            },
+                            {
+                                label: uiEditor.getString('editor.property.off'),
+                                value: 'off'
+                            },
+                            {
+                                label: uiEditor.getString('editor.property.scrollbarhidden'),
+                                value: 'hidden'
+                            }],
+                        },
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    },
+                    {
+                        name: 'scrollBarColor',
+                        displayName: uiEditor.getString('editor.property.scrollbarcolor'),
+                        type: 'color',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    },
+                    {
+                        name: 'scrollBarSize',
+                        displayName: uiEditor.getString('editor.property.scrollbarsize'),
+                        type: 'int',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
                     }
                 ]
             },
