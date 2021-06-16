@@ -18,7 +18,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Button',
                         categoryId: 'Button',
-                        filter: ['text', 'textColor', 'hoverTextColor', 'activeTextColor', 'textFont', 'icon', 'hoverIcon', 'activeIcon',  'disabledIcon',
+                        filter: ['text', 'textColor', 'hoverTextColor', 'activeTextColor', 'textFont', 'iconWidth','iconHeight', 'icon', 'hoverIcon', 'activeIcon',  'disabledIcon',
                         'toolTip', 'toolTipEnabled'],
                     }
                 ],
