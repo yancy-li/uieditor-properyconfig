@@ -11,6 +11,7 @@ export default function(uiEditor) {
                     replace: [
                         {
                             name: 'border',
+                            displayName: uiEditor.getString('editor.property.border'),
                             type: 'border',
                             editorParams: {
                                 'focusLineBorderVisible': true
