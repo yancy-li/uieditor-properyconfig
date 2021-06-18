@@ -23,7 +23,7 @@ export default function (uiEditor) {
                     desc: uiEditor.getString('editor.property.desc.border'),
                 },
                 {
-                    name: 'Padding',
+                    name: 'padding',
                     displayName: uiEditor.getString('editor.property.padding'),
                     type: 'padding',
                     desc: uiEditor.getString('editor.property.desc.padding'),
@@ -38,6 +38,11 @@ export default function (uiEditor) {
                     name: 'borderRadius',
                     displayName: uiEditor.getString('editor.property.borderradius'),
                     type: 'int'
+                },
+                {
+                    name: 'style',
+                    displayName: uiEditor.getString('editor.property.style'),
+                    type: 'string'
                 },
                 {
                     name: 'overflow',

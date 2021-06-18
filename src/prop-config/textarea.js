@@ -15,8 +15,20 @@ export default function(uiEditor) {
                 extends: [{
                     rule: 'ht.ui.TextField',
                     categoryId: 'TextField',
-                    filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'maxLength', 'is:instant', 'maskRe']
-                }]
+                    filter: ['color', 'font', 'placeholder', 'is:readOnly', 'maxLength', 'is:instant', 'maskRe']
+                }],
+                properties: [
+                    {
+                        name: 'value',
+                        displayName: uiEditor.getString('editor.property.value'),
+                        type: 'bigstring'
+                    },
+                    {
+                        name: 'lineHeight',
+                        displayName: uiEditor.getString('editor.property.lineheight'),
+                        type: 'int'
+                    }
+                ]
             },
             {
                 displayName: uiEditor.getString('editor.property.contextmenu'),

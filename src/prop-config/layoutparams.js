@@ -134,7 +134,12 @@ export default function(uiEditor) {
                         if (value == 'wrap_content' || value == 'match_parent')
                             view.setLayoutParams('width', value);
                         else if (value != '') {
-                            view.setLayoutParams('width', parseInt(value));
+                            if (!isNaN(value)) {
+                                view.setLayoutParams('width', parseInt(value));    
+                            }
+                            else {
+                                view.setLayoutParams('width', value);    
+                            }
                         }
                     }
                 },
@@ -169,7 +174,12 @@ export default function(uiEditor) {
                         if (value == 'wrap_content' || value == 'match_parent')
                             view.setLayoutParams('height', value);
                         else if (value != '') {
-                            view.setLayoutParams('height', parseInt(value));
+                            if (!isNaN(value)) {
+                                view.setLayoutParams('height', parseInt(value));    
+                            }
+                            else {
+                                view.setLayoutParams('height', value);    
+                            }
                         }
                     }
                 },
