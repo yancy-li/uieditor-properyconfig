@@ -13,10 +13,51 @@ export default function(uiEditor) {
             },
             {
                 displayName: uiEditor.getString('toolkit.label'),
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.ishintlabel'),
+                        type: 'boolean',
+                        getValue: function (view) {
+                            return view.a('pageFunc') === 'hintLabel';
+                        },
+                        setValue: function (view, value) {
+                            view.a('pageFunc', value ? 'hintLabel': null);
+                        },
+                        isVisible: function (views) {
+                            var visible = true;
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                var parent = view.getParent();
+                                if (!(parent instanceof ht.ui.Pagination)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
+                        name: 'text',
+                        displayName: uiEditor.getString('editor.property.text'),
+                        type: 'string',
+                        isVisible: function (views) {
+                            var visible = true;
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                var parent = view.getParent();
+                                if ((parent instanceof ht.ui.Pagination)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                ],
                 extends: [{
                     rule: 'ht.ui.Button',
                     categoryId: 'Button',
-                    filter: ['text', 'textColor', 'textFont', 'hTextPosition', 'vTextPosition', 'icon', 'iconWidth', 'iconHeight',
+                    filter: ['textColor', 'textFont', 'hTextPosition', 'vTextPosition', 'icon', 'iconWidth', 'iconHeight',
                         'iconTextGap', 'iconStretch', 'toolTip', 'toolTipEnabled', 'align', 'vAlign'
                     ]
                 }]

@@ -16,6 +16,54 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.button'),
                 properties: [
                     {
+                        name: 'pageFunc',
+                        displayName: uiEditor.getString('editor.property.pagefunc'),
+                        type: 'enum',
+                        editorParams: {
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.pagefuncfirst'),
+                                    value: 'first'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.pagefuncprevious'),
+                                    value: 'previous'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.pagefuncnext'),
+                                    value: 'next'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.pagefunclast'),
+                                    value: 'last'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.pagefuncgotopage'),
+                                    value: 'gotoPage'
+                                }
+                            ]
+                        },
+                        getValue: function (view) {
+                            return view.a('pageFunc');
+                        },
+                        setValue: function (view, value) {
+                            view.a('pageFunc', value);
+                        },
+                        isVisible: function (views) {
+                            var visible = true;
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                var parent = view.getParent();
+                                if (!(parent instanceof ht.ui.Pagination)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
                         name: 'text',
                         displayName: uiEditor.getString('editor.property.text'),
                         type: 'string'

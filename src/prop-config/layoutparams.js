@@ -1,10 +1,10 @@
 export default function(uiEditor) {
     return {
-        name: 'layoutParams',
+        displayName: uiEditor.getString('editor.property.layoutparams'),
         properties: [
             {
                 name: 'layoutParams.marginLeft',
-                displayName: 'marginLeft',
+                displayName: uiEditor.getString('editor.property.marginleft'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('marginLeft');
@@ -34,7 +34,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.marginRight',
-                displayName: 'marginRight',
+                displayName: uiEditor.getString('editor.property.marginright'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('marginRight');
@@ -63,7 +63,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.marginTop',
-                displayName: 'marginTop',
+                displayName: uiEditor.getString('editor.property.margintop'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('marginTop');
@@ -92,7 +92,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.marginBottom',
-                displayName: 'marginBottom',
+                displayName: uiEditor.getString('editor.property.marginbottom'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('marginBottom');
@@ -121,7 +121,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.width',
-                displayName: 'width',
+                displayName: uiEditor.getString('editor.property.width'),
                 type: 'enum',
                 editorParams: {
                     datas: ['wrap_content', 'match_parent', 100]
@@ -161,7 +161,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.height',
-                displayName: 'height',
+                displayName: uiEditor.getString('editor.property.height'),
                 type: 'enum',
                 editorParams: {
                     datas: ['wrap_content', 'match_parent', 100]
@@ -202,19 +202,19 @@ export default function(uiEditor) {
             // ---------- relativeLayout 专用
             {
                 name: 'layoutParams.align',
-                displayName: 'Align',
+                displayName: uiEditor.getString('editor.property.align'),
                 type: 'simpleEnum',
                 editorParams: {
                     datas: [{
-                        text: 'left',
+                        text: uiEditor.getString('editor.left'),
                         value: 'left'
                     },
                     {
-                        text: 'center',
+                        text: uiEditor.getString('editor.center'),
                         value: 'center'
                     },
                     {
-                        text: 'right',
+                        text: uiEditor.getString('editor.right'),
                         value: 'right'
                     }]
                 },
@@ -239,19 +239,19 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.vAlign',
-                displayName: 'vAlign',
+                displayName: uiEditor.getString('editor.property.valign'),
                 type: 'simpleEnum',
                     editorParams: {
                         datas: [{
-                            text: 'top',
+                            text: uiEditor.getString('editor.top'),
                             value: 'top'
                         },
                         {
-                            text: 'middle',
+                            text: uiEditor.getString('editor.middle'),
                             value: 'middle'
                         },
                         {
-                            text: 'bottom',
+                            text: uiEditor.getString('editor.bottom'),
                             value: 'bottom'
                         }]
                     },
@@ -277,7 +277,7 @@ export default function(uiEditor) {
             // ---------- tabLayout 专用
             {
                 name: 'layoutParams.title',
-                displayName: 'title',
+                displayName: uiEditor.getString('editor.property.title'),
                 type: 'string',
                 getValue: function (view) {
                     return view.getLayoutParams('title');
@@ -300,7 +300,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.icon',
-                displayName: 'icon',
+                displayName: uiEditor.getString('editor.property.icon'),
                 type: 'string',
                 getValue: function (view) {
                     return view.getLayoutParams('icon');
@@ -326,7 +326,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.closable',
-                displayName: 'closable',
+                displayName: uiEditor.getString('editor.property.closable'),
                 type: 'boolean',
                 getValue: function (view) {
                     return view.getLayoutParams('closable');
@@ -350,7 +350,7 @@ export default function(uiEditor) {
 
             {
                 name: 'layoutParams.gridX',
-                displayName: 'gridX',
+                displayName: uiEditor.getString('editor.property.gridx'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('gridX');
@@ -373,7 +373,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.gridY',
-                displayName: 'gridY',
+                displayName: uiEditor.getString('editor.property.gridy'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('gridY');
@@ -396,7 +396,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.colspan',
-                displayName: 'colspan',
+                displayName: uiEditor.getString('editor.property.colspan'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('colspan');
@@ -419,7 +419,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.rowspan',
-                displayName: 'rowspan',
+                displayName: uiEditor.getString('editor.property.rowspan'),
                 type: 'int',
                 getValue: function (view) {
                     return view.getLayoutParams('rowspan');
@@ -442,7 +442,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.childwidth',
-                displayName: 'ToggleButtonWidth',
+                displayName: uiEditor.getString('editor.property.pagebuttonwidth'),
                 type: 'enum',
                 editorParams: {
                     datas: ['wrap_content', 'match_parent', 100]
@@ -478,7 +478,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'layoutParams.childheight',
-                displayName: 'ToggleButtonHeight',
+                displayName: uiEditor.getString('editor.property.pagebuttonheight'),
                 type: 'enum',
                 editorParams: {
                     datas: ['wrap_content', 'match_parent', 100]
