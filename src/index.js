@@ -43,6 +43,11 @@ import uigraphviewProperties from './prop-config/uigraphview';
 import uivectorviewProperties from './prop-config/uivectorview';
 import uigraph3dviewProperties from './prop-config/uigraph3dview';
 import sidebarProperties from './prop-config/sidebar';
+import paginationProperties from './prop-config/pagination';
+import uploaderProperties from './prop-config/uploader';
+import htmlviewProperties from './prop-config/htmlview';
+import echartviewProperties from './prop-config/echart';
+import pagebuttongroupProperties from './prop-config/pagebuttongroup';
 
 
 // 布局属性
@@ -74,6 +79,8 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(dateTimePickerProperties(uiEditor));
     properties.push(dateRangePickerProperties(uiEditor));
     properties.push(hBoxLayoutProperties(uiEditor));
+    properties.push(paginationProperties(uiEditor));
+    properties.push(pagebuttongroupProperties(uiEditor));
     properties.push(vBoxLayoutProperties(uiEditor));
     properties.push(tabLayoutProperties(uiEditor));
     properties.push(flowLayoutProperties(uiEditor));
@@ -99,6 +106,9 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(uigraph3dviewProperties(uiEditor));
     properties.push(sidebarProperties(uiEditor));
     properties.push(uivectorviewProperties(uiEditor));
+    properties.push(uploaderProperties(uiEditor));
+    properties.push(htmlviewProperties(uiEditor));
+    properties.push(echartviewProperties(uiEditor));
 
     return {
         properties: properties,

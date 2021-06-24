@@ -60,6 +60,7 @@ export default function(uiEditor) {
             },
             {
                 name: 'HBoxLayout',
+                id: 'hboxlayout',
                 displayName: uiEditor.getString('toolkit.hboxlayout'),
                 properties: [{
                         name: 'vAlign',

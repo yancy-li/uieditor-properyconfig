@@ -13,26 +13,12 @@ export default function(uiEditor) {
             },
             {
                 displayName: uiEditor.getString('toolkit.togglebutton'),
+                id: 'togglebutton',
                 properties: [
                     {
-                        name: 'background',
-                        displayName: uiEditor.getString('editor.property.background'),
-                        type: 'drawable'
-                    },
-                    {
-                        name: 'hoverBackground',
-                        displayName: uiEditor.getString('editor.property.hoverbackground'),
-                        type: 'drawable'
-                    },
-                    {
-                        name: 'activeBackground',
-                        displayName: uiEditor.getString('editor.property.activebackground'),
-                        type: 'drawable'
-                    },
-                    {
-                        name: 'disabledBackground',
-                        displayName: uiEditor.getString('editor.property.disabledbackground'),
-                        type: 'drawable'
+                        name: 'is:selected',
+                        displayName: uiEditor.getString('editor.property.selected'),
+                        type: 'boolean'
                     },
                     {
                         name: 'selectBackground',
@@ -55,11 +41,52 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
-                        name: 'is:selected',
-                        displayName: uiEditor.getString('editor.property.selected'),
-                        type: 'boolean'
+                        name: 'selectIcon',
+                        displayName: uiEditor.getString('editor.property.selecticon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectHoverIcon',
+                        displayName: uiEditor.getString('editor.property.selecthovericon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectActiveIcon',
+                        displayName: uiEditor.getString('editor.property.selectactiveicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectDisabledIcon',
+                        displayName: uiEditor.getString('editor.property.selectdisabledicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'selectTextColor',
+                        displayName: uiEditor.getString('editor.property.selecttextcolor'),
+                        type: 'color'
+                    },
+                    {
+                        name: 'selectHoverTextColor',
+                        displayName: uiEditor.getString('editor.property.selecthovertextcolor'),
+                        type: 'color'
+                    },
+                    {
+                        name: 'selectActiveTextColor',
+                        displayName: uiEditor.getString('editor.property.selectactivetextcolor'),
+                        type: 'color'
+                    },
+                    {
+                        name: 'selectDisabledTextColor',
+                        displayName: uiEditor.getString('editor.property.selectdisabledtextcolor'),
+                        type: 'color'
+                    },
+                ],
+                extends: [
+                    {
+                        rule: 'ht.ui.Button',
+                        categoryId: 'Button'
                     }
-                ]
+                ],
             },
             {
                 displayName: uiEditor.getString('editor.property.contextmenu'),

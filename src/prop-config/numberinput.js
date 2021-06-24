@@ -7,16 +7,7 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [{
                     rule: 'ht.ui.View',
-                    categoryId: 'basic',
-                    replace: [
-                        {
-                            name: 'border',
-                            type: 'border',
-                            editorParams: {
-                                'focusLineBorderVisible': true,
-                            }
-                        }
-                    ]
+                    categoryId: 'basic'
                 }]
             },
             {

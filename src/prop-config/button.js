@@ -36,19 +36,14 @@ export default function(uiEditor) {
                         type: 'color'
                     },
                     {
+                        name: 'disabledTextColor',
+                        displayName: uiEditor.getString('editor.property.disabledtextcolor'),
+                        type: 'color'
+                    },
+                    {
                         name: 'textFont',
                         displayName: uiEditor.getString('editor.property.textfont'),
                         type: 'font'
-                    },
-                    {
-                        name: 'hoverBackground',
-                        displayName: uiEditor.getString('editor.property.hoverbackground'),
-                        type: 'drawable'
-                    },
-                    {
-                        name: 'activeBackground',
-                        displayName: uiEditor.getString('editor.property.activebackground'),
-                        type: 'drawable'
                     },
                     {
                         name: 'hTextPosition',
@@ -87,6 +82,26 @@ export default function(uiEditor) {
                                 value: 'bottom'
                             }]
                         }
+                    },
+                    {
+                        name: 'hoverBackground',
+                        displayName: uiEditor.getString('editor.property.hoverbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeBackground',
+                        displayName: uiEditor.getString('editor.property.activebackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'disabledBackground',
+                        displayName: uiEditor.getString('editor.property.disabledbackground'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'disabledBorder',
+                        displayName: uiEditor.getString('editor.property.disabledborder'),
+                        type: 'border'
                     },
                     {
                         name: 'icon',
@@ -144,7 +159,7 @@ export default function(uiEditor) {
                         type: 'boolean'
                     },
                     {
-                        displayName: uiEditor.getString('editor.property.pixcelperfect'),
+                        displayName: uiEditor.getString('editor.property.pixelperfect'),
                         name: 'is:pixelPerfect',
                         type: 'boolean'
                     },

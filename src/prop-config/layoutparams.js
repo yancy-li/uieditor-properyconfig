@@ -439,7 +439,79 @@ export default function(uiEditor) {
                     }
                     return visible;
                 }
-            }
+            },
+            {
+                name: 'layoutParams.childwidth',
+                displayName: 'ToggleButtonWidth',
+                type: 'enum',
+                editorParams: {
+                    datas: ['wrap_content', 'match_parent', 100]
+                },
+                getValue: function (view) {
+                    return view.getTemplateButton().getLayoutParams('width');
+                },
+                setValue: function (view, value) {
+                    if (value != null) {
+                        if (value == 'wrap_content' || value == 'match_parent')
+                            view.getTemplateButton().setLayoutParams('width', value);
+                        else if (value != '') {
+                            if (!isNaN(value)) {
+                                view.getTemplateButton().setLayoutParams('width', parseInt(value));    
+                            }
+                            else {
+                                view.getTemplateButton().setLayoutParams('width', value);    
+                            }
+                        }
+                    }
+                },
+                isVisible: function (views) {
+                    var visible = true;
+                    for (var i = 0, length = views.length; i < length; i++) {
+                        var view = views[i];
+                        if (!(view instanceof ht.ui.PageButtonGroup)) {
+                            visible = false;
+                            break;
+                        }
+                    }
+                    return visible;
+                }
+            },
+            {
+                name: 'layoutParams.childheight',
+                displayName: 'ToggleButtonHeight',
+                type: 'enum',
+                editorParams: {
+                    datas: ['wrap_content', 'match_parent', 100]
+                },
+                getValue: function (view) {
+                    return view.getTemplateButton().getLayoutParams('height');
+                },
+                setValue: function (view, value) {
+                    if (value != null) {
+                        if (value == 'wrap_content' || value == 'match_parent')
+                            view.getTemplateButton().setLayoutParams('height', value);
+                        else if (value != '') {
+                            if (!isNaN(value)) {
+                                view.getTemplateButton().setLayoutParams('height', parseInt(value));    
+                            }
+                            else {
+                                view.getTemplateButton().setLayoutParams('height', value);    
+                            }
+                        }
+                    }
+                },
+                isVisible: function (views) {
+                    var visible = true;
+                    for (var i = 0, length = views.length; i < length; i++) {
+                        var view = views[i];
+                        if (!(view instanceof ht.ui.PageButtonGroup)) {
+                            visible = false;
+                            break;
+                        }
+                    }
+                    return visible;
+                }
+            },
         ]
     }
 }
