@@ -199,6 +199,12 @@ export default function(uiEditor) {
                     return visible;
                 }
             },
+            {
+                name: 'zIndex',
+                displayName: uiEditor.getString('editor.property.zindex'),
+                type: 'int',
+                desc: uiEditor.getString('editor.property.desc.zindex'),
+            },
             // ---------- relativeLayout 专用
             {
                 name: 'layoutParams.align',

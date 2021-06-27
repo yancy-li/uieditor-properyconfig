@@ -29,12 +29,6 @@ export default function (uiEditor) {
                     desc: uiEditor.getString('editor.property.desc.padding'),
                 },
                 {
-                    name: 'zIndex',
-                    displayName: uiEditor.getString('editor.property.zindex'),
-                    type: 'int',
-                    desc: uiEditor.getString('editor.property.desc.zindex'),
-                },
-                {
                     name: 'borderRadius',
                     displayName: uiEditor.getString('editor.property.borderradius'),
                     type: 'int'
@@ -42,6 +36,11 @@ export default function (uiEditor) {
                 {
                     name: 'style',
                     displayName: uiEditor.getString('editor.property.style'),
+                    type: 'string'
+                },
+                {
+                    name: 'boxShadow',
+                    displayName: uiEditor.getString('editor.property.shadow'),
                     type: 'string'
                 },
                 {
