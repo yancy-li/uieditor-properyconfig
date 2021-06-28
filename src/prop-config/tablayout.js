@@ -79,7 +79,25 @@ export default function (uiEditor) {
                         displayName: uiEditor.getString('editor.property.tabposition'),
                         type: 'enum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.top'), uiEditor.getString('editor.bottom'), uiEditor.getString('editor.left'), uiEditor.getString('editor.right')],
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.top'),
+                                    value: 'top'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.bottom'),
+                                    value: 'bottom'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.left'),
+                                    value: 'left'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.right'),
+                                    value: 'right'
+                                }
+                            ],
+                            valueField: 'value',
                             readOnly: true
                         }
                     },
@@ -166,22 +184,34 @@ export default function (uiEditor) {
                     {
                         name: 'tabBackground',
                         displayName: uiEditor.getString('editor.property.tabbackground'),
-                        type: 'drawable'
+                        type: 'drawable',
+                        editorParams: {
+                            tabBackgroundLineDrawableVisible: true
+                        }
                     },
                     {
                         name: 'hoverTabBackground',
                         displayName: uiEditor.getString('editor.property.hovertabbackground'),
-                        type: 'drawable'
+                        type: 'drawable',
+                        editorParams: {
+                            tabBackgroundLineDrawableVisible: true
+                        }
                     },
                     {
                         name: 'activeTabBackground',
                         displayName: uiEditor.getString('editor.property.activetabbackground'),
-                        type: 'drawable'
+                        type: 'drawable',
+                        editorParams: {
+                            tabBackgroundLineDrawableVisible: true
+                        }
                     },
                     {
                         name: 'moveTabBackground',
                         displayName: uiEditor.getString('editor.property.movetabbackground'),
-                        type: 'drawable'
+                        type: 'drawable',
+                        editorParams: {
+                            tabBackgroundLineDrawableVisible: true
+                        }
                     },
                     {
                         name: 'insertLine',
