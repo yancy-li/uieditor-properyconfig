@@ -69,6 +69,11 @@ export default function(uiEditor) {
                         type: 'string'
                     },
                     {
+                        name: 'textFont',
+                        displayName: uiEditor.getString('editor.property.textfont'),
+                        type: 'font'
+                    },
+                    {
                         name: 'textColor',
                         displayName: uiEditor.getString('editor.property.textcolor'),
                         type: 'color',
@@ -87,11 +92,6 @@ export default function(uiEditor) {
                         name: 'disabledTextColor',
                         displayName: uiEditor.getString('editor.property.disabledtextcolor'),
                         type: 'color'
-                    },
-                    {
-                        name: 'textFont',
-                        displayName: uiEditor.getString('editor.property.textfont'),
-                        type: 'font'
                     },
                     {
                         name: 'hTextPosition',

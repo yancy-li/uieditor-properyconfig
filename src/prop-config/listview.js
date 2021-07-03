@@ -93,6 +93,11 @@ export default function(uiEditor) {
                         type: 'datas'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.rowrenderer'),
+                        name: 'rowRenderer',
+                        type: 'rendererResource',
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.labelcolor'),
                         name: 'labelColor',
                         type: 'color',
