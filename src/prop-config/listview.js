@@ -138,6 +138,16 @@ export default function(uiEditor) {
                         type: 'color'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.rowlinesize'),
+                        name: 'rowLineSize',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.cliplastrowline'),
+                        name: 'is:clipLastRowLine',
+                        type: 'boolean'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.pannable'),
                         name: 'pannable',
                         type: 'boolean'

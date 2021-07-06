@@ -5,13 +5,23 @@ export default function (uiEditor) {
             {
             id: 'contextmenu',
             displayName: uiEditor.getString('editor.property.contextmenu'),
-            getValue: function (view, property) {
+            getValue: function (view, property, checkValueChanged) {
                 var contextMenu = view.getContextMenu();
-                if (contextMenu == null) {
-                    return undefined;
+                if (checkValueChanged) {
+                    var contextMenu = view.getContextMenu();
+                    if (contextMenu == null) {
+                        contextMenu = new ht.ui.ContextMenu();
+                    }
+                    
+                    return contextMenu[ht.Default.prefixGetter(property.name)]();
                 }
                 else {
-                    return contextMenu[ht.Default.prefixGetter(property.name)]();
+                    if (contextMenu == null) {
+                        return undefined;
+                    }
+                    else {
+                        return contextMenu[ht.Default.prefixGetter(property.name)]();
+                    }
                 }
             },
             setValue: function (view, value, property) {
@@ -224,12 +234,34 @@ export default function (uiEditor) {
                 {
                     name: 'scrollUpIndicator',
                     displayName: uiEditor.getString('editor.property.scrollupindicator'),
-                    type: 'drawable'
+                    type: 'drawable',
+                    editorParams: {
+                        contextMenuScrollIndicatorDrawableVisible: true
+                    }
                 },
                 {
                     name: 'scrollDownIndicator',
                     displayName: uiEditor.getString('editor.property.scrolldownindicator'),
-                    type: 'drawable'
+                    type: 'drawable',
+                    editorParams: {
+                        contextMenuScrollIndicatorDrawableVisible: true
+                    }
+                },
+                {
+                    name: 'disabledScrollUpIndicator',
+                    displayName: uiEditor.getString('editor.property.disabledscrollupindicator'),
+                    type: 'drawable',
+                    editorParams: {
+                        contextMenuScrollIndicatorDrawableVisible: true
+                    }
+                },
+                {
+                    name: 'disabledScrollDownIndicator',
+                    displayName: uiEditor.getString('editor.property.disabledscrolldownindicator'),
+                    type: 'drawable',
+                    editorParams: {
+                        contextMenuScrollIndicatorDrawableVisible: true
+                    }
                 },
                 {
                     name: 'scrollIndicatorHeight',

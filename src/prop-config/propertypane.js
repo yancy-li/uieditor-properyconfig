@@ -85,7 +85,7 @@ export default function(uiEditor) {
                     rule: 'ht.ui.TreeView',
                     categoryId: 'TreeView',
                     filter: ['labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont', 'expandIcon', 'collapseIcon',
-                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowBackground', 'hoverRowBackground', 'selectRowBackground'
+                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground'
                     ]
                 }],
                 properties: [{

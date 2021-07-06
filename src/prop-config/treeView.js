@@ -97,7 +97,7 @@ export default function(uiEditor) {
                             hierarchic: true
                         }
                     }, 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
-                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
+                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
                         'iconWidth', 'iconHeight', 'iconGap' ,'iconStretch', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon',
                         'dragEnabled', 'dropEnabled', 'dropLineColor', 'editable', 'editorClass', 'checkMode', 'rowIndent',
                         'pannable'
