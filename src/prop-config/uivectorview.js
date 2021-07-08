@@ -12,8 +12,17 @@ export default function(uiEditor) {
                 ]
             },
             {
-                displayName: uiEditor.getString('toolkit.uigraphview'),
+                id: 'uivectorview',
+                displayName: uiEditor.getString('toolkit.uivectorview'),
                 properties: [
+                    {
+                        name: 'url',
+                        displayName: uiEditor.getString('editor.property.url'),
+                        type: 'urlResource',
+                        editorParams: {
+                            readOnly: true
+                        }
+                    },
                     {
                         name: 'is:gvAutoFitContent',
                         displayName: uiEditor.getString('editor.property.gvautofitcontent'),

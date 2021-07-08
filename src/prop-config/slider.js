@@ -56,10 +56,17 @@ export default function(uiEditor) {
                     {
                         name: 'orientation',
                         displayName: uiEditor.getString('editor.property.orientation'),
-                        type: 'enum',
+                        type: 'simpleEnum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.horizontal'), uiEditor.getString('editor.vertical')],
-                            readOnly: true
+                            datas: [{
+                                text: uiEditor.getString('editor.horizontal'),
+                                value: 'h'
+                            },
+                            {
+                                text: uiEditor.getString('editor.vertical'),
+                                value: 'v'
+                            }],
+                            // readOnly: true
                         }
                     },
                     {

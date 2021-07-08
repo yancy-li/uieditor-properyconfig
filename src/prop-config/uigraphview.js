@@ -13,31 +13,10 @@ export default function(uiEditor) {
             },
             {
                 displayName: uiEditor.getString('toolkit.uigraphview'),
-                properties: [
+                extends: [
                     {
-                        name: 'is:gvAutoFitContent',
-                        displayName: uiEditor.getString('editor.property.gvautofitcontent'),
-                        type: 'boolean'
-                    },
-                    {
-                        name: 'gvPannable',
-                        displayName: uiEditor.getString('editor.property.gvpannable'),
-                        type: 'boolean'
-                    },
-                    {
-                        name: 'nodeSelectable',
-                        displayName: uiEditor.getString('editor.property.nodeselectable'),
-                        type: 'boolean'
-                    },
-                    {
-                        name: 'gvZoomable',
-                        displayName: uiEditor.getString('editor.property.gvzoomable'),
-                        type: 'boolean'
-                    },
-                    {
-                        name: 'gvScrollBarVisible',
-                        displayName: uiEditor.getString('editor.property.gvscrollbarvisible'),
-                        type: 'boolean'
+                        rule: 'ht.ui.UIVectorView',
+                        categoryId: 'uivectorview'
                     }
                 ]
             },

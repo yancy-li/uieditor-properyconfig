@@ -8,9 +8,9 @@ export default function (uiEditor) {
             getValue: function (view, property, checkValueChanged) {
                 var contextMenu = view.getContextMenu();
                 if (checkValueChanged) {
-                    var contextMenu = view.getContextMenu();
+                    var contextMenu = view.getContextMenu() || view._contextMenuCache;
                     if (contextMenu == null) {
-                        contextMenu = new ht.ui.ContextMenu();
+                        contextMenu = view._contextMenuCache = new ht.ui.ContextMenu();
                     }
                     
                     return contextMenu[ht.Default.prefixGetter(property.name)]();

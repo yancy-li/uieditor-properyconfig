@@ -102,10 +102,10 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(carouselProperties(uiEditor));
     properties.push(gridPaneProperties(uiEditor));
     properties.push(refViewGroupProperties(uiEditor));
+    properties.push(uivectorviewProperties(uiEditor));
     properties.push(uigraphviewProperties(uiEditor));
     properties.push(uigraph3dviewProperties(uiEditor));
     properties.push(sidebarProperties(uiEditor));
-    properties.push(uivectorviewProperties(uiEditor));
     properties.push(uploaderProperties(uiEditor));
     properties.push(htmlviewProperties(uiEditor));
     properties.push(echartviewProperties(uiEditor));

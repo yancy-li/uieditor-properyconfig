@@ -12,6 +12,19 @@ export default function(uiEditor) {
                 ]
             },
             {
+                displayName: uiEditor.getString('toolkit.uigraph3dview'),
+                properties: [
+                    {
+                        name: 'url',
+                        displayName: uiEditor.getString('editor.property.url'),
+                        type: 'urlResource',
+                        editorParams: {
+                            readOnly: true
+                        }
+                    }
+                ]
+            },
+            {
                 displayName: uiEditor.getString('editor.property.contextmenu'),
                 collapse: true,
                 extends: [
