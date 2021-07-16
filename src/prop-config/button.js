@@ -16,6 +16,54 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.button'),
                 properties: [
                     {
+                        name: 'dropdownFunc',
+                        displayName: uiEditor.getString('editor.property.dropdownfunc'),
+                        type: 'enum',
+                        editorParams: {
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.ok'),
+                                    value: 'ok'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.cancel'),
+                                    value: 'cancel'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null
+                                }
+                            ]
+                        },
+                        getValue: function (view) {
+                            return view.a('dropdownFunc');
+                        },
+                        setValue: function (view, value) {
+                            view.a('dropdownFunc', value);
+                        },
+                        isVisible: function (views) {
+                            var visible = true;
+                            var inColorDropDown = function(v) {
+                                while (v) {
+                                    if (v instanceof ht.ui.ColorDropDownView) {
+                                        return true;
+                                    }
+                                    v = v.getParent();
+                                }
+                            }
+                            
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                if (!inColorDropDown(view)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
                         name: 'pageFunc',
                         displayName: uiEditor.getString('editor.property.pagefunc'),
                         type: 'enum',

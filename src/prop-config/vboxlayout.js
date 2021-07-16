@@ -3,6 +3,7 @@ export default function(uiEditor) {
         rule: 'ht.ui.VBoxLayout',
         categories: [
             {
+                id: 'Basic',
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [
                     {
@@ -59,6 +60,7 @@ export default function(uiEditor) {
                 ]
             },
             {
+                id: 'VBoxLayout',
                 displayName: uiEditor.getString('toolkit.vboxlayout'),
                 properties: [
                     {

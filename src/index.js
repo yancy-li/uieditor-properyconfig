@@ -48,6 +48,8 @@ import uploaderProperties from './prop-config/uploader';
 import htmlviewProperties from './prop-config/htmlview';
 import echartviewProperties from './prop-config/echart';
 import pagebuttongroupProperties from './prop-config/pagebuttongroup';
+import colorpaneProperties from './prop-config/colorpane';
+import colordropdownviewProperties from './prop-config/colordropdownview';
 
 
 // 布局属性
@@ -109,6 +111,8 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(uploaderProperties(uiEditor));
     properties.push(htmlviewProperties(uiEditor));
     properties.push(echartviewProperties(uiEditor));
+    properties.push(colorpaneProperties(uiEditor));
+    properties.push(colordropdownviewProperties(uiEditor));
 
     return {
         properties: properties,

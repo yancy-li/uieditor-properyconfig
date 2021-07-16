@@ -18,10 +18,7 @@ export default function(uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.autoplay'),
                         name: 'autoplay',
-                        type: 'boolean',
-                        getValue: function(view, property) {
-                            return view._autoplay;
-                        }
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.carouselinterval'),
