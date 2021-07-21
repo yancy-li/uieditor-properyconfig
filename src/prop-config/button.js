@@ -114,7 +114,21 @@ export default function(uiEditor) {
                     {
                         name: 'text',
                         displayName: uiEditor.getString('editor.property.text'),
-                        type: 'string'
+                        type: 'string',
+                        getValue: function(view) {
+                            var text = view.getText();
+                            if (text) {
+                                text = text.replace(/\\/g, '\\\\');
+                                text = text.replace(/\n/g, '\\n')
+                            }
+                            return text;
+                        },
+                        setValue: function(view, value) {
+                            if (value) {
+                                value = window.eval('({"a": "' + value + '"})').a;
+                            }
+                            view.setText(value);
+                        }
                     },
                     {
                         name: 'textFont',
