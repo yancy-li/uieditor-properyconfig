@@ -14,48 +14,40 @@ export default function(uiEditor) {
     
                 id: 'ColorPicker',
                 displayName: uiEditor.getString('toolkit.colorpicker'),
-                properties: [
-                    {
-                        displayName: uiEditor.getString('editor.property.expanded'),
-                        name: 'is:expanded',
-                        type: 'boolean',
-                        getValue: function (view, property, checkValueChanged) {
-                           return view.isOpened();
+                extends: [{
+                    rule: 'ht.ui.ComboBox',
+                    categoryId: 'ComboBox',
+                    filter: [
+                        'dropDownViewRenderer', 'is:expanded', 'dropDownWidth', 'dropDownHeight', 
+                        {
+                            name: 'value',
+                            displayName: uiEditor.getString('editor.property.value'),
+                            type: 'color'
                         },
-                        setValue: function (view, value, property) {
-                            if (value) {
-                                view.open()
-                            }
-                            else {
-                                view.close();
+                        {
+                            name: 'valueMode',
+                            displayName: uiEditor.getString('editor.property.valuemode'),
+                            type: 'enum',
+                            editorParams: {
+                                datas: [{
+                                    label: uiEditor.getString('editor.property.text'),
+                                    value: 'text'
+                                }, {
+                                    label: uiEditor.getString('editor.color'),
+                                    value: 'color'
+                                }],
+                                readOnly: true
                             }
                         },
-                    },
-                    {
-                        name: 'value',
-                        displayName: uiEditor.getString('editor.property.value'),
-                        type: 'color'
-                    },
-                    {
-                        name: 'valueMode',
-                        displayName: uiEditor.getString('editor.property.valuemode'),
-                        type: 'enum',
-                        editorParams: {
-                            datas: [uiEditor.getString('editor.property.text'), uiEditor.getString('editor.color')],
-                            readOnly: true
-                        }
-                    },
-                    {
-                        name: 'previewBackground',
-                        displayName: uiEditor.getString('editor.property.previewbackground'),
-                        type: 'drawable'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.dropdownviewrenderer'),
-                        name: 'dropDownViewRenderer',
-                        type: 'rendererResource'
-                    }
-                ]
+                        {
+                            name: 'previewBackground',
+                            displayName: uiEditor.getString('editor.property.previewbackground'),
+                            type: 'drawable'
+                        },
+                        'color', 'font',
+                        'is:readOnly', 'icon', 'hoverIcon', 'activeIcon'
+                    ]
+                }],
             },
             {
                 displayName: uiEditor.getString('editor.property.contextmenu'),

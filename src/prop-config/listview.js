@@ -3,6 +3,7 @@ export default function(uiEditor) {
         rule: 'ht.ui.ListView',
         categories: [
             {
+                id: 'basic',
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [{
                     rule: 'ht.ui.View',

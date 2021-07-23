@@ -44,9 +44,9 @@ export default function(uiEditor) {
                         },
                         isVisible: function (views) {
                             var visible = true;
-                            var inColorDropDown = function(v) {
+                            var inColorOrDateTimeDropDown = function(v) {
                                 while (v) {
-                                    if (v instanceof ht.ui.ColorDropDownView) {
+                                    if (v instanceof ht.ui.ColorDropDownView || v instanceof ht.ui.DateTimeDropDownView) {
                                         return true;
                                     }
                                     v = v.getParent();
@@ -55,7 +55,7 @@ export default function(uiEditor) {
                             
                             for (var i = 0, length = views.length; i < length; i++) {
                                 var view = views[i];
-                                if (!inColorDropDown(view)) {
+                                if (!inColorOrDateTimeDropDown(view)) {
                                     visible = false;
                                     break;
                                 }

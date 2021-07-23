@@ -17,7 +17,7 @@ export default function(uiEditor) {
                 properties: [
                     {
                         name: 'dropdownFunc',
-                        displayName: uiEditor.getString('editor.property.dropdownfunc'),
+                        displayName: uiEditor.getString('editor.property.iscolorpane'),
                         type: 'boolean',
                         getValue: function (view) {
                             return view.a('dropdownFunc') === 'colorpane';

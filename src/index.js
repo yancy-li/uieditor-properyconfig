@@ -50,6 +50,8 @@ import echartviewProperties from './prop-config/echart';
 import pagebuttongroupProperties from './prop-config/pagebuttongroup';
 import colorpaneProperties from './prop-config/colorpane';
 import colordropdownviewProperties from './prop-config/colordropdownview';
+import datetimepaneProperties from './prop-config/datetimepane'
+import datetimedropdownviewProperties from './prop-config/datetimedropdownview'
 
 
 // 布局属性
@@ -113,6 +115,8 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(echartviewProperties(uiEditor));
     properties.push(colorpaneProperties(uiEditor));
     properties.push(colordropdownviewProperties(uiEditor));
+    properties.push(datetimepaneProperties(uiEditor));
+    properties.push(datetimedropdownviewProperties(uiEditor));
 
     return {
         properties: properties,

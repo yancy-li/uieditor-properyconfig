@@ -26,7 +26,7 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.direction'),
                         type: 'enum',
                         editorParams: {
-                            datas: ['leftToRight', 'rightToLeft'],
+                            datas: ['leftToRight', 'rightToLeft', 'topToDown', 'bottomToUp'],
                             readOnly: true
                         }
                     }
