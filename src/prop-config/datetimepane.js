@@ -332,6 +332,14 @@ export default function(uiEditor) {
                         }
                     },
                     {
+                        name: 'rangeGridBackground',
+                        displayName: uiEditor.getString('editor.property.rangegridbackground'),
+                        type: 'drawable',
+                        editorParams: {
+                            dateTimePaneSelectGridDrawableVisible: true
+                        }
+                    },
+                    {
                         name: 'hoverMonthGridBackground',
                         displayName: uiEditor.getString('editor.property.hovermonthgridbackground'),
                         type: 'drawable',
@@ -342,6 +350,14 @@ export default function(uiEditor) {
                     {
                         name: 'selectMonthGridBackground',
                         displayName: uiEditor.getString('editor.property.selectmonthgridbackground'),
+                        type: 'drawable',
+                        editorParams: {
+                            dateTimePaneSelectGridDrawableVisible: true
+                        }
+                    },
+                    {
+                        name: 'rangeMonthGridBackground',
+                        displayName: uiEditor.getString('editor.property.rangemonthgridbackground'),
                         type: 'drawable',
                         editorParams: {
                             dateTimePaneSelectGridDrawableVisible: true
@@ -362,7 +378,15 @@ export default function(uiEditor) {
                         editorParams: {
                             dateTimePaneSelectGridDrawableVisible: true
                         }
-                    }
+                    },
+                    {
+                        name: 'rangeYearGridBackground',
+                        displayName: uiEditor.getString('editor.property.rangeyeargridbackground'),
+                        type: 'drawable',
+                        editorParams: {
+                            dateTimePaneSelectGridDrawableVisible: true
+                        }
+                    },
                 ]
             },
             {
