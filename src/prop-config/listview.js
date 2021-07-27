@@ -62,6 +62,44 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.listview'),
                 properties: [
                     {
+                        name: 'dropdownFunc',
+                        displayName: uiEditor.getString('editor.property.isshortcuts'),
+                        type: 'boolean',
+                        editorParams: {
+                        },
+                        getValue: function (view) {
+                            return view.a('dropdownFunc') === 'shortcuts';
+                        },
+                        setValue: function (view, value, property, uiEditor) {
+                            if (value)
+                                view.a('dropdownFunc', 'shortcuts');
+                            else
+                                view.a('dropdownFunc', undefined);
+
+                            uiEditor.rebuildInspector();
+                        },
+                        isVisible: function (views) {
+                            var visible = true;
+                            var inDateRangeDropDown = function(v) {
+                                while (v) {
+                                    if (v instanceof ht.ui.DateRangeDropDownView) {
+                                        return true;
+                                    }
+                                    v = v.getParent();
+                                }
+                            }
+                            
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                if (!inDateRangeDropDown(view)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.listdatas'),
                         name: 'listDatas',
                         editorParams: {
@@ -91,7 +129,19 @@ export default function(uiEditor) {
                                 }
                             ]
                         },
-                        type: 'datas'
+                        type: 'datas',
+                        isVisible: function (views) {
+                            var visible = true;
+                            
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                if (view.a('dropdownFunc') === 'shortcuts') {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
                     },
                     {
                         displayName: uiEditor.getString('editor.property.rowrenderer'),

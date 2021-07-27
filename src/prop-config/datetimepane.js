@@ -48,6 +48,54 @@ export default function(uiEditor) {
                         }
                     },
                     {
+                        name: 'dropdownFunc',
+                        displayName: uiEditor.getString('editor.property.dropdownfunc'),
+                        type: 'enum',
+                        getValue: function (view) {
+                            return view.a('dropdownFunc');
+                        },
+                        setValue: function (view, value) {
+                            view.a('dropdownFunc', value);
+                        },
+                        editorParams: {
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.daterangepane_start'),
+                                    value: 'daterangepane_start'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.daterangepane_end'),
+                                    value: 'daterangepane_end'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null
+                                }
+                            ]
+                        },
+                        isVisible: function (views) {
+                            var visible = true;
+                            var inDateRangeDropDown = function(v) {
+                                while (v) {
+                                    if (v instanceof ht.ui.DateRangeDropDownView) {
+                                        return true;
+                                    }
+                                    v = v.getParent();
+                                }
+                            }
+                            
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                if (!inDateRangeDropDown(view)) {
+                                    visible = false;
+                                    break;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
                         name: 'value',
                         displayName: uiEditor.getString('editor.property.value'),
                         type: 'datetime',
