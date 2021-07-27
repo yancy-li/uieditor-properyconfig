@@ -60,7 +60,13 @@ export default function(uiEditor) {
                             'selectIcon', 'selectHoverIcon', 'selectActiveIcon', 
                             'selectTextColor', 
                             'selectHoverTextColor', 'selectActiveTextColor', 
-                            'text', 'textColor', 'hoverTextColor', 'activeTextColor', 'textFont', 
+                            {
+                                name: 'text',
+                                displayName: uiEditor.getString('editor.property.text'),
+                                type: 'string'
+                            },
+                            
+                            'textColor', 'hoverTextColor', 'activeTextColor', 'textFont', 
                             'hTextPosition', 'vTextPosition', 
                             'hoverBackground', 'activeBackground',
                             'icon', 'hoverIcon', 'activeIcon',
