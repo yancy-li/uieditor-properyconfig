@@ -21,7 +21,8 @@ export default function(uiEditor) {
                         type: 'rendererResource',
                         setValue: function(view, value, property, uiEditor) {
                             view.setDropDownViewRenderer(value);
-                            uiEditor.rebuildInspector();
+                            
+                            uiEditor && uiEditor.rebuildInspector();
                         }
                     },
                     {

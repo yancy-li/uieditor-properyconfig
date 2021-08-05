@@ -76,7 +76,8 @@ export default function(uiEditor) {
                             else
                                 view.a('dropdownFunc', undefined);
 
-                            uiEditor.rebuildInspector();
+                                
+                            uiEditor && uiEditor.rebuildInspector();
                         },
                         isVisible: function (views) {
                             var visible = true;
