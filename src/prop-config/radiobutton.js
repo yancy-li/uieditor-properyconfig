@@ -19,16 +19,6 @@ export default function(uiEditor) {
                         categoryId: 'CheckBox',
                     }
                 ]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     }

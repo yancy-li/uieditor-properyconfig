@@ -71,16 +71,6 @@ export default function(uiEditor) {
                         type: 'int'
                     }
                 ]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     }

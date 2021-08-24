@@ -75,16 +75,6 @@ export default function(uiEditor) {
                         'iconTextGap', 'iconStretch', 'toolTip', 'toolTipEnabled', 'align', 'vAlign'
                     ]
                 }]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
 
         ]

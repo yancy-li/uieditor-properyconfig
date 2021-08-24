@@ -139,15 +139,6 @@ export default function(uiEditor) {
                         type: 'drawable'
                     }
                 ]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     }

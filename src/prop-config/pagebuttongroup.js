@@ -92,16 +92,6 @@ export default function(uiEditor) {
                     if (templateButton)
                         templateButton[ht.Default.prefixSetter(property.name)](value);
                 }
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     }

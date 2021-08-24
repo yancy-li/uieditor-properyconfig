@@ -48,16 +48,6 @@ export default function(uiEditor) {
                         'is:readOnly', 'icon', 'hoverIcon', 'activeIcon'
                     ]
                 }],
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     }

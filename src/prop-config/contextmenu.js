@@ -1,49 +1,10 @@
 export default function (uiEditor) {
     return {
-        rule: 'ContextMenuForViews',
+        rule: 'ht.ui.ContextMenu',
         categories: [
             {
             id: 'contextmenu',
             displayName: uiEditor.getString('editor.property.contextmenu'),
-            getValue: function (view, property, checkValueChanged) {
-                var contextMenu = view.getContextMenu();
-                if (checkValueChanged) {
-                    var contextMenu = view.getContextMenu() || view._contextMenuCache;
-                    if (contextMenu == null) {
-                        contextMenu = view._contextMenuCache = new ht.ui.ContextMenu();
-                    }
-                    
-                    return contextMenu[ht.Default.prefixGetter(property.name)]();
-                }
-                else {
-                    if (contextMenu == null) {
-                        return undefined;
-                    }
-                    else {
-                        return contextMenu[ht.Default.prefixGetter(property.name)]();
-                    }
-                }
-            },
-            setValue: function (view, value, property) {
-                var contextMenu = view.getContextMenu();
-                if (property.name === 'items') {
-                    if (value == null) {
-                        if (contextMenu) {
-                            contextMenu = null;
-                            view.setContextMenu(null);
-                        }
-                    }
-                    else {
-                        if (!contextMenu) {
-                            contextMenu = new ht.ui.ContextMenu();
-                            view.setContextMenu(contextMenu);
-                        }
-                    }
-                }
-                
-                if (contextMenu)
-                    contextMenu[ht.Default.prefixSetter(property.name)](value);
-            },
             properties: [{
                     name: 'items',
                     displayName: uiEditor.getString('editor.property.items'),

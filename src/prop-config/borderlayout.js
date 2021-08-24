@@ -125,16 +125,6 @@ export default function(uiEditor) {
                         type: 'boolean'
                     }
                 ]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
-                    }
-                ]
             }
         ]
     };

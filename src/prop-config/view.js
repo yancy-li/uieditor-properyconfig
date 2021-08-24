@@ -34,6 +34,53 @@ export default function (uiEditor) {
                     type: 'int'
                 },
                 {
+                    name: 'preferredSize',
+                    displayName: uiEditor.getString('editor.property.preferredsize'),
+                    type: 'string',
+                    setValue: function(view, value, property) {
+                        if (value == null || value.trim() == '') {
+                            view.setPreferredSize(undefined);
+                        }
+                        else {
+                            value = value.split(',');
+                            var width = value[0];
+                            var height = value[1];
+                            if (!isNaN(width)) {
+                                width = parseInt(width);
+                            }
+                            else {
+                                width = undefined;
+                            }
+
+                            if (!isNaN(height)) {
+                                height = parseInt(height);
+                            }
+                            else {
+                                height = undefined;
+                            }
+
+                            view.setPreferredSize(width, height);
+                        }
+                    },
+                    getValue: function(view, property) {
+                        var preferredSize = view._preferredSize;
+                        if (preferredSize && view.isPreferredSizeSet()) {
+                            var str = '';
+                            var width = preferredSize.width,
+                                height = preferredSize.height;
+                            if (width != null) {
+                                str += width;
+                            }
+                            str += ',';
+
+                            if (height != null) {
+                                str += height;
+                            }
+                            return str;
+                        }
+                    }
+                },
+                {
                     name: 'style',
                     displayName: uiEditor.getString('editor.property.style'),
                     type: 'string'
@@ -97,7 +144,39 @@ export default function (uiEditor) {
                         }
                         return visible;
                     }
-                }
+                },
+                {
+                    name: 'viewGroupTemplate',
+                    displayName: uiEditor.getString('editor.property.viewgrouptemplate'),
+                    type: 'boolean',
+
+                    setValue: function(view, value, property) {
+                        if (value) {
+                            view.addBinding('children', 'template_children');
+                        }
+                        else {
+                            view.removeBinding('children', 'template_children');
+                        }
+                    },
+                    getValue: function(view, property) {
+                        return !!view.getBinding('children', 'template_children');
+                    },
+                    isVisible: function (views) {
+                        var visible = false;
+                        if (views.length === 1) {
+                            var view = views[0];
+                            if (view.getParent() && view.getParent().getClassName() === 'ht.uieditor.Designer' &&  view instanceof ht.ui.ViewGroup && !(view instanceof ht.ui.RefViewGroup)) {
+                                visible = true;
+                            }
+                        }
+                        return visible;
+                    }
+                },
+                {
+                    name: 'contextMenuUrl',
+                    displayName: uiEditor.getString('editor.property.contextmenu'),
+                    type: 'urlResource'
+                },
             ]
         }]
     }

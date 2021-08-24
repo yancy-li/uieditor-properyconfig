@@ -8,7 +8,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Panel',
                         categoryId: 'basic',
-                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable']
+                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable', 'preferredSize']
                     }
                 ],
                 properties: [
@@ -116,16 +116,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.activerestoreicon'),
                         name: 'activeRestoreIcon',
                         type: 'drawable'
-                    }
-                ]
-            },
-            {
-                displayName: uiEditor.getString('editor.property.contextmenu'),
-                collapse: true,
-                extends: [
-                    {
-                        rule: 'ContextMenuForViews',
-                        categoryId: 'contextmenu'
                     }
                 ]
             }
