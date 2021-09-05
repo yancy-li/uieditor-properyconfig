@@ -374,7 +374,21 @@ export default function(uiEditor) {
                         name: 'sortMode',
                         type: 'enum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.property.nothing'), uiEditor.getString('editor.property.bistate'), uiEditor.getString('editor.property.tristate')]
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.bistate'),
+                                    value: 'bistate'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.tristate'),
+                                    value: 'tristate'
+                                }
+                            ]
                         }
                     },
                     {

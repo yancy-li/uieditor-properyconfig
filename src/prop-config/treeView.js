@@ -78,19 +78,10 @@ export default function(uiEditor) {
                                 //     sortable: false
                                 // },
                                 {
-                                    class: 'ht.uieditor.ResourceColumn',
+                                    className: 'ht.uieditor.ResourceColumn',
                                     displayName: uiEditor.getString('editor.property.icon'),
                                     name: 'icon',
                                     editable: true,
-                                    sortable: false
-                                },
-                                {
-                                    class: 'ht.ui.Column',
-                                    displayName: uiEditor.getString('editor.property.customattr1'),
-                                    name: 'name',
-                                    editable: true,
-                                    editorClass: 'ht.ui.editor.StringEditor',
-                                    accessType: 'attr',
                                     sortable: false
                                 }
                             ],
@@ -99,7 +90,45 @@ export default function(uiEditor) {
                     }, 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
                         'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
                         'iconWidth', 'iconHeight', 'iconGap' ,'iconStretch', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon',
-                        'dragEnabled', 'dropEnabled', 'dropLineColor', 'editable', 'editorClass', 'checkMode', 'rowIndent',
+                        'dragEnabled', 'dropEnabled', 'dropLineColor', 'editable', 'editorClass', 
+                        {
+                            displayName: uiEditor.getString('editor.property.checkmode'),
+                            name: 'is:checkMode',
+                            type: 'enum',
+                            getValue: function (view, property) {
+                                return view.getCheckMode();
+                            },
+                            setValue: function (view, value, property) {
+                                view.setCheckMode(value);
+                            },
+                            editorParams: {
+                                readOnly: true,
+                                datas: [
+                                    {
+                                        value: 'all',
+                                        label: uiEditor.getString('editor.property.checkall')
+                                    },
+                                    {
+                                        value: 'descendant',
+                                        label: uiEditor.getString('editor.property.checkdescendant')
+                                    },
+                                    {
+                                        value: 'children',
+                                        label: uiEditor.getString('editor.property.checkchildren')
+                                    },
+                                    {
+                                        value: 'default',
+                                        label: uiEditor.getString('editor.property.checkdefault')
+                                    },
+                                    {
+                                        value: null,
+                                        label: uiEditor.getString('editor.property.checknothing')
+                                    }
+                                ]
+                            }
+                        }
+
+                        , 'rowIndent',
                         'pannable'
                     ]
                 }],

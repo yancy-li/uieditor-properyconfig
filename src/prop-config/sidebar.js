@@ -21,7 +21,7 @@ export default function(uiEditor) {
                         editorParams: {
                             'columns': [
                                 {
-                                    class: 'ht.uieditor.ResourceColumn',
+                                    className: 'ht.uieditor.ResourceColumn',
                                     displayName: uiEditor.getString('editor.property.icon'),
                                     name: 'icon',
                                     accessType: 'style',
@@ -29,7 +29,7 @@ export default function(uiEditor) {
                                     sortable: false
                                 },
                                 {
-                                    class: 'ht.uieditor.ResourceColumn',
+                                    className: 'ht.uieditor.ResourceColumn',
                                     displayName: uiEditor.getString('editor.property.selecticon'),
                                     name: 'selectIcon',
                                     accessType: 'style',
@@ -37,7 +37,7 @@ export default function(uiEditor) {
                                     sortable: false
                                 },
                                 {
-                                    class: 'ht.ui.Column',
+                                    className: 'ht.ui.Column',
                                     displayName: uiEditor.getString('editor.property.customattr1'),
                                     name: 'name',
                                     editable: true,

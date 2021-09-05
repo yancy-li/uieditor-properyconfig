@@ -12,7 +12,7 @@ export default function (uiEditor) {
                     editorParams: {
                         columns: [
                             {
-                                class: 'ht.uieditor.ResourceColumn',
+                                className: 'ht.uieditor.ResourceColumn',
                                 displayName: uiEditor.getString('editor.property.icon'),
                                 name: 'icon',
                                 editable: true,
@@ -20,7 +20,7 @@ export default function (uiEditor) {
                             },
                             {
                                 displayName: uiEditor.getString('editor.property.type'),
-                                class: 'ht.ui.EnumColumn',
+                                className: 'ht.ui.EnumColumn',
                                 name: 'type',
                                 valueField: 'value',
                                 displayField: 'label',
@@ -48,7 +48,7 @@ export default function (uiEditor) {
                                 ]
                             },
                             {
-                                class: 'ht.ui.Column',
+                                className: 'ht.ui.Column',
                                 displayName: uiEditor.getString('editor.property.groupid'),
                                 name: 'groupId',
                                 accessType: 'attr',
@@ -56,7 +56,7 @@ export default function (uiEditor) {
                                 editorClass: 'ht.ui.editor.StringEditor',
                             },
                             {
-                                class: 'ht.ui.Column',
+                                className: 'ht.ui.Column',
                                 displayName: uiEditor.getString('editor.property.disabled'),
                                 name: 'disabled',
                                 accessType: 'attr',

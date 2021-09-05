@@ -116,19 +116,57 @@ export default function(uiEditor) {
                             editorParams: {
                                 hierarchic: true
                             }
+                        },
+                        {
+                            displayName: uiEditor.getString('editor.property.checkmode'),
+                            name: 'is:checkMode',
+                            type: 'enum',
+                            getValue: function (view, property) {
+                                var tableView = view.getTableView();
+                                return tableView.getCheckMode();
+                            },
+                            setValue: function (view, value, property) {
+                                var tableView = view.getTableView();
+                                tableView.setCheckMode(value);
+                            },
+                            editorParams: {
+                                readOnly: true,
+                                datas: [
+                                    {
+                                        value: 'all',
+                                        label: uiEditor.getString('editor.property.checkall')
+                                    },
+                                    {
+                                        value: 'descendant',
+                                        label: uiEditor.getString('editor.property.checkdescendant')
+                                    },
+                                    {
+                                        value: 'children',
+                                        label: uiEditor.getString('editor.property.checkchildren')
+                                    },
+                                    {
+                                        value: 'default',
+                                        label: uiEditor.getString('editor.property.checkdefault')
+                                    },
+                                    {
+                                        value: null,
+                                        label: uiEditor.getString('editor.property.checknothing')
+                                    }
+                                ]
+                            }
                         }
                     ]
                 }]
             },
             {
-                displayName: uiEditor.getString('editor.property.tablefooter'),
+                displayName: uiEditor.getString('toolkit.tablefooter'),
                 extends: [{
                     rule: 'ht.ui.TablePane',
                     categoryId: 'TableFooter'
                 }]
             },
             {
-                displayName: uiEditor.getString('editor.property.tableview'),
+                displayName: uiEditor.getString('toolkit.treeview'),
                 getValue: function(view, property) {
                     var tableView = view.getTableView();
                     return tableView[ht.Default.prefixGetter(property.name)]();
@@ -141,7 +179,7 @@ export default function(uiEditor) {
                     rule: 'ht.ui.TreeView',
                     categoryId: 'TreeView',
                     filter: ['expandIcon', 'hoverExpandIcon', 'selectExpandIcon', 'collapseIcon', 'hoverCollapseIcon', 
-                        'selectCollapseIcon', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon'],
+                        'selectCollapseIcon'],
                 }]
             }
         ]

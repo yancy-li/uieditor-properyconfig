@@ -105,7 +105,7 @@ export default function(uiEditor) {
                         name: 'listDatas',
                         editorParams: {
                             'columns': [{
-                                    class: 'ht.ui.Column',
+                                    className: 'ht.ui.Column',
                                     displayName: uiEditor.getString('editor.property.name'),
                                     name: 'name',
                                     editable: true,
@@ -113,19 +113,10 @@ export default function(uiEditor) {
                                     sortable: false
                                 },
                                 {
-                                    class: 'ht.uieditor.ResourceColumn',
+                                    className: 'ht.uieditor.ResourceColumn',
                                     displayName: uiEditor.getString('editor.property.icon'),
                                     name: 'icon',
                                     editable: true,
-                                    sortable: false
-                                },
-                                {
-                                    class: 'ht.ui.Column',
-                                    displayName: uiEditor.getString('editor.property.customattr1'),
-                                    name: 'name',
-                                    editable: true,
-                                    editorClass: 'ht.ui.editor.StringEditor',
-                                    accessType: 'attr',
                                     sortable: false
                                 }
                             ]

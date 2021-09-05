@@ -203,14 +203,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.resizable'),
                         name: 'resizable',
                         type: 'boolean'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.checkmode'),
-                        name: 'checkMode',
-                        type: 'enum',
-                        editorParams: {
-                            datas: [uiEditor.getString('editor.property.all'), uiEditor.getString('editor.property.indeterminate'),  uiEditor.getString('editor.property.nothing')]
-                        }
                     }
                 ]
             },
@@ -255,7 +247,21 @@ export default function(uiEditor) {
                         name: 'sortMode',
                         type: 'enum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.property.nothing'), uiEditor.getString('editor.property.bistate'), uiEditor.getString('editor.property.tristate')]
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.bistate'),
+                                    value: 'bistate'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.tristate'),
+                                    value: 'tristate'
+                                }
+                            ]
                         }
                     },
                     {
@@ -349,6 +355,23 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.checkmode'),
+                        name: 'is:checkMode',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [
+                                {
+                                    value: true,
+                                    text: uiEditor.getString('editor.true'),
+                                },
+                                {
+                                    value: false,
+                                    text: uiEditor.getString('editor.false'),
+                                }
+                            ]
+                        }
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.dragenabled'),
                         name: 'dragEnabled',
                         type: 'boolean'
@@ -379,10 +402,10 @@ export default function(uiEditor) {
                 },
                 setValue: function (view, value, property) {
                     var footer = view.getTableFooter();
-                    return footer[ht.Default.prefixGetter(property.name)](value);
+                    return footer[ht.Default.prefixSetter(property.name)](value);
                 },
                 properties: [{
-                    displayName: uiEditor.getString('editor.property.visible'),
+                        displayName: uiEditor.getString('editor.property.visible'),
                         name: 'visible',
                         type: 'boolean',
                     },

@@ -17,7 +17,7 @@ export default function(uiEditor) {
                     editorParams: {
                         columns: [
                             {
-                                class: 'ht.uieditor.ResourceColumn',
+                                className: 'ht.uieditor.ResourceColumn',
                                 displayName: uiEditor.getString('editor.property.icon'),
                                 name: 'icon',
                                 editable: true,
@@ -25,7 +25,7 @@ export default function(uiEditor) {
                             },
                             {
                                 displayName: uiEditor.getString('editor.property.type'),
-                                class: 'ht.ui.EnumColumn',
+                                className: 'ht.ui.EnumColumn',
                                 name: 'type',
                                 valueField: 'value',
                                 displayField: 'label',
@@ -53,7 +53,7 @@ export default function(uiEditor) {
                                 ]
                             },
                             {
-                                class: 'ht.ui.Column',
+                                className: 'ht.ui.Column',
                                 displayName: uiEditor.getString('editor.property.groupid'),
                                 name: 'groupId',
                                 accessType: 'attr',
@@ -61,7 +61,7 @@ export default function(uiEditor) {
                                 editorClass: 'ht.ui.editor.StringEditor',
                             },
                             {
-                                class: 'ht.ui.Column',
+                                className: 'ht.ui.Column',
                                 displayName: uiEditor.getString('editor.property.disabled'),
                                 name: 'disabled',
                                 accessType: 'attr',
@@ -118,7 +118,34 @@ export default function(uiEditor) {
                     type: 'drawable'
                 }
                 ]
-            }
+            },
+            // {
+            //     displayName: uiEditor.getString('editor.property.dropdownmenu'),
+            //     collapse: true,
+            //     getValue: function(view, property) {
+            //         var dropDownMenu = view.getDropDownMenu();
+            //         return dropDownMenu[ht.Default.prefixGetter(property.name)]();
+            //     },
+            //     setValue: function(view, value, property) {
+            //         var name = property.name;
+            //         var dropDownMenu = view.getDropDownMenu();
+            //         dropDownMenu[ht.Default.prefixSetter(name)](value);
+            //     },
+            //     extends: [
+            //         {
+            //             rule: 'ht.ui.ContextMenu',
+            //             categoryId: 'contextmenu',
+            //             filter: [
+            //                 'rowHeight', 'gapLeft', 'gapRight', 'hoverRowBackground', 'separatorColor', 'separatorSize',
+            //                 'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
+            //                 'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 
+            //                 'indicatorWidth', 'indicatorColor', 'hoverIndicatorColor', 'radioOnIcon', 'radioOffIcon', 
+            //                 'checkIcon', 'uncheckIcon', 'shortcutEnabled', 'scrollUpIndicator', 'scrollDownIndicator', 
+            //                 'disabledScrollUpIndicator', 'disabledScrollDownIndicator', 'scrollIndicatorHeight'
+            //             ]
+            //         }
+            //     ]
+            // }
         ]
     }
 }
