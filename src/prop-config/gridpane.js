@@ -144,42 +144,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.resizable'),
                         name: 'resizable',
                         type: 'boolean'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.checkmode'),
-                        name: 'checkMode',
-                        type: 'enum',
-                        editorParams: {
-                            datas: [uiEditor.getString('editor.property.all'), uiEditor.getString('editor.property.indeterminate'),  uiEditor.getString('editor.property.nothing')]
-                        }
-                    }
-                ]
-            },
-            {
-                id: 'RowHeader',
-                displayName: uiEditor.getString('toolkit.rowheader'),
-                getValue: function (view, property) {
-                    var rowHeader = view.getRowHeader();
-                    return rowHeader[ht.Default.prefixGetter(property.name)]();
-                },
-                setValue: function (view, value, property) {
-                    var rowHeader = view.getRowHeader();
-                    return rowHeader[ht.Default.prefixSetter(property.name)](value);
-                },
-                properties: [{
-                    displayName: uiEditor.getString('editor.property.labelcolor'),
-                        name: 'labelColor',
-                        type: 'color'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.rowlinevisible'),
-                        name: 'rowLineVisible',
-                        type: 'boolean'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.rowlinecolor'),
-                        name: 'rowLineColor',
-                        type: 'color'
                     }
                 ]
             },
@@ -233,6 +197,7 @@ export default function(uiEditor) {
                                     displayName: uiEditor.getString('editor.property.accesstype'),
                                     valueField: 'value',
                                     name: 'accessType',
+                                    width: 80,
                                     sortable: false,
                                     strict: false,
                                     's:editorViewProperties': {
@@ -241,11 +206,36 @@ export default function(uiEditor) {
                                 },
                                 {
                                     className: 'ht.ui.EnumColumn',
-                                    datas: [uiEditor.getString('editor.int'), uiEditor.getString('editor.number'), uiEditor.getString('editor.color'), uiEditor.getString('editor.boolean'), uiEditor.getString('editor.string')],
+                                    datas: [{
+                                        label: uiEditor.getString('editor.property.int'),
+                                        value: 'int'
+                                    },
+                                    {
+                                        label: uiEditor.getString('editor.property.number'),
+                                        value: 'number'
+                                    },
+                                    {
+                                        label: uiEditor.getString('editor.property.color'),
+                                        value: 'color'
+                                    }, 
+                                    {
+                                        label: uiEditor.getString('editor.property.boolean'),
+                                        value: 'boolean'
+                                    },
+                                    {
+                                        label: uiEditor.getString('editor.property.string'),
+                                        value: 'string'
+                                    },
+                                    {
+                                        label: uiEditor.getString('editor.property.enum'),
+                                        value: 'enum'
+                                    }
+                                    ],
                                     readOnly: true,
                                     editable: true,
                                     displayName: uiEditor.getString('editor.property.valuetype'),
                                     name: 'valueType',
+                                    width: 80,
                                     sortable: false,
                                 },
                                 {
@@ -253,6 +243,7 @@ export default function(uiEditor) {
                                     name: 'visible',
                                     valueType: 'boolean',
                                     editable: true,
+                                    width: 60,
                                     getValue: function (data, column) {
                                         if (data.a('visible') !== false) return true;
                                         else return false;
@@ -264,6 +255,7 @@ export default function(uiEditor) {
                                     name: 'sortable',
                                     valueType: 'boolean',
                                     editable: true,
+                                    width: 60,
                                     getValue: function (data, column) {
                                         if (data.a('sortable') !== false) return true;
                                         else return false;
@@ -273,6 +265,7 @@ export default function(uiEditor) {
                                 {
                                     displayName: uiEditor.getString('editor.property.width'),
                                     name: 'width',
+                                    width: 60,
                                     valueType: 'int',
                                     editable: true,
                                     editorClass: 'ht.ui.editor.IntEditor',
@@ -283,6 +276,7 @@ export default function(uiEditor) {
                                     displayName: uiEditor.getString('editor.property.fixedposition'),
                                     name: 'fixed',
                                     editable: true,
+                                    width: 60,
                                     valueField: 'value',
                                     readOnly: true,
                                     datas: [{
@@ -296,6 +290,64 @@ export default function(uiEditor) {
                                         {
                                             label: uiEditor.getString('editor.property.nothing'),
                                             value: null
+                                        }
+                                    ],
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    width: 60,
+                                    displayName: uiEditor.getString('editor.property.editable'),
+                                    name: 'editable',
+                                    editable: true,
+                                    valueType: 'boolean',
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.uieditor.ResourceColumn',
+                                    width: 120,
+                                    displayName: uiEditor.getString('editor.property.renderer'),
+                                    name: 'renderer',
+                                    editable: true,
+                                    'a:datas': uiEditor.getRenderers(),
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    width: 120,
+                                    displayName: uiEditor.getString('editor.property.editorstyle'),
+                                    name: 'a:editorStyle',
+                                    editable: true,
+                                    editorClass: 'ht.ui.editor.StringEditor',
+                                    sortable: false,
+                                },
+                                {
+                                    className: 'ht.ui.EnumColumn',
+                                    displayName: uiEditor.getString('editor.property.summary'),
+                                    name: 'summary',
+                                    editable: true,
+                                    width: 80,
+                                    valueField: 'value',
+                                    readOnly: true,
+                                    datas: [{
+                                            label: uiEditor.getString('editor.property.min'),
+                                            value: 'min'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.max'),
+                                            value: 'max'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.sum'),
+                                            value: 'sum'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.average'),
+                                            value: 'average'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.property.first'),
+                                            value: 'first'
                                         }
                                     ],
                                     sortable: false,
@@ -494,6 +546,41 @@ export default function(uiEditor) {
                 ]
             },
             {
+                id: 'RowHeader',
+                displayName: uiEditor.getString('toolkit.rowheader'),
+                getValue: function (view, property) {
+                    var rowHeader = view.getRowHeader();
+                    return rowHeader[ht.Default.prefixGetter(property.name)]();
+                },
+                setValue: function (view, value, property) {
+                    var rowHeader = view.getRowHeader();
+                    return rowHeader[ht.Default.prefixSetter(property.name)](value);
+                },
+                properties: [
+                    {
+                        name: 'background',
+                        type: 'drawable',
+                        displayName: uiEditor.getString('editor.property.background'),
+                        desc: uiEditor.getString('editor.property.background')
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelcolor'),
+                        name: 'labelColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinevisible'),
+                        name: 'rowLineVisible',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.rowlinecolor'),
+                        name: 'rowLineColor',
+                        type: 'color'
+                    }
+                ]
+            },
+            {
                 id: 'TableFooter',
                 displayName: uiEditor.getString('toolkit.tablefooter'),
                 getValue: function (view, property) {
@@ -502,12 +589,25 @@ export default function(uiEditor) {
                 },
                 setValue: function (view, value, property) {
                     var footer = view.getTableFooter();
-                    return footer[ht.Default.prefixGetter(property.name)](value);
+                    return footer[ht.Default.prefixSetter(property.name)](value);
                 },
-                properties: [{
+                properties: [
+                    {
+                        name: 'background',
+                        type: 'drawable',
+                        displayName: uiEditor.getString('editor.property.background'),
+                        desc: uiEditor.getString('editor.property.background')
+                    },
+                    {
                     displayName: uiEditor.getString('editor.property.visible'),
                         name: 'visible',
                         type: 'boolean',
+                        getValue: function (view) {
+                            return view.isTableFooterVisible();
+                        },
+                        setValue: function (view, value) {
+                            view.setTableFooterVisible(!!value);
+                        },
                     },
                     {
                         displayName: uiEditor.getString('editor.property.labelcolor'),
