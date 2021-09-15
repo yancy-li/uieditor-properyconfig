@@ -53,6 +53,7 @@ import colordropdownviewProperties from './prop-config/colordropdownview';
 import datetimepaneProperties from './prop-config/datetimepane'
 import datetimedropdownviewProperties from './prop-config/datetimedropdownview'
 import daterangedropdownviewProperties from './prop-config/daterangedropdownview'
+import multiselectProperties from './prop-config/multiselect'
 
 
 // 布局属性
@@ -119,6 +120,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(datetimepaneProperties(uiEditor));
     properties.push(datetimedropdownviewProperties(uiEditor));
     properties.push(daterangedropdownviewProperties(uiEditor));
+    properties.push(multiselectProperties(uiEditor));
 
     return {
         properties: properties,
