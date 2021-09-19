@@ -261,6 +261,16 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        name: 'hoverBorder',
+                        displayName: uiEditor.getString('editor.property.hoverborder'),
+                        type: 'border'
+                    },
+                    {
+                        name: 'activeBorder',
+                        displayName: uiEditor.getString('editor.property.activeborder'),
+                        type: 'border'
+                    },
+                    {
                         name: 'disabledBorder',
                         displayName: uiEditor.getString('editor.property.disabledborder'),
                         type: 'border'

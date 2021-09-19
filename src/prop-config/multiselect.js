@@ -33,6 +33,11 @@ export default function(uiEditor) {
                             type: 'int'
                         },
                         {
+                            displayName: uiEditor.getString('editor.property.iconheight'),
+                            name: 'iconHeight',
+                            type: 'int'
+                        },
+                        {
                             displayName: uiEditor.getString('editor.property.itemmargin'),
                             name: 'itemMargin',
                             type: 'string',
