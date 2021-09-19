@@ -45,20 +45,20 @@ export default function (uiEditor) {
                             value = value.split(',');
                             var width = value[0];
                             var height = value[1];
-                            if (!isNaN(width)) {
+                            if (width != undefined && width.trim() != '' && !isNaN(width)) {
                                 width = parseInt(width);
                             }
                             else {
                                 width = undefined;
                             }
 
-                            if (!isNaN(height)) {
+                            if (height != undefined && height.trim() != '' && !isNaN(height)) {
                                 height = parseInt(height);
                             }
                             else {
                                 height = undefined;
                             }
-
+                            
                             view.setPreferredSize(width, height);
                         }
                     },
