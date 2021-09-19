@@ -31,7 +31,7 @@ export default function(uiEditor) {
                             type: 'string'
                         },
                         'color', 'font', 'placeholder',
-                        'icon', 'hoverIcon', 'activeIcon',
+                        'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight',
                         'is:readOnly', 'readOnlyBackground', 'hoverReadOnlyBackground', 'activeReadOnlyBackground'
                     ]
                 }]

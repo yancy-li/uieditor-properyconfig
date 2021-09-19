@@ -135,12 +135,12 @@ export default function(uiEditor) {
                     },
                     {
                         name: 'valueIconWidth',
-                        displayName: uiEditor.getString('editor.property.iconwidth'),
+                        displayName: uiEditor.getString('editor.property.valueiconwidth'),
                         type: 'int'
                     },
                     {
                         name: 'valueIconHeight',
-                        displayName: uiEditor.getString('editor.property.iconheight'),
+                        displayName: uiEditor.getString('editor.property.valueiconheight'),
                         type: 'int'
                     }
                 ],
@@ -148,7 +148,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.TextField',
                         categoryId: 'TextField',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconTextGap',
+                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap',
                             'is:readOnly', 
                             {
                                 name: 'readOnlyBackground',

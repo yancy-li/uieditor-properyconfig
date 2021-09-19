@@ -18,7 +18,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.TextField',
                         categoryId: 'TextField',
-                        filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'is:instant']
+                        filter: ['value', 'color', 'font', 'placeholder', 'is:readOnly', 'is:instant', 'iconWidth', 'iconHeight']
                     }
                 ],
                 properties: [

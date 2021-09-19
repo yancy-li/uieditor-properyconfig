@@ -45,7 +45,7 @@ export default function(uiEditor) {
                             type: 'drawable'
                         },
                         'color', 'font',
-                        'is:readOnly', 'icon', 'hoverIcon', 'activeIcon'
+                        'is:readOnly', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight'
                     ]
                 }],
             }
