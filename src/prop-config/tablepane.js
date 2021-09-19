@@ -108,7 +108,8 @@ export default function(uiEditor) {
                     var tableHeader = view.getTableHeader();
                     return tableHeader[ht.Default.prefixSetter(property.name)](value);
                 },
-                properties: [{
+                properties: [
+                    {
                     displayName: uiEditor.getString('editor.property.height'),
                         name: 'height',
                         type: 'int',
@@ -118,6 +119,11 @@ export default function(uiEditor) {
                         setValue: function (view, value, property) {
                             view.getTableHeader().setPreferredSize(1, value);
                         }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.background'),
+                        name: 'background',
+                        type: 'drawable'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.checkicon'),

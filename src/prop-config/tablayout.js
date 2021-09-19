@@ -81,6 +81,10 @@ export default function (uiEditor) {
                         editorParams: {
                             datas: [
                                 {
+                                    label: uiEditor.getString('editor.property.topcenter'),
+                                    value: 'top-center'
+                                },
+                                {
                                     label: uiEditor.getString('editor.top'),
                                     value: 'top'
                                 },

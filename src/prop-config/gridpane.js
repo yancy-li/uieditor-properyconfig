@@ -61,6 +61,11 @@ export default function(uiEditor) {
                         }
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.background'),
+                        name: 'background',
+                        type: 'drawable'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.checkicon'),
                         name: 'checkIcon',
                         type: 'drawable'
