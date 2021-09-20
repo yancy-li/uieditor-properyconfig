@@ -271,10 +271,34 @@ export default function(uiEditor) {
                                     displayName: uiEditor.getString('editor.property.width'),
                                     name: 'width',
                                     width: 60,
-                                    valueType: 'int',
+                                    valueType: 'number',
                                     editable: true,
-                                    editorClass: 'ht.ui.editor.IntEditor',
+                                    editorClass: 'ht.ui.editor.NumberEditor',
                                     sortable: false,
+                                    
+                                },
+                                {
+                                    displayName: uiEditor.getString('editor.property.align'),
+                                    className: 'ht.ui.EnumColumn',
+                                    name: 'align',
+                                    width: 60,
+                                    editable: true,
+                                    sortable: false,
+                                    valueField: 'value',
+                                    readOnly: true,
+                                    datas: [{
+                                            label: uiEditor.getString('editor.left'),
+                                            value: 'left'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.right'),
+                                            value: 'right'
+                                        },
+                                        {
+                                            label: uiEditor.getString('editor.center'),
+                                            value: 'center'
+                                        }
+                                    ]
                                 },
                                 {
                                     className: 'ht.ui.EnumColumn',
