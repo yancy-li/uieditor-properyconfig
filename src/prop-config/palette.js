@@ -168,7 +168,7 @@ export default function(uiEditor) {
                                     }
                                 }
                             },
-                            'boxShadow'
+                             'boxShadow', 'disabled'
                         ]
                     },
                     {

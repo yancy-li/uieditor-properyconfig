@@ -177,6 +177,16 @@ export default function (uiEditor) {
                     displayName: uiEditor.getString('editor.property.contextmenu'),
                     type: 'urlResource'
                 },
+                {
+                    name: 'disabled',
+                    displayName: uiEditor.getString('editor.property.disabled'),
+                    type: 'boolean'
+                },
+                {
+                    name: 'disabledBackground',
+                    displayName: uiEditor.getString('editor.property.disabledbackground'),
+                    type: 'color'
+                }
             ]
         }]
     }

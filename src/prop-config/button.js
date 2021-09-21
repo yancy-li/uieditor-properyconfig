@@ -3,11 +3,13 @@ export default function(uiEditor) {
         rule: 'ht.ui.Button',
         categories: [
             {
+                id: 'buttonBasic',
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [
                     {
                         rule: 'ht.ui.View',
-                        categoryId: 'basic'
+                        categoryId: 'basic', 
+                        filter: ['id', 'background', 'border', 'padding', 'borderRadius', 'preferredSize', 'style', 'boxShadow', 'contextMenuUrl', 'disabled']
                     }
                 ]
             },
