@@ -416,6 +416,11 @@ export default function(uiEditor) {
                         type: 'boolean',
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.background'),
+                        name: 'background',
+                        type: 'drawable'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.labelcolor'),
                         name: 'labelColor',
                         type: 'color'
