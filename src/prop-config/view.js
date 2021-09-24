@@ -81,6 +81,53 @@ export default function (uiEditor) {
                     }
                 },
                 {
+                    name: 'minSize',
+                    displayName: uiEditor.getString('editor.property.minsize'),
+                    type: 'string',
+                    setValue: function(view, value, property) {
+                        if (value == null || value.trim() == '') {
+                            view.setMinSize(undefined);
+                        }
+                        else {
+                            value = value.split(',');
+                            var width = value[0];
+                            var height = value[1];
+                            if (width != undefined && width.trim() != '' && !isNaN(width)) {
+                                width = parseInt(width);
+                            }
+                            else {
+                                width = undefined;
+                            }
+
+                            if (height != undefined && height.trim() != '' && !isNaN(height)) {
+                                height = parseInt(height);
+                            }
+                            else {
+                                height = undefined;
+                            }
+                            
+                            view.setMinSize(width, height);
+                        }
+                    },
+                    getValue: function(view, property) {
+                        var minSize = view._minSize;
+                        if (minSize && view.isMinSizeSet()) {
+                            var str = '';
+                            var width = minSize.width,
+                                height = minSize.height;
+                            if (width != null) {
+                                str += width;
+                            }
+                            str += ',';
+
+                            if (height != null) {
+                                str += height;
+                            }
+                            return str;
+                        }
+                    }
+                },
+                {
                     name: 'style',
                     displayName: uiEditor.getString('editor.property.style'),
                     type: 'string'

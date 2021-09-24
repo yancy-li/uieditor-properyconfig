@@ -398,7 +398,27 @@ export default function(uiEditor) {
                                         }
                                     ],
                                     sortable: false,
-                                }
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    width: 80,
+                                    displayName: uiEditor.getString('editor.property.paddingleft'),
+                                    name: 'paddingLeft',
+                                    editable: true,
+                                    editorClass: 'ht.ui.editor.IntEditor',
+                                    valueType: 'int',
+                                    sortable: false
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    width: 80,
+                                    displayName: uiEditor.getString('editor.property.paddingright'),
+                                    name: 'paddingRight',
+                                    editable: true,
+                                    valueType: 'int',
+                                    sortable: false,
+                                    editorClass: 'ht.ui.editor.IntEditor',
+                                },
                             ]
                         },
                         setValue: function(view, value, property) {

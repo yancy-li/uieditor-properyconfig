@@ -74,7 +74,14 @@ export default function (uiEditor) {
             {
                 name: 'TabLayout',
                 displayName: uiEditor.getString('toolkit.tablayout'),
-                properties: [{
+                properties: [
+                    {
+                        name: 'tabHeight',
+                        displayName: uiEditor.getString('editor.property.tabheight'),
+                        type: 'int'
+                    },
+                    
+                    {
                         name: 'tabPosition',
                         displayName: uiEditor.getString('editor.property.tabposition'),
                         type: 'enum',
