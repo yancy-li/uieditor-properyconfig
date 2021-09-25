@@ -54,6 +54,7 @@ import datetimepaneProperties from './prop-config/datetimepane'
 import datetimedropdownviewProperties from './prop-config/datetimedropdownview'
 import daterangedropdownviewProperties from './prop-config/daterangedropdownview'
 import multiselectProperties from './prop-config/multiselect'
+import dividerProperties from './prop-config/divider'
 
 
 // 布局属性
@@ -121,6 +122,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(datetimedropdownviewProperties(uiEditor));
     properties.push(daterangedropdownviewProperties(uiEditor));
     properties.push(multiselectProperties(uiEditor));
+    properties.push(dividerProperties(uiEditor));
 
     return {
         properties: properties,
