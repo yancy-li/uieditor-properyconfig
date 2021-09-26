@@ -65,8 +65,25 @@ export default function (uiEditor) {
                             }
                         ],
                         hierarchic: true
+                    },
+                    getValue: function(view) {
+                        var deleteDrawable = function(arr) {
+                            for (var i = 0, length = arr.length; i < length; i++) {
+                                var ele = arr[i];
+                                delete ele.iconDrawable;
+                                delete ele._pid;
+                                delete ele._id;
+                                if (ele.items) deleteDrawable(ele.items);
+                            }
+                        }
+                        var items = ht.Default.parse(ht.Default.stringify(view.getItems()));
+                        if (items) {
+                            deleteDrawable(items);
+                            return items;
+                        }
                     }
                 },
+                
                 {
                     name: 'rowHeight',
                     type: 'int',
