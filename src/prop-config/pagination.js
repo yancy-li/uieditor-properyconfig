@@ -32,8 +32,8 @@ export default function(uiEditor) {
                     {
                         name: 'hintText',
                         displayName: uiEditor.getString('editor.property.hinttext'),
-                        type: 'string'
-                    },
+                        type: 'bigstring'
+                    }
                 ]
             }
         ]

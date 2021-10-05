@@ -6,9 +6,10 @@ export default function(uiEditor) {
                 id: 'basic',
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [{
-                    rule: 'ht.ui.View',
+                    rule: 'ht.ui.TextField',
                     categoryId: 'basic'
-                }]
+                }
+                ]
             },
             {
     
