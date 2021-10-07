@@ -55,6 +55,8 @@ import datetimedropdownviewProperties from './prop-config/datetimedropdownview'
 import daterangedropdownviewProperties from './prop-config/daterangedropdownview'
 import multiselectProperties from './prop-config/multiselect'
 import dividerProperties from './prop-config/divider'
+import cascadecomboboxProperties from './prop-config/cascadecombobox'
+import cascadedropdownProperties from './prop-config/cascadedropdown'
 
 
 // 布局属性
@@ -123,6 +125,9 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(daterangedropdownviewProperties(uiEditor));
     properties.push(multiselectProperties(uiEditor));
     properties.push(dividerProperties(uiEditor));
+    properties.push(cascadecomboboxProperties(uiEditor));
+    properties.push(cascadedropdownProperties(uiEditor));
+    
 
     return {
         properties: properties,
