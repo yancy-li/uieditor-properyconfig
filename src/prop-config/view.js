@@ -128,6 +128,148 @@ export default function (uiEditor) {
                     }
                 },
                 {
+                    name: 'cursor',
+                    displayName: uiEditor.getString('editor.property.cursor'),
+                    type: 'enum',
+                    editorParams: {
+                        readOnly: true,
+                        datas: [
+                            {
+                                label: 'auto',
+                                value: 'auto'
+                            },
+                            {
+                                label: 'default',
+                                value: 'default'
+                            },
+                            {
+                                label: 'help',
+                                value: 'help'
+                            },
+                            {
+                                label: 'pointer',
+                                value: 'pointer'
+                            },
+                            {
+                                label: 'progress',
+                                value: 'progress'
+                            },
+                            {
+                                label: 'wait',
+                                value: 'wait'
+                            },
+                            {
+                                label: 'cell',
+                                value: 'cell'
+                            },
+                            {
+                                label: 'crosshair',
+                                value: 'crosshair'
+                            },
+                            {
+                                label: 'text',
+                                value: 'text'
+                            },
+                            {
+                                label: 'vertical-text',
+                                value: 'vertical-text'
+                            },
+                            {
+                                label: 'alias',
+                                value: 'alias'
+                            },
+                            {
+                                label: 'copy',
+                                value: 'copy'
+                            },
+                            {
+                                label: 'move',
+                                value: 'move'
+                            },
+                            {
+                                label: 'not-allowed',
+                                value: 'not-allowed'
+                            },
+                            {
+                                label: 'grab',
+                                value: 'grab'
+                            },
+                            {
+                                label: 'grabbing',
+                                value: 'grabbing'
+                            },
+                            {
+                                label: 'all-scroll',
+                                value: 'all-scroll'
+                            },
+                            {
+                                label: 'col-resize',
+                                value: 'col-resize'
+                            },
+                            {
+                                label: 'row-resize',
+                                value: 'row-resize'
+                            },
+                            {
+                                label: 'n-resize',
+                                value: 'n-resize'
+                            },
+                            {
+                                label: 'e-resize',
+                                value: 'e-resize'
+                            },
+                            {
+                                label: 's-resize',
+                                value: 's-resize'
+                            },
+                            {
+                                label: 'w-resize',
+                                value: 'w-resize'
+                            },
+                            {
+                                label: 'ne-resize',
+                                value: 'ne-resize'
+                            },
+                            {
+                                label: 'nw-resize',
+                                value: 'nw-resize'
+                            },
+                            {
+                                label: 'se-resize',
+                                value: 'se-resize'
+                            },
+                            {
+                                label: 'sw-resize',
+                                value: 'sw-resize'
+                            },
+                            {
+                                label: 'ew-resize',
+                                value: 'ew-resize'
+                            },
+                            {
+                                label: 'ns-resize',
+                                value: 'ns-resize'
+                            },
+                            {
+                                label: 'nesw-resize',
+                                value: 'nesw-resize'
+                            },
+                            {
+                                label: 'nwse-resize',
+                                value: 'nwse-resize'
+                            },
+                            {
+                                label: 'zoom-in',
+                                value: 'zoom-in'
+                            },
+                            {
+                                label: 'zoom-out',
+                                value: 'zoom-out'
+                            },
+                        ]
+                    },
+                },
+                {
                     name: 'style',
                     displayName: uiEditor.getString('editor.property.style'),
                     type: 'string'

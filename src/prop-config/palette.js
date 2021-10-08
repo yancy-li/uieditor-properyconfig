@@ -217,6 +217,7 @@ export default function(uiEditor) {
                                     }
                                 }
                             },
+                            'cursor',
                              'boxShadow', 'disabled'
                         ]
                     },

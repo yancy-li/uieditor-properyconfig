@@ -9,7 +9,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.View',
                         categoryId: 'basic',
                         filter: [
-                            'background', 'border', 'padding', 'borderRadius', 'preferredSize', 'minSize', 'style', 'shaodow'
+                            'background', 'border', 'padding', 'borderRadius', 'preferredSize', 'minSize', 'cursor', 'style', 'shaodow'
                         ]
                     }
                 ]

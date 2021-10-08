@@ -175,7 +175,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.View',
                         categoryId: 'basic',
                         filter: [
-                            'background', 'border', 'padding', 'borderRadius', 'style', 'boxShadow'
+                            'background', 'border', 'padding', 'borderRadius', 'cursor', 'style', 'boxShadow'
                         ]
                     },
                     {
