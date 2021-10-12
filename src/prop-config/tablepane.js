@@ -126,6 +126,11 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.border'),
+                        name: 'border',
+                        type: 'border'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.checkicon'),
                         name: 'checkIcon',
                         type: 'drawable'
