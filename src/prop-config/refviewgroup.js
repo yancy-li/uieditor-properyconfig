@@ -2,15 +2,30 @@ export default function(uiEditor) {
     return {
         rule: 'ht.ui.RefViewGroup',
         categories: [
-            // {
-            //     displayName: uiEditor.getString('editor.property.baseproperty'),
-            //     extends: [
-            //         {
-            //             rule: 'ht.ui.View',
-            //             categoryId: 'basic'
-            //         }
-            //     ]
-            // },
+            
+            {
+                displayName: uiEditor.getString('editor.property.baseproperty'),
+                extends: [
+                    {
+                        rule: 'ht.ui.View',
+                        categoryId: 'basic',
+                        filter: [
+                            {
+                                name: 'id',
+                                displayName: uiEditor.getString('editor.id'),
+                                type: 'string',
+                                desc: uiEditor.getString('editor.id'),
+                                getValue: function(view) {
+                                    return view.getId();
+                                },
+                                setValue: function(view, value) {
+                                    view.getChildren().get(0).setId(value || undefined);
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
             {
                 name: 'RefViewGroup',
                 displayName: uiEditor.getString('toolkit.refviewgroup'),

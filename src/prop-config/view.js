@@ -4,7 +4,9 @@ export default function (uiEditor) {
         categories: [{
             id: 'basic',
             name: uiEditor.getString('editor.property.baseproperty'),
-            properties: [{
+            properties: [
+                
+                {
                     name: 'id',
                     displayName: uiEditor.getString('editor.id'),
                     type: 'string',
