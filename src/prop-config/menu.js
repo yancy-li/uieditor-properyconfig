@@ -119,33 +119,33 @@ export default function(uiEditor) {
                 }
                 ]
             },
-            // {
-            //     displayName: uiEditor.getString('editor.property.dropdownmenu'),
-            //     collapse: true,
-            //     getValue: function(view, property) {
-            //         var dropDownMenu = view.getDropDownMenu();
-            //         return dropDownMenu[ht.Default.prefixGetter(property.name)]();
-            //     },
-            //     setValue: function(view, value, property) {
-            //         var name = property.name;
-            //         var dropDownMenu = view.getDropDownMenu();
-            //         dropDownMenu[ht.Default.prefixSetter(name)](value);
-            //     },
-            //     extends: [
-            //         {
-            //             rule: 'ht.ui.ContextMenu',
-            //             categoryId: 'contextmenu',
-            //             filter: [
-            //                 'rowHeight', 'gapLeft', 'gapRight', 'hoverRowBackground', 'separatorColor', 'separatorSize',
-            //                 'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
-            //                 'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 
-            //                 'indicatorWidth', 'indicatorColor', 'hoverIndicatorColor', 'radioOnIcon', 'radioOffIcon', 
-            //                 'checkIcon', 'uncheckIcon', 'shortcutEnabled', 'scrollUpIndicator', 'scrollDownIndicator', 
-            //                 'disabledScrollUpIndicator', 'disabledScrollDownIndicator', 'scrollIndicatorHeight'
-            //             ]
-            //         }
-            //     ]
-            // }
+            {
+                displayName: uiEditor.getString('editor.property.dropdownmenu'),
+                collapse: true,
+                getValue: function(view, property) {
+                    var dropDownMenu = view.getDropDownMenu();
+                    return dropDownMenu[ht.Default.prefixGetter(property.name)]();
+                },
+                setValue: function(view, value, property) {
+                    var name = property.name;
+                    var dropDownMenu = view.getDropDownMenu();
+                    dropDownMenu[ht.Default.prefixSetter(name)](value);
+                },
+                extends: [
+                    {
+                        rule: 'ht.ui.ContextMenu',
+                        categoryId: 'contextmenu',
+                        filter: [
+                            'rowHeight', 'gapLeft', 'gapRight', 'hoverRowBackground', 'separatorColor', 'separatorSize',
+                            'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
+                            'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 
+                            'indicatorWidth', 'indicatorColor', 'hoverIndicatorColor', 'radioOnIcon', 'radioOffIcon', 
+                            'checkIcon', 'uncheckIcon', 'shortcutEnabled', 'scrollUpIndicator', 'scrollDownIndicator', 
+                            'disabledScrollUpIndicator', 'disabledScrollDownIndicator', 'scrollIndicatorHeight'
+                        ]
+                    }
+                ]
+            }
         ]
     }
 }
