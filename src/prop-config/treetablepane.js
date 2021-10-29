@@ -179,7 +179,12 @@ export default function(uiEditor) {
                     rule: 'ht.ui.TreeView',
                     categoryId: 'TreeView',
                     filter: ['expandIcon', 'hoverExpandIcon', 'selectExpandIcon', 'collapseIcon', 'hoverCollapseIcon', 
-                        'selectCollapseIcon'],
+                        'selectCollapseIcon', 
+                        {
+                            displayName: uiEditor.getString('editor.property.indeterminateicon'),
+                            name: 'indeterminateIcon',
+                            type: 'drawable'
+                        }],
                 }]
             }
         ]

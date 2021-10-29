@@ -90,6 +90,11 @@ export default function(uiEditor) {
                     }, 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
                         'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
                         'iconWidth', 'iconHeight', 'iconGap' ,'iconStretch', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon',
+                        {
+                            displayName: uiEditor.getString('editor.property.indeterminateicon'),
+                            name: 'indeterminateIcon',
+                            type: 'drawable'
+                        },
                         'dragEnabled', 'dropEnabled', 'dropLineColor', 'editable', 'editorClass', 
                         {
                             displayName: uiEditor.getString('editor.property.checkmode'),
