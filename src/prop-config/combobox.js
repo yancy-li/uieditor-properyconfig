@@ -107,6 +107,48 @@ export default function(uiEditor) {
                         }
                     },
                     {
+                        name: 'dropDownOffset',
+                        displayName: uiEditor.getString('editor.property.dropdownoffset'),
+                        type: 'string',
+                        getValue: function (view, property, checkValueChanged) {
+                            var dropDownConfig = view.getDropDownConfig();
+                            if (!dropDownConfig) {
+                                return undefined;
+                            }
+                            else {
+                                var offset = dropDownConfig['offset'];
+                                if (offset) {
+                                    return offset.join(',');
+                                }
+                            }
+                        },
+                        setValue: function (view, value, property) {
+                            var dropDownConfig = view.getDropDownConfig() || {};
+                            var newDropDownConfig = {};
+                            for (var key in dropDownConfig) {
+                                newDropDownConfig[key] = dropDownConfig[key];
+                            }
+                            if (value == null || value == '') {
+                                delete newDropDownConfig['offset'];
+                            }
+                            else {
+                                value = value.split(',');
+                                if (Array.isArray(value)) {
+                                    for (var i = 0; i < value.length; i++) {
+                                        value[i] = parseInt(value[i]);
+                                    }
+                                }
+                                newDropDownConfig['offset'] = value;
+                            }
+
+                            view.setDropDownConfig(newDropDownConfig);
+                            if (view.isOpened()) {
+                                view.close();
+                                view.open();
+                            }
+                        }
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.datas'),
                         name: 'datas',
                         type: 'comboBoxDatas'

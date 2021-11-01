@@ -20,7 +20,7 @@ export default function(uiEditor) {
                     filter: [
                         'datas', 'valueField', 'displayField', 'iconField', 
                         'dropDownViewRenderer', 
-                        'dropDownWidth', 'dropDownHeight', 
+                        'dropDownWidth', 'dropDownHeight', 'dropDownOffset',
                         {
                             displayName: uiEditor.getString('editor.property.instant'),
                             name: 'is:instant',

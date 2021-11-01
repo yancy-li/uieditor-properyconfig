@@ -18,7 +18,7 @@ export default function(uiEditor) {
                     rule: 'ht.ui.ComboBox',
                     categoryId: 'ComboBox',
                     filter: [
-                        'dropDownViewRenderer', 'is:expanded', 'dropDownWidth', 'dropDownHeight', 
+                        'dropDownViewRenderer', 'is:expanded', 'dropDownWidth', 'dropDownHeight', 'dropDownOffset',
                         {
                             name: 'value',
                             displayName: uiEditor.getString('editor.property.value'),

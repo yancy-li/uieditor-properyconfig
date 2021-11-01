@@ -23,7 +23,7 @@ export default function(uiEditor) {
                             displayName: uiEditor.getString('editor.property.displayseparator'),
                             type: 'string',
                         },
-                        'dropDownViewRenderer', 'is:expanded', 'dropDownWidth', 'dropDownHeight',
+                        'dropDownViewRenderer', 'is:expanded', 'dropDownWidth', 'dropDownHeight', 'dropDownOffset',
                         {
                             name: 'datas',
                             displayName: uiEditor.getString('editor.property.datas'),
