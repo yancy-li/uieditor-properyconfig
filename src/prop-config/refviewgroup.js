@@ -15,12 +15,6 @@ export default function(uiEditor) {
                                 displayName: uiEditor.getString('editor.id'),
                                 type: 'string',
                                 desc: uiEditor.getString('editor.id'),
-                                getValue: function(view) {
-                                    return view.getId();
-                                },
-                                setValue: function(view, value) {
-                                    view.getChildren().get(0).setId(value || undefined);
-                                }
                             }
                         ]
                     }
