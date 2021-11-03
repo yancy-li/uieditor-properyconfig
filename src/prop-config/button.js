@@ -317,8 +317,28 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.iconstretch'),
                         type: 'enum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.property.stretch.fill'), uiEditor.getString('editor.property.stretch.uniform'),
-                            uiEditor.getString('editor.property.stretch.centeruniform'), uiEditor.getString('editor.property.stretch.center'), null],
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.stretch.fill'),
+                                    value: 'fill'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.stretch.uniform'),
+                                    value: 'uniform'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.stretch.centeruniform'),
+                                    value: 'cenerUniform'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.stretch.center'),
+                                    value: 'center'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null                                    
+                                }
+                            ],
                             readOnly: true
                         }
                     },
