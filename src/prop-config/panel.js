@@ -49,6 +49,16 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.headerpaddingleft'),
+                        name: 'headerPaddingLeft',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.headerpaddingright'),
+                        name: 'headerPaddingRight',
+                        type: 'int'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.title'),
                         name: 'title',
                         type: 'string'

@@ -96,7 +96,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.Panel',
                         categoryId: 'panel',
                         filter: [
-                            'headerHeight', 'is:headerVisible', 'headerBackground', 'hoverHeaderBackground', 'activeHeaderBackground',
+                            'headerHeight', 'is:headerVisible', 'headerBackground', 'hoverHeaderBackground', 'activeHeaderBackground', 'headerPaddingLeft', 'headerPaddingRight',
                             'titleFont', 'titleColor', 'hoverTitleColor', 'activeTitleColor', 'iconWidth', 'iconHeight', 'tools', 'toolWidth', 'toolHeight',
                             'contentPadding', 'expandIcon', 'hoverExpandIcon', 'activeExpandIcon', 'collapseIcon', 'hoverCollapseIcon', 'activeCollapseIcon'
                         ]
