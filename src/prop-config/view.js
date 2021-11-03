@@ -377,6 +377,11 @@ export default function (uiEditor) {
                     name: 'disabledBackground',
                     displayName: uiEditor.getString('editor.property.disabledbackground'),
                     type: 'color'
+                },
+                {
+                    name: 'focusable',
+                    displayName: uiEditor.getString('editor.property.focusable'),
+                    type: 'boolean'
                 }
             ]
         }]
