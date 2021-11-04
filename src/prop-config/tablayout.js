@@ -186,7 +186,16 @@ export default function (uiEditor) {
                         type: 'drawable'
                     },
                     {
-                        displayName: 'autoHideCloseIcon',
+                        displayName: uiEditor.getString('editor.property.closeiconx'),
+                        name: 'closeIconX',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.closeicony'),
+                        name: 'closeIconY',
+                        type: 'number'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.autohidecloseicon'),
                         name: 'is:autoHideCloseIcon',
                         type: 'boolean'
