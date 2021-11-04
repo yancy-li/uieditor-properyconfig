@@ -97,7 +97,7 @@ export default function(uiEditor) {
                         categoryId: 'panel',
                         filter: [
                             'headerHeight', 'is:headerVisible', 'headerBackground', 'hoverHeaderBackground', 'activeHeaderBackground', 'headerPaddingLeft', 'headerPaddingRight',
-                            'titleFont', 'titleColor', 'hoverTitleColor', 'activeTitleColor', 'iconWidth', 'iconHeight', 'tools', 'toolWidth', 'toolHeight',
+                            'titleFont', 'titleColor', 'hoverTitleColor', 'activeTitleColor', 'iconWidth', 'iconHeight', 'iconTitleGap', 'tools', 'toolWidth', 'toolHeight',
                             'contentPadding', 'expandIcon', 'hoverExpandIcon', 'activeExpandIcon', 'collapseIcon', 'hoverCollapseIcon', 'activeCollapseIcon'
                         ]
                     }
@@ -229,7 +229,8 @@ export default function(uiEditor) {
                             'selectTextColor', 'selectHoverTextColor', 'selectActiveTextColor', 
                             'hTextPosition', 'vTextPosition', 
                             'hoverBackground', 'activeBackground','selectBackground','selectHoverBackground',
-                            'selectActiveBackground','iconWidth', 'iconHeight', 'iconTextGap', 'iconStretch', 
+                            'selectActiveBackground',
+                            'hoverBorder','activeBorder', 'selectBorder', 'selectHoverBorder', 'selectActiveBorder', 'iconWidth', 'iconHeight', 'iconTextGap', 'iconStretch', 
                             'toolTipEnabled', 'is:pixelPerfect',
                             'align', 'vAlign'
                         ]

@@ -119,6 +119,11 @@ export default function (uiEditor) {
                         type: 'int'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.icontitlegap'),
+                        name: 'iconTitleGap',
+                        type: 'int'
+                    },
+                    {
                         name: 'closeIcon',
                         displayName: uiEditor.getString('editor.property.closeicon'),
                         type: 'drawable'

@@ -68,7 +68,29 @@ export default function(uiEditor) {
                                     displayName: uiEditor.getString('editor.property.selectdisabledbackground'),
                                     type: 'drawable'
                                 },
-                            'disabledBorder', 'icon', 'hoverIcon', 'activeIcon', 'disabledIcon', 
+                                'hoverBorder', 'activeBorder',
+                            'disabledBorder', 
+                            {
+                                name: 'selectBorder',
+                                displayName: uiEditor.getString('editor.property.selectborder'),
+                                type: 'border'
+                            },
+                            {
+                                name: 'selectHoverBorder',
+                                displayName: uiEditor.getString('editor.property.selecthoverborder'),
+                                type: 'border'
+                            },
+                            {
+                                name: 'selectActiveBorder',
+                                displayName: uiEditor.getString('editor.property.selectactiveborder'),
+                                type: 'border'
+                            },
+                            {
+                                name: 'selectDisabledBorder',
+                                displayName: uiEditor.getString('editor.property.selectdisabledborder'),
+                                type: 'border'
+                            },
+                            'icon', 'hoverIcon', 'activeIcon', 'disabledIcon', 
                                 {
                                     name: 'selectIcon',
                                     displayName: uiEditor.getString('editor.property.selecticon'),

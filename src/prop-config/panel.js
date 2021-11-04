@@ -99,6 +99,11 @@ export default function(uiEditor) {
                         type: 'int'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.icontitlegap'),
+                        name: 'iconTitleGap',
+                        type: 'int'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.tools'),
                         name: 'tools',
                         type: 'panelTools'
