@@ -336,6 +336,11 @@ export default function(uiEditor) {
                         type: 'drawable',
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.striperowbackground'),
+                        name: 'stripeRowBackground',
+                        type: 'drawable'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.iconwidth'),
                         name: 'iconWidth',
                         type: 'int'

@@ -82,6 +82,14 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inDateRangeDropDown = function(v) {
+                                if (!(v instanceof ht.ui.ListView)) {
+                                    if (v instanceof ht.ui.RefViewGroup) {
+                                        var child = v.getChildren().get(0);
+    
+                                        if (!(child instanceof ht.ui.ListView)) return;
+                                    }
+                                }
+                                
                                 while (v) {
                                     if (v instanceof ht.ui.DateRangeDropDownView) {
                                         return true;
@@ -218,6 +226,11 @@ export default function(uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.focusrowbackground'),
                         name: 'focusRowBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.striperowbackground'),
+                        name: 'stripeRowBackground',
                         type: 'drawable'
                     },
                     {

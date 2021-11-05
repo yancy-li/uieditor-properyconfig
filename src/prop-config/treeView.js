@@ -88,7 +88,7 @@ export default function(uiEditor) {
                             hierarchic: true
                         }
                     }, 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
-                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
+                        'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground', 'stripeRowBackground',
                         'iconWidth', 'iconHeight', 'iconGap' ,'iconStretch', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon',
                         {
                             displayName: uiEditor.getString('editor.property.indeterminateicon'),

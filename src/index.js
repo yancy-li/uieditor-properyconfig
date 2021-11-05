@@ -114,7 +114,6 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(paletteProperties(uiEditor));
     properties.push(carouselProperties(uiEditor));
     properties.push(gridPaneProperties(uiEditor));
-    properties.push(refViewGroupProperties(uiEditor));
     properties.push(uivectorviewProperties(uiEditor));
     properties.push(uigraphviewProperties(uiEditor));
     properties.push(uigraph3dviewProperties(uiEditor));
@@ -131,6 +130,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(dividerProperties(uiEditor));
     properties.push(cascadecomboboxProperties(uiEditor));
     properties.push(cascadedropdownProperties(uiEditor));
+    properties.push(refViewGroupProperties(uiEditor));
     
 
     return {

@@ -28,6 +28,14 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inColorDropDown = function(v) {
+                                if (!(v instanceof ht.ui.ColorPane)) {
+                                    if (v instanceof ht.ui.RefViewGroup) {
+                                        var child = v.getChildren().get(0);
+                                        
+                                        if (!(child instanceof ht.ui.ColorPane)) return;
+                                    }
+                                }
+                                
                                 while (v) {
                                     if (v instanceof ht.ui.ColorDropDownView) {
                                         return true;

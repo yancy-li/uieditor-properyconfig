@@ -28,29 +28,37 @@ export default function(uiEditor) {
                         name: 'url',
                         displayName: uiEditor.getString('editor.property.url'),
                         type: 'slotResource'
+                    }
+                ],
+                extends: [
+                    {
+                        rule: 'ht.ui.ListView',
+                        categoryId: 'ListView',
+                        filter: [
+                            'dropdownFunc'
+                        ]
                     },
-                    // {
-                    //     name: 'slotreplaceable',
-                    //     displayName: uiEditor.getString('editor.property.slotreplaceable'),
-                    //     type: 'boolean',
-                    //     getValue: function (view, property) {
-                    //         return view.a('slotReplaceable');
-                    //     },
-                    //     setValue: function (view, value, property) {
-                    //         view.a('slotReplaceable', !!value)
-                    //     }
-                    // },
-                    // {
-                    //     name: 'slotName',
-                    //     displayName: uiEditor.getString('editor.property.slotname'),
-                    //     type: 'string',
-                    //     getValue: function (view, property) {
-                    //         return view.a('slot');
-                    //     },
-                    //     setValue: function (view, value, property) {
-                    //         view.a('slot', value)
-                    //     }
-                    // }
+                    {
+                        rule: 'ht.ui.Button',
+                        categoryId: 'Button',
+                        filter: [
+                            'dropdownFunc'
+                        ]
+                    },
+                    {
+                        rule: 'ht.ui.ColorPane',
+                        categoryId: 'ColorPane',
+                        filter: [
+                            'dropdownFunc'
+                        ]
+                    },
+                    {
+                        rule: 'ht.ui.DateTimePane',
+                        categoryId: 'DateTimePane',
+                        filter: [
+                            'dropdownFunc'
+                        ]
+                    },
                 ]
             }
         ]

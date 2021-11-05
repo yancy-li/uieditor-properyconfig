@@ -47,6 +47,14 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inColorOrDateTimeDropDown = function(v) {
+                                if (!(v instanceof ht.ui.Button)) {
+                                    if (v instanceof ht.ui.RefViewGroup) {
+                                        var child = v.getChildren().get(0);
+                                        
+                                        if (!(child instanceof ht.ui.Button)) return;
+                                    }
+                                }
+                                
                                 while (v) {
                                     if (v instanceof ht.ui.ColorDropDownView || v instanceof ht.ui.DateTimeDropDownView) {
                                         return true;
@@ -99,6 +107,13 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inDateRangeDropDown = function(v) {
+                                if (!(v instanceof ht.ui.Button)) {
+                                    if (v instanceof ht.ui.RefViewGroup) {
+                                        var child = v.getChildren().get(0);
+                                        
+                                        if (!(child instanceof ht.ui.Button)) return;
+                                    }
+                                }
                                 while (v) {
                                     if (v instanceof ht.ui.DateRangeDropDownView) {
                                         return true;
