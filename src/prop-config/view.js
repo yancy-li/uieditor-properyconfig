@@ -382,6 +382,11 @@ export default function (uiEditor) {
                     name: 'focusable',
                     displayName: uiEditor.getString('editor.property.focusable'),
                     type: 'boolean'
+                },
+                {
+                    name: 'is:visible',
+                    displayName: uiEditor.getString('editor.property.visible'),
+                    type: 'boolean'
                 }
             ]
         }]
