@@ -79,8 +79,23 @@ export default function (uiEditor) {
                         type: 'boolean'
                     },
                     {
+                        name: 'tabPadding',
+                        displayName: uiEditor.getString('editor.property.tabpadding'),
+                        type: 'int'
+                    },
+                    {
                         name: 'tabGap',
                         displayName: uiEditor.getString('editor.property.tabgap'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'tabGapTop',
+                        displayName: uiEditor.getString('editor.property.tabgaptop'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'tabGapBottom',
+                        displayName: uiEditor.getString('editor.property.tabgapbottom'),
                         type: 'int'
                     },
                     {
@@ -102,6 +117,11 @@ export default function (uiEditor) {
                         name: 'activeTitleColor',
                         displayName: uiEditor.getString('editor.property.activetitlecolor'),
                         type: 'color'
+                    },
+                    {
+                        name: 'activeViewIndex',
+                        displayName: uiEditor.getString('editor.property.activeviewindex'),
+                        type: 'int'
                     },
                     {
                         name: 'moveTitleColor',
@@ -151,6 +171,16 @@ export default function (uiEditor) {
                     {
                         name: 'tabHeaderLineSize',
                         displayName: uiEditor.getString('editor.property.tabheaderlinesize'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'tabHeaderPaddingLeft',
+                        displayName: uiEditor.getString('editor.property.tabheaderpaddingleft'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'tabHeaderPaddingRight',
+                        displayName: uiEditor.getString('editor.property.tabheaderpaddingright'),
                         type: 'int'
                     },
                     {
