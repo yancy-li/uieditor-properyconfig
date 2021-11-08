@@ -15,7 +15,8 @@ export default function(uiEditor) {
                                 displayName: uiEditor.getString('editor.id'),
                                 type: 'string',
                                 desc: uiEditor.getString('editor.id'),
-                            }
+                            },
+                            'is:visible'
                         ]
                     }
                 ]
