@@ -27,10 +27,7 @@ export default function(uiEditor) {
                         {
                             name: 'datas',
                             displayName: uiEditor.getString('editor.property.datas'),
-                            type: 'code',
-                            editorParams: {
-                                'language': 'json'
-                            }
+                            type: 'cascadeDatas'
                         }, 
                         'valueField', 'displayField', 
                         'iconField',

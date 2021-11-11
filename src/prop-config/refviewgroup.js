@@ -2,7 +2,6 @@ export default function(uiEditor) {
     return {
         rule: 'ht.ui.RefViewGroup',
         categories: [
-            
             {
                 displayName: uiEditor.getString('editor.property.baseproperty'),
                 extends: [
@@ -16,6 +15,7 @@ export default function(uiEditor) {
                                 type: 'string',
                                 desc: uiEditor.getString('editor.id'),
                             },
+                            'boxShadow',
                             'is:visible'
                         ]
                     }
