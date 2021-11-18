@@ -29,12 +29,10 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inDateTimeDropDown = function(v) {
-                                if (!(v instanceof ht.ui.DateTimePane)) {
-                                    if (v instanceof ht.ui.RefViewGroup) {
-                                        var child = v.getChildren().get(0);
-                                        
-                                        if (!(child instanceof ht.ui.DateTimePane)) return;
-                                    }
+                                if (v instanceof ht.ui.RefViewGroup) {
+                                    var child = v.getChildren().get(0);
+                                    
+                                    if (!(child instanceof ht.ui.DateTimePane)) return;
                                 }
                                 
                                 while (v) {

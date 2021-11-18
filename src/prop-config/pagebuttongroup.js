@@ -22,7 +22,7 @@ export default function(uiEditor) {
                 properties: [
                     {
                         name: 'buttonCount',
-                        displayName: uiEditor.getString('editor.property.buttoncount'),
+                        displayName: uiEditor.getString('editor.property.pagebuttoncount'),
                         type: 'int'
                     },
                 ]

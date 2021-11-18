@@ -47,12 +47,10 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inColorOrDateTimeDropDown = function(v) {
-                                if (!(v instanceof ht.ui.Button)) {
-                                    if (v instanceof ht.ui.RefViewGroup) {
-                                        var child = v.getChildren().get(0);
-                                        
-                                        if (!(child instanceof ht.ui.Button)) return;
-                                    }
+                                if (v instanceof ht.ui.RefViewGroup) {
+                                    var child = v.getChildren().get(0);
+                                    
+                                    if (!(child instanceof ht.ui.Button)) return;
                                 }
                                 
                                 while (v) {
@@ -107,12 +105,10 @@ export default function(uiEditor) {
                         isVisible: function (views) {
                             var visible = true;
                             var inDateRangeDropDown = function(v) {
-                                if (!(v instanceof ht.ui.Button)) {
-                                    if (v instanceof ht.ui.RefViewGroup) {
-                                        var child = v.getChildren().get(0);
-                                        
-                                        if (!(child instanceof ht.ui.Button)) return;
-                                    }
+                                if (v instanceof ht.ui.RefViewGroup) {
+                                    var child = v.getChildren().get(0);
+                                    
+                                    if (!(child instanceof ht.ui.Button)) return;
                                 }
                                 while (v) {
                                     if (v instanceof ht.ui.DateRangeDropDownView) {
@@ -139,6 +135,10 @@ export default function(uiEditor) {
                         editorParams: {
                             readOnly: true,
                             datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.nothing'),
+                                    value: null
+                                },
                                 {
                                     label: uiEditor.getString('editor.property.pagefuncfirst'),
                                     value: 'first'
@@ -171,6 +171,14 @@ export default function(uiEditor) {
                             var visible = true;
                             for (var i = 0, length = views.length; i < length; i++) {
                                 var view = views[i];
+                                if (view instanceof ht.ui.RefViewGroup) {
+                                    var child = view.getChildren().get(0);
+                                    if (!(child instanceof ht.ui.Button)) {
+                                        visible = false;
+                                        break;
+                                    };
+                                }
+
                                 var parent = view.getParent();
                                 if (!(parent instanceof ht.ui.Pagination)) {
                                     visible = false;

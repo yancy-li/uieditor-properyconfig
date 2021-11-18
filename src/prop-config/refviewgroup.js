@@ -43,7 +43,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.Button',
                         categoryId: 'Button',
                         filter: [
-                            'dropdownFunc'
+                            'dropdownFunc', 'pageFunc'
                         ]
                     },
                     {
@@ -60,6 +60,13 @@ export default function(uiEditor) {
                             'dropdownFunc'
                         ]
                     },
+                    {
+                        rule: 'ht.ui.NumberInput',
+                        categoryId: 'NumberInput',
+                        filter: [
+                            'pageFunc'
+                        ]
+                    }
                 ]
             }
         ]
