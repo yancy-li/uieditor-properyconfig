@@ -35,6 +35,65 @@ export default function(uiEditor) {
                             var tableView = view.getTableView();
                             return tableView[ht.Default.prefixSetter(property.name)](value);
                         },
+                    },
+                    {
+                        name: 'scrollBarMode',
+                        displayName: uiEditor.getString('editor.property.scrollbarmode'),
+                        type: 'enum',
+                        editorParams: {
+                            readOnly: true,
+                            datas: [
+                                {
+                                    label: uiEditor.getString('editor.property.auto'),
+                                    value: 'auto'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.on'),
+                                value: 'on'
+                            },
+                            {
+                                label: uiEditor.getString('editor.property.off'),
+                                value: 'off'
+                            },
+                            {
+                                label: uiEditor.getString('editor.property.scrollbarhidden'),
+                                value: 'hidden'
+                            }],
+                        },
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    },
+                    {
+                        name: 'scrollBarColor',
+                        displayName: uiEditor.getString('editor.property.scrollbarcolor'),
+                        type: 'color',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
+                    },
+                    {
+                        name: 'scrollBarSize',
+                        displayName: uiEditor.getString('editor.property.scrollbarsize'),
+                        type: 'int',
+                        getValue: function (view, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixGetter(property.name)]();
+                        },
+                        setValue: function (view, value, property) {
+                            var tableView = view.getTableView();
+                            return tableView[ht.Default.prefixSetter(property.name)](value);
+                        },
                     }
                 ]
             },
@@ -49,7 +108,8 @@ export default function(uiEditor) {
                     var tableHeader = view.getTableHeader();
                     return tableHeader[ht.Default.prefixSetter(property.name)](value);
                 },
-                properties: [{
+                properties: [
+                    {
                     displayName: uiEditor.getString('editor.property.height'),
                         name: 'height',
                         type: 'int',
@@ -59,6 +119,11 @@ export default function(uiEditor) {
                         setValue: function (view, value, property) {
                             view.getTableHeader().setPreferredSize(1, value);
                         }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.border'),
+                        name: 'border',
+                        type: 'border'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.background'),
@@ -153,6 +218,52 @@ export default function(uiEditor) {
                 ]
             },
             {
+                id: 'FilterHeader',
+                displayName: uiEditor.getString('toolkit.filterheader'),
+                getValue: function (view, property) {
+                    var filterHeader = view.getFilterHeader();
+                    return filterHeader[ht.Default.prefixGetter(property.name)]();
+                },
+                setValue: function (view, value, property) {
+                    var filterHeader = view.getFilterHeader();
+                    return filterHeader[ht.Default.prefixSetter(property.name)](value);
+                },
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.visible'),
+                        name: 'visible',
+                        type: 'boolean',
+                        getValue: function (view) {
+                            return view.isFilterHeaderVisible();
+                        },
+                        setValue: function (view, value) {
+                            view.setFilterHeaderVisible(!!value);
+                        },
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.height'),
+                        name: 'height',
+                        type: 'int',
+                        getValue: function (view, property) {
+                            return view.getFilterHeader().getPreferredSize().height;
+                        },
+                        setValue: function (view, value, property) {
+                            view.getFilterHeader().setPreferredSize(1, value);
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.border'),
+                        name: 'border',
+                        type: 'border'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.background'),
+                        name: 'background',
+                        type: 'drawable'
+                    },
+                ]
+            },
+            {
                 id: 'TableView',
                 displayName: uiEditor.getString('toolkit.tableview'),
                 getValue: function (view, property) {
@@ -172,7 +283,7 @@ export default function(uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.columns'),
                         name: 'columnDatas',
-                        type: 'columns',
+                        type: 'gridColumns',
                         setValue: function(view, value, property) {
                             var tableView = view.getTableView();
                             if (typeof value === 'string') {
@@ -295,33 +406,8 @@ export default function(uiEditor) {
                         type: 'drawable',
                     },
                     {
-                        displayName: uiEditor.getString('editor.property.iconwidth'),
-                        name: 'iconWidth',
-                        type: 'int'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.iconheight'),
-                        name: 'iconHeight',
-                        type: 'int'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.checkicon'),
-                        name: 'checkIcon',
-                        type: 'drawable'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.uncheckicon'),
-                        name: 'uncheckIcon',
-                        type: 'drawable'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.radioonicon'),
-                        name: 'radioOnIcon',
-                        type: 'drawable'
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.radioofficon'),
-                        name: 'radioOffIcon',
+                        displayName: uiEditor.getString('editor.property.striperowbackground'),
+                        name: 'stripeRowBackground',
                         type: 'drawable'
                     },
                     {
@@ -360,8 +446,14 @@ export default function(uiEditor) {
                 properties: [
                     {
                         displayName: uiEditor.getString('editor.property.visible'),
-                        name: 'is:visible',
-                        type: 'boolean'
+                        name: 'visible',
+                        type: 'boolean',
+                        getValue: function (view) {
+                            return view.isRowHeaderVisible();
+                        },
+                        setValue: function (view, value) {
+                            view.setRowHeaderVisible(!!value);
+                        },
                     },
                     {
                         name: 'background',
