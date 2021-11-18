@@ -359,6 +359,11 @@ export default function(uiEditor) {
                 },
                 properties: [
                     {
+                        displayName: uiEditor.getString('editor.property.visible'),
+                        name: 'is:visible',
+                        type: 'boolean'
+                    },
+                    {
                         name: 'background',
                         type: 'drawable',
                         displayName: uiEditor.getString('editor.property.background'),
