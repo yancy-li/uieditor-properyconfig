@@ -258,10 +258,11 @@ export default function(uiEditor) {
                 },
                 extends: [
                     {
-                        rule: 'ht.ui.View',
+                        rule: 'ht.ui.ListView',
                         categoryId: 'basic',
                         filter: [ 
-                            'background', 'border', 'padding', 'borderRadius', 'style', 'boxShadow', 'disabled', 'disabledBackground'
+                            'background', 'border', 'padding', 'borderRadius', 'style', 'boxShadow', 'disabled', 'disabledBackground',
+                            'scrollBarMode', 'scrollBarColor', 'scrollBarSize'
                         ]
                     },
                     {
