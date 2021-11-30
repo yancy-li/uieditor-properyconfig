@@ -59,6 +59,7 @@ export default function(uiEditor) {
                                 displayName: uiEditor.getString('editor.property.selectdisabledtextcolor'),
                                 type: 'color'
                             },
+                            'iconTextGap',
                             {
                                 name: 'is:selected',
                                 displayName: uiEditor.getString('editor.property.selected'),
