@@ -15,8 +15,9 @@ export default function(uiEditor) {
                                 type: 'string',
                                 desc: uiEditor.getString('editor.id'),
                             },
+                            'borderRadius',
                             'boxShadow',
-                            'is:visible'
+                            'is:visible',
                         ]
                     }
                 ]

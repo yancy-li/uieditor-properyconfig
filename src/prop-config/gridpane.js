@@ -272,6 +272,11 @@ export default function(uiEditor) {
                 },
                 setValue: function (view, value, property) {
                     var tableView = view.getTableView();
+                    if (property.name === 'fixedShadow') {
+                        view.getTableHeader().iv();
+                        view.getFilterHeader().iv();
+                        view.getTableFooter().iv();
+                    }
                     return tableView[ht.Default.prefixSetter(property.name)](value);
                 },
                 properties: [
@@ -317,6 +322,11 @@ export default function(uiEditor) {
                                 datas: tableView[ht.Default.prefixGetter(property.name)]()
                             }
                         }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.border'),
+                        name: 'border',
+                        type: 'border'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.labelcolor'),
@@ -430,6 +440,11 @@ export default function(uiEditor) {
                         name: 'labelFont',
                         type: 'font'
                     },
+                    {
+                        displayName: uiEditor.getString('editor.property.fixedshadow'),
+                        name: 'fixedShadow',
+                        type: 'color'
+                    }
                 ]
             },
             {
