@@ -82,10 +82,16 @@ export default function(uiEditor) {
                     {
                         name: 'iconPosition',
                         displayName: uiEditor.getString('editor.property.iconposition'),
-                        type: 'enum', 
+                        type: 'simpleEnum',
                         editorParams: {
-                            datas: [uiEditor.getString('editor.left'), uiEditor.getString('editor.right')],
-                            readOnly: true
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: 'left'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
                         }
                     },
                     {

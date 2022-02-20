@@ -217,6 +217,55 @@ export default function(uiEditor) {
                                     }
                                 }
                             },
+                            {
+                                name: 'maxSize',
+                                displayName: uiEditor.getString('editor.property.maxsize'),
+                                type: 'string',
+                                setValue: function(view, value, property) {
+                                    view = view.getTemplateButton();
+                                    if (value == null || value.trim() == '') {
+                                        view.setMaxSize(undefined);
+                                    }
+                                    else {
+                                        value = value.split(',');
+                                        var width = value[0];
+                                        var height = value[1];
+                                        if (width != undefined && width.trim() != '' && !isNaN(width)) {
+                                            width = parseInt(width);
+                                        }
+                                        else {
+                                            width = undefined;
+                                        }
+            
+                                        if (height != undefined && height.trim() != '' && !isNaN(height)) {
+                                            height = parseInt(height);
+                                        }
+                                        else {
+                                            height = undefined;
+                                        }
+            
+                                        view.setMaxSize(width, height);
+                                    }
+                                },
+                                getValue: function(view, property) {
+                                    view = view.getTemplateButton();
+                                    var maxSize = view._maxSize;
+                                    if (maxSize && view.isMaxSizeSet()) {
+                                        var str = '';
+                                        var width = maxSize.width,
+                                            height = maxSize.height;
+                                        if (width != null) {
+                                            str += width;
+                                        }
+                                        str += ',';
+            
+                                        if (height != null) {
+                                            str += height;
+                                        }
+                                        return str;
+                                    }
+                                }
+                            },
                             'cursor',
                              'boxShadow', 'disabled'
                         ]

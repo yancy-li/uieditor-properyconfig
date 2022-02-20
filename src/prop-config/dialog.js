@@ -8,7 +8,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Panel',
                         categoryId: 'basic',
-                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable', 'preferredSize', 'minSize']
+                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable', 'preferredSize', 'minSize', 'maxSize']
                     }
                 ],
                 properties: [

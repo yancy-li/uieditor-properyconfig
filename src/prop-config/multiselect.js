@@ -185,7 +185,7 @@ export default function(uiEditor) {
                         filter: [
                             'rowRenderer', 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'unselectableLabelColor', 
                             'labelFont',  'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine',
-                            'pannable', 'iconGap', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 
+                            'pannable', 'iconGap', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground',
                             'iconWidth', 'iconHeight', 'iconStretch', 'rowIndent', 'is:checkMode', 'checkIcon', 'uncheckIcon',
                             {
                                 name: 'childRelativeIndent',

@@ -99,15 +99,6 @@ export default function(uiEditor) {
                         name: 'activeDecreaseIcon',
                         displayName: uiEditor.getString('editor.property.activedecreaseicon'),
                         type: 'drawable'
-                    },
-                    {
-                        name: 'iconPosition',
-                        displayName: uiEditor.getString('editor.property.iconposition'),
-                        type: 'enum', 
-                        editorParams: {
-                            datas: ['left', 'right'],
-                            readOnly: true
-                        }
                     }
                 ]
             }

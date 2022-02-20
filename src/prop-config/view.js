@@ -33,7 +33,39 @@ export default function (uiEditor) {
                 {
                     name: 'borderRadius',
                     displayName: uiEditor.getString('editor.property.borderradius'),
-                    type: 'int'
+                    type: 'string',
+                    editorParams: {
+                        placeholder: '10,1,1,1 or 10'
+                    },
+                    getValue: function (view) {
+                        var borderRadius = view.getBorderRadius();
+                        if (borderRadius != null) {
+                            if (Array.isArray(borderRadius)) {
+                                return borderRadius.join(',');
+                            }
+                            else {
+                                return borderRadius;
+                            }
+                        }
+                    },
+                    setValue: function (view, value) {
+                        if (value != null && value != '') {
+                            if (typeof value === 'string' && value.indexOf(',') > 0) {
+                                var newValue = [];
+                                value = value.split(',');
+                                value.forEach(function(v) {
+                                    newValue.push(parseInt(v))
+                                })
+                                view.setBorderRadius(newValue)
+                            }
+                            else {
+                                view.setBorderRadius(value);
+                            }
+                        }
+                        else {
+                            view.setBorderRadius(null)
+                        }
+                    },
                 },
                 {
                     name: 'preferredSize',
@@ -117,6 +149,53 @@ export default function (uiEditor) {
                             var str = '';
                             var width = minSize.width,
                                 height = minSize.height;
+                            if (width != null) {
+                                str += width;
+                            }
+                            str += ',';
+
+                            if (height != null) {
+                                str += height;
+                            }
+                            return str;
+                        }
+                    }
+                },
+                {
+                    name: 'maxSize',
+                    displayName: uiEditor.getString('editor.property.maxsize'),
+                    type: 'string',
+                    setValue: function(view, value, property) {
+                        if (value == null || value.trim() == '') {
+                            view.setMaxSize(undefined);
+                        }
+                        else {
+                            value = value.split(',');
+                            var width = value[0];
+                            var height = value[1];
+                            if (width != undefined && width.trim() != '' && !isNaN(width)) {
+                                width = parseInt(width);
+                            }
+                            else {
+                                width = undefined;
+                            }
+
+                            if (height != undefined && height.trim() != '' && !isNaN(height)) {
+                                height = parseInt(height);
+                            }
+                            else {
+                                height = undefined;
+                            }
+                            
+                            view.setMaxSize(width, height);
+                        }
+                    },
+                    getValue: function(view, property) {
+                        var maxSize = view._maxSize;
+                        if (maxSize && view.isMaxSizeSet()) {
+                            var str = '';
+                            var width = maxSize.width,
+                                height = maxSize.height;
                             if (width != null) {
                                 str += width;
                             }
@@ -387,6 +466,11 @@ export default function (uiEditor) {
                     name: 'is:visible',
                     displayName: uiEditor.getString('editor.property.visible'),
                     type: 'boolean'
+                },
+                {
+                    name: 'drawableState',
+                    displayName: uiEditor.getString('editor.property.drawablestate'),
+                    type: 'string'
                 }
             ]
         }]

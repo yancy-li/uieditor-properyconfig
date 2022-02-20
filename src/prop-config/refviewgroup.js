@@ -17,6 +17,7 @@ export default function(uiEditor) {
                             },
                             'borderRadius',
                             'boxShadow',
+                            'focusable',
                             'is:visible',
                         ]
                     }
