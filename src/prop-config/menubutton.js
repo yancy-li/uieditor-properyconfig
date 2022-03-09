@@ -20,6 +20,22 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.items'),
                         type: 'menuItems'
                     },
+                    {
+                        displayName: uiEditor.getString('editor.property.expanded'),
+                        name: 'is:expanded',
+                        type: 'boolean',
+                        getValue: function (view, property, checkValueChanged) {
+                           return view.isOpened();
+                        },
+                        setValue: function (view, value, property) {
+                            if (value) {
+                                view.open()
+                            }
+                            else {
+                                view.close();
+                            }
+                        },
+                    },
                     // {
                     //     displayName: uiEditor.getString('editor.property.expanded'),
                     //     name: 'is:expanded',
@@ -91,6 +107,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.ContextMenu',
                         categoryId: 'contextmenu',
                         filter: [
+                            'background',
                             'rowHeight', 'gapLeft', 'gapRight', 'hoverRowBackground', 'separatorColor', 'separatorSize',
                             'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
                             'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 

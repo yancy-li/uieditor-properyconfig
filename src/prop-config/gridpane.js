@@ -471,6 +471,12 @@ export default function(uiEditor) {
                         },
                     },
                     {
+                        name: 'border',
+                        displayName: uiEditor.getString('editor.property.border'),
+                        type: 'border',
+                        desc: uiEditor.getString('editor.property.desc.border'),
+                    },
+                    {
                         name: 'background',
                         type: 'drawable',
                         displayName: uiEditor.getString('editor.property.background'),

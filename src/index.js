@@ -25,7 +25,7 @@ import tablePaneProperties from './prop-config/tablepane';
 import listProperties from './prop-config/listview';
 import treeProperties from './prop-config/treeview';
 import treeTablePaneProperties from './prop-config/treetablepane';
-import propertyPaneProperties from './prop-config/propertypane';
+import propertyViewProperties from './prop-config/propertyview';
 import breadcrumbProperties from './prop-config/breadcrumb';
 import progressBarProperties from './prop-config/progressbar';
 import menuProperties from './prop-config/menu';
@@ -99,7 +99,7 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     properties.push(flowLayoutProperties(uiEditor));
     properties.push(tablePaneProperties(uiEditor));
     properties.push(treeTablePaneProperties(uiEditor));
-    properties.push(propertyPaneProperties(uiEditor));
+    properties.push(propertyViewProperties(uiEditor));
     properties.push(breadcrumbProperties(uiEditor));
     properties.push(progressBarProperties(uiEditor));
     properties.push(menuProperties(uiEditor));

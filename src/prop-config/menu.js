@@ -136,6 +136,7 @@ export default function(uiEditor) {
                         rule: 'ht.ui.ContextMenu',
                         categoryId: 'contextmenu',
                         filter: [
+                            'background',
                             'rowHeight', 'gapLeft', 'gapRight', 'hoverRowBackground', 'separatorColor', 'separatorSize',
                             'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
                             'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 

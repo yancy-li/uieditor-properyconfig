@@ -5,7 +5,8 @@ export default function (uiEditor) {
             {
             id: 'contextmenu',
             displayName: uiEditor.getString('editor.property.contextmenu'),
-            properties: [{
+            properties: [
+                {
                     name: 'items',
                     displayName: uiEditor.getString('editor.property.items'),
                     type: 'menuItems',
@@ -83,7 +84,12 @@ export default function (uiEditor) {
                         }
                     }
                 },
-                
+                {
+                    name: 'background',
+                    type: 'drawable',
+                    displayName: uiEditor.getString('editor.property.background'),
+                    desc: uiEditor.getString('editor.property.background')
+                },
                 {
                     name: 'rowHeight',
                     type: 'int',

@@ -119,6 +119,11 @@ export default function(uiEditor) {
                         type: 'int'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.toolgap'),
+                        name: 'toolGap',
+                        type: 'int'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.contentpadding'),
                         name: 'contentPadding',
                         type: 'padding'

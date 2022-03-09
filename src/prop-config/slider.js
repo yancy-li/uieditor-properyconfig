@@ -98,8 +98,12 @@ export default function(uiEditor) {
                         name: 'is:instant',
                         displayName: uiEditor.getString('editor.property.instant'),
                         type: 'boolean'
+                    },
+                    {
+                        name: 'toolTipEnabled',
+                        displayName: uiEditor.getString('editor.property.tooltipenabled'),
+                        type: 'boolean'
                     }
-                    
                 ]
             }
         ]
