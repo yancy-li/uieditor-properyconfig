@@ -18,7 +18,80 @@ export default function(uiEditor) {
                     {
                         name: 'items',
                         displayName: uiEditor.getString('editor.property.items'),
-                        type: 'menuItems'
+                        type: 'menuItems',
+                        editorParams: {
+                            columns: [
+                                {
+                                    className: 'ht.uieditor.ResourceColumn',
+                                    displayName: uiEditor.getString('editor.property.icon'),
+                                    name: 'icon',
+                                    editable: true,
+                                    accessType: 'attr',
+                                },
+                                {
+                                    displayName: uiEditor.getString('editor.property.type'),
+                                    className: 'ht.ui.EnumColumn',
+                                    name: 'type',
+                                    valueField: 'value',
+                                    displayField: 'label',
+                                    accessType: 'attr',
+                                    editable: true,
+                                    strict: false,
+                                    datas: [
+                                        {
+                                            value: null,
+                                            label: uiEditor.getString('editor.string'),
+                                        },
+                                        {
+                                            value: '-',
+                                            label: uiEditor.getString('editor.property.menuseparator')
+                                        },
+                                        {
+                                            value: 'radio',
+                                            label: uiEditor.getString('toolkit.radiobutton')
+                                        },
+                                        {
+                                            value: 'check',
+                                            label: uiEditor.getString('toolkit.checkbox')
+                                        },
+        
+                                    ]
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    displayName: uiEditor.getString('editor.property.groupid'),
+                                    name: 'groupId',
+                                    accessType: 'attr',
+                                    editable: true,
+                                    editorClass: 'ht.ui.editor.StringEditor',
+                                },
+                                {
+                                    className: 'ht.ui.Column',
+                                    displayName: uiEditor.getString('editor.property.disabled'),
+                                    name: 'disabled',
+                                    accessType: 'attr',
+                                    valueType: 'boolean',
+                                    editable: true
+                                }
+                            ],
+                            hierarchic: true
+                        },
+                        getValue: function(view) {
+                            var deleteDrawable = function(arr) {
+                                for (var i = 0, length = arr.length; i < length; i++) {
+                                    var ele = arr[i];
+                                    delete ele.iconDrawable;
+                                    delete ele._pid;
+                                    delete ele._id;
+                                    if (ele.items) deleteDrawable(ele.items);
+                                }
+                            }
+                            var items = ht.Default.parse(ht.Default.stringify(view.getItems()));
+                            if (items) {
+                                deleteDrawable(items);
+                                return items;
+                            }
+                        }
                     },
                     {
                         displayName: uiEditor.getString('editor.property.expanded'),
