@@ -228,7 +228,8 @@ export default function(uiEditor) {
                     return view.getLayoutParams('align');
                 },
                 setValue: function (view, value) {
-                    view.setLayoutParams('align', value);
+                    if (value != null)
+                        view.setLayoutParams('align', value);
                 },
                 isVisible: function (views) {
                     var visible = true;

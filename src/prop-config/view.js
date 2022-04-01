@@ -358,7 +358,7 @@ export default function (uiEditor) {
                 {
                     name: 'boxShadow',
                     displayName: uiEditor.getString('editor.property.shadow'),
-                    type: 'string'
+                    type: 'shadow'
                 },
                 {
                     name: 'overflow',
