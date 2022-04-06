@@ -13,16 +13,18 @@ export default function(uiEditor) {
                 extends: [{
                     rule: 'ht.ui.TreeView',
                     categoryId: 'TreeView',
-                    filter: ['labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont', 'expandIcon', 'collapseIcon',
+                    filter: [
+                        {
+                            displayName: uiEditor.getString('editor.property.propertydatas'),
+                            name: 'propertyDatas',
+                            type: 'properties'
+                        },
+                        'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont', 'expandIcon', 'collapseIcon',
                         'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground',
                         'translateY'
                     ]
                 }],
-                properties: [{
-                    displayName: uiEditor.getString('editor.property.propertydatas'),
-                        name: 'propertyDatas',
-                        type: 'properties'
-                    },
+                properties: [
                     {
                         displayName: uiEditor.getString('editor.property.indentbackground'),
                         name: 'indentBackground',
