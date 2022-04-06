@@ -16,22 +16,6 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.progressbar'),
                 properties: [
                     {
-                        displayName: uiEditor.getString('editor.property.bar'),
-                        name: 'bar',
-                        type: 'drawable',
-                        editorParams: {
-                            'sliderBarDrawableVisible': true
-                        }
-                    },
-                    {
-                        displayName: uiEditor.getString('editor.property.selectbar'),
-                        name: 'selectBar',
-                        type: 'drawable',
-                        editorParams: {
-                            'sliderBarDrawableVisible': true
-                        }
-                    },
-                    {
                         displayName: uiEditor.getString('editor.property.value'),
                         name: 'value',
                         type: 'number'
@@ -59,6 +43,22 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.textcolor'),
                         name: 'percentTextColor',
                         type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.bar'),
+                        name: 'bar',
+                        type: 'drawable',
+                        editorParams: {
+                            'sliderBarDrawableVisible': true
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectbar'),
+                        name: 'selectBar',
+                        type: 'drawable',
+                        editorParams: {
+                            'sliderBarDrawableVisible': true
+                        }
                     },
                     {
                         name: 'is:clipSelectBar',
