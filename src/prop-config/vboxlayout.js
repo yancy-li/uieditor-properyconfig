@@ -109,23 +109,24 @@ export default function(uiEditor) {
                     {
                         name: 'equalMode',
                         displayName: uiEditor.getString('editor.property.equalmode'),
-                        type: 'simpleEnum',
+                        type: 'emum',
                         editorParams: {
+                            readOnly: true,
                             datas: [
                                 {
-                                    text: uiEditor.getString('editor.property.nothing'),
+                                    label: uiEditor.getString('editor.property.nothing'),
                                     value: ''
                                 },
                                 {
-                                    text: uiEditor.getString('editor.property.spacebetween'),
+                                    label: uiEditor.getString('editor.property.spacebetween'),
                                 value: 'space-between'
                             },
                             {
-                                text: uiEditor.getString('editor.property.spacearound'),
+                                label: uiEditor.getString('editor.property.spacearound'),
                                 value: 'space-around'
                             },
                             {
-                                text: uiEditor.getString('editor.property.spaceevenly'),
+                                label: uiEditor.getString('editor.property.spaceevenly'),
                                 value: 'space-evenly'
                             }]
                         }
