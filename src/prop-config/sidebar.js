@@ -15,6 +15,23 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.sidebar'),
                 properties: [
                     {
+                        displayName: uiEditor.getString('editor.property.expandall'),
+                        type: 'boolean',
+                        getValue: function(view, property) {
+                            return view._expandAllFlag;
+                        },
+                        setValue: function(view, value, property) {
+                            if (!view._expandAllFlag) {
+                                view.getAccordionTree().expandAll()
+                                view._expandAllFlag = true;
+                            }
+                            else {
+                                view.getAccordionTree().collapseAll()
+                                view._expandAllFlag = false;
+                            }
+                        }
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.listdatas'),
                         name: 'listDatas',
                         type: 'datas',
@@ -99,7 +116,16 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.headerheight'),
                         type: 'int'
                     },
-
+                    {
+                        name: 'headerIconWidth',
+                        displayName: uiEditor.getString('editor.property.headericonwidth'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'headerIconHeight',
+                        displayName: uiEditor.getString('editor.property.headericonheight'),
+                        type: 'int'
+                    },
                     {
                         name: 'headerCollapseIcon',
                         displayName: uiEditor.getString('editor.property.headercollapseicon'),
@@ -129,6 +155,16 @@ export default function(uiEditor) {
                     {
                         name: 'rowHeight',
                         displayName: uiEditor.getString('editor.property.rowheight'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'rowIconWidth',
+                        displayName: uiEditor.getString('editor.property.rowiconwidth'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'rowIconHeight',
+                        displayName: uiEditor.getString('editor.property.rowiconheight'),
                         type: 'int'
                     },
 
@@ -203,6 +239,11 @@ export default function(uiEditor) {
                         name: 'selectRowExpandIcon',
                         displayName: uiEditor.getString('editor.property.selectrowexpandicon'),
                         type: 'drawable'
+                    },
+                    {
+                        name: 'iconGap',
+                        displayName: uiEditor.getString('editor.property.icontextgap'),
+                        type: 'int'
                     },
                     {
                         name: 'indent',
