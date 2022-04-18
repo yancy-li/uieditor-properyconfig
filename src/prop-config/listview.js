@@ -311,6 +311,10 @@ export default function(uiEditor) {
                                 {
                                     label: uiEditor.getString('editor.color'),
                                     value: 'ht.ui.editor.ColorEditor'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.datetime'),
+                                    value: 'ht.ui.editor.DateTimeEditor'
                                 }
                             ],
                             valueField: 'value',
