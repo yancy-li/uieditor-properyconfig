@@ -232,7 +232,37 @@ export default function(uiEditor) {
                     }
                     return tableView[ht.Default.prefixSetter(property.name)](value);
                 },
-                properties: [{
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.expandall'),
+                        type: 'boolean',
+                        getValue: function(view, property) {
+                            view = view.getTableView();
+                            return view._expandAllFlag;
+                        },
+                        setValue: function(view, value, property) {
+                            view = view.getTableView();
+                            if (view._expandAllFlag) {
+                                view.collapseAll();
+                                view._expandAllFlag = false;
+                            }
+                            else {
+                                view.expandAll();
+                                view._expandAllFlag = true;
+                            }
+                        },
+                        isVisible: function (views) {
+                            var visible = false;
+                            for (var i = 0, length = views.length; i < length; i++) {
+                                var view = views[i];
+                                if (view instanceof ht.ui.TreeTablePane) {
+                                    visible = true;
+                                }
+                            }
+                            return visible;
+                        }
+                    },
+                    {
                     displayName: uiEditor.getString('editor.property.columns'),
                         name: 'columnDatas',
                         type: 'columns'

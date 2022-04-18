@@ -64,6 +64,23 @@ export default function(uiEditor) {
                     categoryId: 'ListView',
                     filter: [
                         {
+                            displayName: uiEditor.getString('editor.property.expandall'),
+                            type: 'boolean',
+                            getValue: function(view, property) {
+                                return view._expandAllFlag;
+                            },
+                            setValue: function(view, value, property) {
+                                if (view._expandAllFlag) {
+                                    view.collapseAll();
+                                    view._expandAllFlag = false;
+                                }
+                                else {
+                                    view.expandAll();
+                                    view._expandAllFlag = true;
+                                }
+                            }
+                        },
+                        {
                             displayName: uiEditor.getString('editor.property.listdatas'),
                             name: 'listDatas',
                             type: 'datas',

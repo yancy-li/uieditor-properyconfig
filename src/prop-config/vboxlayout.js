@@ -109,26 +109,50 @@ export default function(uiEditor) {
                     {
                         name: 'equalMode',
                         displayName: uiEditor.getString('editor.property.equalmode'),
-                        type: 'emum',
+                        type: 'enum',
                         editorParams: {
                             readOnly: true,
+                            dropDownConfig: {
+                                'dropDownView.toolTipEnabled': true,
+                                'dropDownView.zIndex': 0,
+                                'dropDownView.iconWidth': 30,
+                                'dropDownView.iconHeight': 16,
+                                'width': 200,
+                                'dropDownView.iconStretch': 'fill'
+                            },
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.property.nothing'),
-                                    value: ''
+                                    value: '',
+                                    listDataProperties: {
+                                        toolTip: uiEditor.getString('editor.property.nothing')
+                                    }
                                 },
                                 {
                                     label: uiEditor.getString('editor.property.spacebetween'),
-                                value: 'space-between'
-                            },
-                            {
-                                label: uiEditor.getString('editor.property.spacearound'),
-                                value: 'space-around'
-                            },
-                            {
-                                label: uiEditor.getString('editor.property.spaceevenly'),
-                                value: 'space-evenly'
-                            }]
+                                    value: 'space-between',
+                                    icon: 'UIEditor.propertypane.space-between',
+                                    listDataProperties: {
+                                        toolTip: uiEditor.getString('editor.property.spacebetween')
+                                    }
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.spacearound'),
+                                    value: 'space-around',
+                                    icon: 'UIEditor.propertypane.space-around',
+                                    listDataProperties: {
+                                        toolTip: uiEditor.getString('editor.property.spacearound')
+                                    }
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.spaceevenly'),
+                                    value: 'space-evenly',
+                                    icon: 'UIEditor.propertypane.space-evenly',
+                                    listDataProperties: {
+                                        toolTip: uiEditor.getString('editor.property.spaceevenly')
+                                    }
+                                }
+                            ]
                         }
                     }
                 ]

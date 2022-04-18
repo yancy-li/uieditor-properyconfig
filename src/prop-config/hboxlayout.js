@@ -114,6 +114,10 @@ export default function(uiEditor) {
                             dropDownConfig: {
                                 'dropDownView.toolTipEnabled': true,
                                 'dropDownView.zIndex': 0,
+                                'dropDownView.iconWidth': 30,
+                                'dropDownView.iconHeight': 16,
+                                'width': 200,
+                                'dropDownView.iconStretch': 'fill'
                             },
                             datas: [
                                 {
@@ -126,6 +130,7 @@ export default function(uiEditor) {
                                 {
                                     label: uiEditor.getString('editor.property.spacebetween'),
                                     value: 'space-between',
+                                    icon: 'UIEditor.propertypane.space-between',
                                     listDataProperties: {
                                         toolTip: uiEditor.getString('editor.property.spacebetween')
                                     }
@@ -133,6 +138,7 @@ export default function(uiEditor) {
                                 {
                                     label: uiEditor.getString('editor.property.spacearound'),
                                     value: 'space-around',
+                                    icon: 'UIEditor.propertypane.space-around',
                                     listDataProperties: {
                                         toolTip: uiEditor.getString('editor.property.spacearound')
                                     }
@@ -140,6 +146,7 @@ export default function(uiEditor) {
                                 {
                                     label: uiEditor.getString('editor.property.spaceevenly'),
                                     value: 'space-evenly',
+                                    icon: 'UIEditor.propertypane.space-evenly',
                                     listDataProperties: {
                                         toolTip: uiEditor.getString('editor.property.spaceevenly')
                                     }
