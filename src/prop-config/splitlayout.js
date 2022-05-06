@@ -20,11 +20,11 @@ export default function(uiEditor) {
                         type: 'simpleEnum',
                         editorParams: {
                             datas: [{
-                                text: uiEditor.getString('editor.property.horizontal'),
+                                text: uiEditor.getString('editor.horizontal'),
                                 value: 'h'
                             },
                             {
-                                text: uiEditor.getString('editor.property.vertical'),
+                                text: uiEditor.getString('editor.vertical'),
                                 value: 'v'
                             }]
                         }
