@@ -21,6 +21,13 @@ export default function(uiEditor) {
                             'is:visible',
                         ]
                     }
+                ],
+                properties: [
+                    {
+                        name: 'is:autoCloseChildrenPopup',
+                        displayName: uiEditor.getString('editor.property.autoclosechildrenpopup'),
+                        type: 'boolean'
+                    }
                 ]
             },
             {

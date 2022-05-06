@@ -55,6 +55,11 @@ export default function(uiEditor) {
                         name: 'scrollBarSize',
                         displayName: uiEditor.getString('editor.property.scrollbarsize'),
                         type: 'int'
+                    },
+                    {
+                        name: 'is:autoCloseChildrenPopup',
+                        displayName: uiEditor.getString('editor.property.autoclosechildrenpopup'),
+                        type: 'boolean'
                     }
                 ]
             },

@@ -82,7 +82,7 @@ export default function (uiEditor) {
                             deleteDrawable(items);
                             return items;
                         }
-                    }
+                    },
                 },
                 {
                     name: 'background',
@@ -211,6 +211,16 @@ export default function (uiEditor) {
                     type: 'drawable'
                 },
                 {
+                    name: 'boxShadow',
+                    displayName: uiEditor.getString('editor.property.shadow'),
+                    type: 'shadow',
+                    setValue: function(view, value, property) {
+                        view.setBoxShadow(value);
+                        view.ivm();
+                        view.iv();
+                    }
+                },
+                {
                     name: 'shortcutEnabled',
                     displayName: uiEditor.getString('editor.property.shortcutenabled'),
                     type: 'boolean'
@@ -251,7 +261,7 @@ export default function (uiEditor) {
                     name: 'scrollIndicatorHeight',
                     displayName: uiEditor.getString('editor.property.scrollindicatorheight'),
                     type: 'int'
-                },
+                }
             ]
         }]
     }

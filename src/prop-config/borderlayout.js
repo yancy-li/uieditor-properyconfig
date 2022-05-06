@@ -15,9 +15,9 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.borderlayout'),
                 properties: [
                     {
-                        name: 'is:splitterVisible',
+                        name: 'splitterVisible',
                         displayName: uiEditor.getString('editor.property.splittervisible'),
-                        type: 'boolean'
+                        type: 'splitterVisible'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.splitter'),
@@ -52,7 +52,7 @@ export default function(uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.resizehintbackground'),
                         name: 'resizeHintBackground',
-                        type: 'drawable'
+                        type: 'color'
                     },
                     {
                         name: 'is:toggleVisible',

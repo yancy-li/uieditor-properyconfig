@@ -185,7 +185,19 @@ export default function(uiEditor) {
                             'prefixWidth', 'prefixGapRight', 'iconWidth', 'iconGapRight', 'labelFont', 'labelColor', 
                             'hoverLabelColor', 'disabledLabelColor', 'labelGapRight', 'suffixGapRight', 'indicatorIcon', 
                             'indicatorWidth', 'indicatorColor', 'hoverIndicatorColor', 'radioOnIcon', 'radioOffIcon', 
-                            'checkIcon', 'uncheckIcon', 'shortcutEnabled', 'scrollUpIndicator', 'scrollDownIndicator', 
+                            'checkIcon', 'uncheckIcon', 
+                            {
+                                name: 'boxShadow',
+                                displayName: uiEditor.getString('editor.property.shadow'),
+                                type: 'shadow',
+                                setValue: function(view, value, property) {
+                                    var dropDownMenu = view.getDropDownMenu();
+                                    dropDownMenu.setBoxShadow(value);
+                                    dropDownMenu.ivm();
+                                    dropDownMenu.iv();
+                                }
+                            }
+                            , 'shortcutEnabled', 'scrollUpIndicator', 'scrollDownIndicator', 
                             'disabledScrollUpIndicator', 'disabledScrollDownIndicator', 'scrollIndicatorHeight'
                         ]
                     }

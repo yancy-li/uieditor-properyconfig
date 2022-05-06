@@ -217,135 +217,168 @@ export default function (uiEditor) {
                         datas: [
                             {
                                 label: 'auto',
-                                value: 'auto'
+                                value: 'auto',
+                                icon: 'UIEditor.cursor.auto-nothing'
                             },
                             {
                                 label: 'default',
-                                value: 'default'
+                                value: 'default',
+                                icon: 'UIEditor.cursor.default'
                             },
                             {
                                 label: 'help',
-                                value: 'help'
+                                value: 'help',
+                                icon: 'UIEditor.cursor.help'
                             },
                             {
                                 label: 'pointer',
-                                value: 'pointer'
+                                value: 'pointer',
+                                icon: 'UIEditor.cursor.pointer'
                             },
                             {
                                 label: 'progress',
-                                value: 'progress'
+                                value: 'progress',
+                                icon: 'UIEditor.cursor.progress'
                             },
                             {
                                 label: 'wait',
-                                value: 'wait'
+                                value: 'wait',
+                                icon: 'UIEditor.cursor.wait'
                             },
                             {
                                 label: 'cell',
-                                value: 'cell'
+                                value: 'cell',
+                                icon: 'UIEditor.cursor.cell'
                             },
                             {
                                 label: 'crosshair',
-                                value: 'crosshair'
+                                value: 'crosshair',
+                                icon: 'UIEditor.cursor.crosshair'
                             },
                             {
                                 label: 'text',
-                                value: 'text'
+                                value: 'text',
+                                icon: 'UIEditor.cursor.text'
                             },
                             {
                                 label: 'vertical-text',
-                                value: 'vertical-text'
+                                value: 'vertical-text',
+                                icon: 'UIEditor.cursor.vertical-text'
                             },
                             {
                                 label: 'alias',
-                                value: 'alias'
+                                value: 'alias',
+                                icon: 'UIEditor.cursor.alias'
                             },
                             {
                                 label: 'copy',
-                                value: 'copy'
+                                value: 'copy',
+                                icon: 'UIEditor.cursor.copy'
                             },
                             {
                                 label: 'move',
-                                value: 'move'
+                                value: 'move',
+                                icon: 'UIEditor.cursor.move'
                             },
                             {
                                 label: 'not-allowed',
-                                value: 'not-allowed'
+                                value: 'not-allowed',
+                                icon: 'UIEditor.cursor.not-allowed'
                             },
                             {
                                 label: 'grab',
-                                value: 'grab'
+                                value: 'grab',
+                                icon: 'UIEditor.cursor.grab'
                             },
                             {
                                 label: 'grabbing',
-                                value: 'grabbing'
+                                value: 'grabbing',
+                                icon: 'UIEditor.cursor.grabbing'
                             },
                             {
                                 label: 'all-scroll',
-                                value: 'all-scroll'
+                                value: 'all-scroll',
+                                icon: 'UIEditor.cursor.all-scroll'
                             },
                             {
                                 label: 'col-resize',
-                                value: 'col-resize'
+                                value: 'col-resize',
+                                icon: 'UIEditor.cursor.col-resize'
                             },
                             {
                                 label: 'row-resize',
-                                value: 'row-resize'
+                                value: 'row-resize',
+                                icon: 'UIEditor.cursor.row-resize'
                             },
                             {
                                 label: 'n-resize',
-                                value: 'n-resize'
+                                value: 'n-resize',
+                                icon: 'UIEditor.cursor.n-resize'
                             },
                             {
                                 label: 'e-resize',
-                                value: 'e-resize'
+                                value: 'e-resize',
+                                icon: 'UIEditor.cursor.e-resize'
                             },
                             {
                                 label: 's-resize',
-                                value: 's-resize'
+                                value: 's-resize',
+                                icon: 'UIEditor.cursor.s-resize'
                             },
                             {
                                 label: 'w-resize',
-                                value: 'w-resize'
+                                value: 'w-resize',
+                                icon: 'UIEditor.cursor.w-resize'
                             },
                             {
                                 label: 'ne-resize',
-                                value: 'ne-resize'
+                                value: 'ne-resize',
+                                icon: 'UIEditor.cursor.ne-resize'
                             },
                             {
                                 label: 'nw-resize',
-                                value: 'nw-resize'
+                                value: 'nw-resize',
+                                icon: 'UIEditor.cursor.nw-resize'
                             },
                             {
                                 label: 'se-resize',
-                                value: 'se-resize'
+                                value: 'se-resize',
+                                icon: 'UIEditor.cursor.se-resize'
                             },
                             {
                                 label: 'sw-resize',
-                                value: 'sw-resize'
+                                value: 'sw-resize',
+                                icon: 'UIEditor.cursor.sw-resize'
                             },
                             {
                                 label: 'ew-resize',
-                                value: 'ew-resize'
+                                value: 'ew-resize',
+                                icon: 'UIEditor.cursor.ew-resize'
                             },
                             {
                                 label: 'ns-resize',
-                                value: 'ns-resize'
+                                value: 'ns-resize',
+                                icon: 'UIEditor.cursor.ns-resize'
                             },
                             {
                                 label: 'nesw-resize',
-                                value: 'nesw-resize'
+                                value: 'nesw-resize',
+                                icon: 'UIEditor.cursor.nesw-resize'
                             },
                             {
                                 label: 'nwse-resize',
-                                value: 'nwse-resize'
+                                value: 'nwse-resize',
+                                icon: 'UIEditor.cursor.nwse-resize'
                             },
                             {
                                 label: 'zoom-in',
-                                value: 'zoom-in'
+                                value: 'zoom-in',
+                                icon: 'UIEditor.cursor.zoom-in'
                             },
                             {
                                 label: 'zoom-out',
-                                value: 'zoom-out'
+                                value: 'zoom-out',
+                                icon: 'UIEditor.cursor.zoom-out'
                             },
                         ]
                     },
