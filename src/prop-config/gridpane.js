@@ -444,6 +444,44 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.fixedshadow'),
                         name: 'fixedShadow',
                         type: 'color'
+                    },
+
+                    {
+                        displayName: uiEditor.getString('editor.property.checkicon'),
+                        name: 'checkIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.uncheckicon'),
+                        name: 'uncheckIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.radioonicon'),
+                        name: 'radioOnIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.radioofficon'),
+                        name: 'radioOffIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkmode'),
+                        name: 'is:checkMode',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [
+                                {
+                                    value: true,
+                                    text: uiEditor.getString('editor.true'),
+                                },
+                                {
+                                    value: false,
+                                    text: uiEditor.getString('editor.false'),
+                                }
+                            ]
+                        }
                     }
                 ]
             },
