@@ -27,6 +27,28 @@ export default function(uiEditor) {
                         name: 'is:autoCloseChildrenPopup',
                         displayName: uiEditor.getString('editor.property.autoclosechildrenpopup'),
                         type: 'boolean'
+                    },
+                    {
+                        name: 'editor_previewurl',
+                        displayName: uiEditor.getString('editor.property.editor_previewurl'),
+                        type: 'string',
+    
+                        setValue: function(view, value, property) {
+                            view.a('editor_previewurl', value);
+                        },
+                        getValue: function(view, property) {
+                            return view.a('editor_previewurl');
+                        },
+                        isVisible: function (views) {
+                            var visible = false;
+                            if (views.length === 1) {
+                                var view = views[0];
+                                if (view.getParent() && view.getParent().getClassName() === 'ht.uieditor.Designer') {
+                                    visible = true;
+                                }
+                            }
+                            return visible;
+                        }
                     }
                 ]
             },
