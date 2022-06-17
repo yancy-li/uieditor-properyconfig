@@ -9,26 +9,22 @@ export default function (uiEditor) {
                 {
                     name: 'id',
                     displayName: uiEditor.getString('editor.id'),
-                    type: 'string',
-                    desc: uiEditor.getString('editor.id')
+                    type: 'string'
                 },
                 {
                     name: 'background',
                     type: 'drawable',
-                    displayName: uiEditor.getString('editor.property.background'),
-                    desc: uiEditor.getString('editor.property.background')
+                    displayName: uiEditor.getString('editor.property.background')
                 },
                 {
                     name: 'border',
                     displayName: uiEditor.getString('editor.property.border'),
-                    type: 'border',
-                    desc: uiEditor.getString('editor.property.desc.border'),
+                    type: 'border'
                 },
                 {
                     name: 'padding',
                     displayName: uiEditor.getString('editor.property.padding'),
-                    type: 'padding',
-                    desc: uiEditor.getString('editor.property.desc.padding'),
+                    type: 'padding'
                 },
                 {
                     name: 'borderRadius',
