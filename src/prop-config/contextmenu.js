@@ -87,8 +87,7 @@ export default function (uiEditor) {
                 {
                     name: 'background',
                     type: 'drawable',
-                    displayName: uiEditor.getString('editor.property.background'),
-                    desc: uiEditor.getString('editor.property.background')
+                    displayName: uiEditor.getString('editor.property.background')
                 },
                 {
                     name: 'rowHeight',

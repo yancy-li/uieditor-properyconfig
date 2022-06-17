@@ -23,6 +23,9 @@ export default function(uiEditor) {
                             view.setDropDownViewRenderer(value);
                             
                             uiEditor && uiEditor.rebuildInspector();
+                        },
+                        getValue: function(view, property) {
+                            return view.getDropDownViewRenderer();
                         }
                     },
                     {

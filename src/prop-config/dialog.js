@@ -8,7 +8,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Panel',
                         categoryId: 'basic',
-                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable', 'preferredSize', 'minSize', 'maxSize', 'boxShadow']
+                        filter: ['id', 'background', 'border', 'borderRadius', 'is:collapsable', 'preferredSize', 'minSize', 'maxSize', 'boxShadow', 'viewGroupTemplate']
                     }
                 ],
                 properties: [
@@ -47,6 +47,28 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.fixtocenter'),
                         type: 'boolean',
                         desc: uiEditor.getString('editor.property.desc.fixtocenter')   
+                    },
+                    {
+                        name: 'editor_previewurl',
+                        displayName: uiEditor.getString('editor.property.editor_previewurl'),
+                        type: 'string',
+    
+                        setValue: function(view, value, property) {
+                            view.a('editor_previewurl', value);
+                        },
+                        getValue: function(view, property) {
+                            return view.a('editor_previewurl');
+                        },
+                        isVisible: function (views) {
+                            var visible = false;
+                            if (views.length === 1) {
+                                var view = views[0];
+                                if (view.getParent() && view.getParent().getClassName() === 'ht.uieditor.Designer') {
+                                    visible = true;
+                                }
+                            }
+                            return visible;
+                        }
                     }
                 ]
             },
