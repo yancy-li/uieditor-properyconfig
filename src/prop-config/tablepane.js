@@ -111,7 +111,7 @@ export default function(uiEditor) {
                 properties: [
                     {
                     displayName: uiEditor.getString('editor.property.height'),
-                        name: 'height',
+                        name: 'tableHeader.preferredSize.height',
                         type: 'int',
                         getValue: function (view, property) {
                             return view.getTableHeader().getPreferredSize().height;
