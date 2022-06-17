@@ -123,7 +123,7 @@ export default function(uiEditor) {
                     {
                         name: 'maskRe',
                         displayName: uiEditor.getString('editor.property.maskre'),
-                        type: 'string'
+                        type: 'regexp'
                     }
                 ]
             }
