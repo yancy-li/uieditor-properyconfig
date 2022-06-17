@@ -7,7 +7,17 @@ export default function(uiEditor) {
                 extends: [
                     {
                         rule: 'ht.ui.View',
-                        categoryId: 'basic'
+                        categoryId: 'basic',
+                        replace: [
+                            {
+                                name: 'border',
+                                displayName: uiEditor.getString('editor.property.border'),
+                                type: 'border',
+                                editorParams: {
+                                    'focusLineBorderVisible': true
+                                }
+                            }
+                        ]
                     }
                 ]
             },
@@ -61,31 +71,6 @@ export default function(uiEditor) {
                                     return itemMargin.join(',');
                                 }
                             }
-                        },
-                        {
-                            displayName: uiEditor.getString('editor.property.closeicon'),
-                            name: 'closeIcon',
-                            type: 'drawable'
-                        },
-                        {
-                            displayName: uiEditor.getString('editor.property.hovercloseicon'),
-                            name: 'hoverCloseIcon',
-                            type: 'drawable'
-                        },
-                        {
-                            displayName: uiEditor.getString('editor.property.activecloseicon'),
-                            name: 'activeCloseIcon',
-                            type: 'drawable'
-                        },
-                        {
-                            displayName: uiEditor.getString('editor.property.closeiconwidth'),
-                            name: 'closeIconWidth',
-                            type: 'int'
-                        },
-                        {
-                            displayName: uiEditor.getString('editor.property.closeiconheight'),
-                            name: 'closeIconHeight',
-                            type: 'int'
                         }
                     ]
                 }],
@@ -93,18 +78,28 @@ export default function(uiEditor) {
             {
                 displayName: uiEditor.getString('editor.property.templateitem'),
                 setValue: function(view, value, property) {
-                    var templateButton = view.getTemplateItem();
-                    
-                    if (templateButton)
-                        templateButton[ht.Default.prefixSetter(property.name)](value);
-                },
-                getValue: function(view, property) {
-                    var templateButton = view.getTemplateItem();
-                    if (templateButton == null) {
-                        return undefined;
+                    if (property.name.indexOf('loseIcon') >= 0) {
+                        view[ht.Default.prefixSetter(property.name)](value);
                     }
                     else {
-                        return templateButton[ht.Default.prefixGetter(property.name)]();
+                        var templateButton = view.getTemplateItem();
+                    
+                        if (templateButton)
+                            templateButton[ht.Default.prefixSetter(property.name)](value); 
+                    }  
+                },
+                getValue: function(view, property) {
+                    if (property.name.indexOf('loseIcon') >= 0) {
+                        return view[ht.Default.prefixGetter(property.name)]();
+                    }
+                    else {
+                        var templateButton = view.getTemplateItem();
+                        if (templateButton == null) {
+                            return undefined;
+                        }
+                        else {
+                            return templateButton[ht.Default.prefixGetter(property.name)]();
+                        }
                     }
                 },
                 extends: [
@@ -123,6 +118,43 @@ export default function(uiEditor) {
                             'vTextPosition', 'hoverBackground', 'activeBackground', 'iconWidth', 'iconHeight',
                             'iconTextGap', 'iconStretch', 'toolTipEnabled', 'align', 'vAlign'
                         ]
+                    },
+                ],
+                properties: [
+                    {
+                        displayName: uiEditor.getString('editor.property.closeicon'),
+                        name: 'closeIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovercloseicon'),
+                        name: 'hoverCloseIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activecloseicon'),
+                        name: 'activeCloseIcon',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.closeiconx'),
+                        name: 'closeIconX',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.closeicony'),
+                        name: 'closeIconY',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.closeiconwidth'),
+                        name: 'closeIconWidth',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.closeiconheight'),
+                        name: 'closeIconHeight',
+                        type: 'int'
                     }
                 ]
             },
