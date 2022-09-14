@@ -19,6 +19,9 @@ export default function(uiEditor) {
                             'boxShadow',
                             'focusable',
                             'is:visible',
+                            'preferredSize',
+                            'minSize',
+                            'maxSize',
                         ]
                     }
                 ],

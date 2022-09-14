@@ -65,7 +65,12 @@ import cascadedropdownProperties from './prop-config/cascadedropdown'
 import layoutParams from './prop-config/layoutParams';
 
 // 事件列表 
+import viewEvents from './event-config/view'
 import buttonEvents from './event-config/button'
+import comboboxEvents from './event-config/combobox'
+import listviewEvents from './event-config/listview'
+import tableviewEvents from './event-config/tableview'
+import treeviewEvents from './event-config/treeview'
 
 
 window.uiEditorPropertyConfig = function(uiEditor) {
@@ -136,6 +141,6 @@ window.uiEditorPropertyConfig = function(uiEditor) {
     return {
         properties: properties,
         layoutParams: layoutParams(uiEditor),
-        events: [buttonEvents(uiEditor)]
+        events: [viewEvents(uiEditor), buttonEvents(uiEditor), comboboxEvents(uiEditor), listviewEvents(uiEditor), tableviewEvents(uiEditor), treeviewEvents(uiEditor)]
     }
 } 

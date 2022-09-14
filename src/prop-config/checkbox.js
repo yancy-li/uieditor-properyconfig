@@ -18,7 +18,13 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Button',
                         categoryId: 'Button',
-                        filter: ['text', 'textColor', 'hoverTextColor', 'activeTextColor', 'disabledTextColor', 'textFont', 'hTextPosition', 'vTextPosition', 'iconWidth','iconHeight', 'icon', 'hoverIcon', 'activeIcon',  'disabledIcon',
+                        filter: ['text', 'textColor', 'hoverTextColor', 'activeTextColor', 'disabledTextColor', 'textFont', 'hTextPosition', 'vTextPosition',
+                            {
+                                name: 'value',
+                                displayName: uiEditor.getString('editor.property.value'),
+                                type: 'string'
+                            },
+                            'iconWidth','iconHeight', 'icon', 'hoverIcon', 'activeIcon',  'disabledIcon',
                             {
                                 name: 'selectIcon',
                                 displayName: uiEditor.getString('editor.property.selecticon'),

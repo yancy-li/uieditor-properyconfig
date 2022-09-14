@@ -85,6 +85,11 @@ export default function(uiEditor) {
                         type: 'int'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.breadcrumbitemgap'),
+                        name: 'itemGap',
+                        type: 'int'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.separator'),
                         name: 'separator',
                         type: 'drawable'

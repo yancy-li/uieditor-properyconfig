@@ -236,7 +236,7 @@ export default function(uiEditor) {
                     for (var i = 0, length = views.length; i < length; i++) {
                         var view = views[i];
                         var parent = view.getParent();
-                        if (!(parent instanceof ht.ui.RelativeLayout)) {
+                        if (!(parent instanceof ht.ui.RelativeLayout) && !(parent instanceof ht.ui.VBoxLayout)) {
                             visible = false;
                             break;
                         }
@@ -273,7 +273,7 @@ export default function(uiEditor) {
                     for (var i = 0, length = views.length; i < length; i++) {
                         var view = views[i];
                         var parent = view.getParent();
-                        if (!(parent instanceof ht.ui.RelativeLayout)) {
+                        if (!(parent instanceof ht.ui.RelativeLayout) && !(parent instanceof ht.ui.HBoxLayout)) {
                             visible = false;
                             break;
                         }

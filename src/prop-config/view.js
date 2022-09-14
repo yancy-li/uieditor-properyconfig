@@ -500,6 +500,11 @@ export default function (uiEditor) {
                     name: 'drawableState',
                     displayName: uiEditor.getString('editor.property.drawablestate'),
                     type: 'string'
+                },
+                {
+                    name: 'formDataName',
+                    displayName: uiEditor.getString('editor.property.formdataname'),
+                    type: 'string'
                 }
             ]
         }]

@@ -27,6 +27,42 @@ export default function(uiEditor) {
                         name: 'lineHeight',
                         displayName: uiEditor.getString('editor.property.lineheight'),
                         type: 'int'
+                    },
+                    {
+                        name: 'resizeMode',
+                        displayName: uiEditor.getString('editor.property.resizemode'),
+                        type: 'enum',
+                        editorParams: {
+                            datas: [{
+                                label: uiEditor.getString('editor.horizontal'),
+                                value: 'h'
+                            }, {
+                                label: uiEditor.getString('editor.vertical'),
+                                value: 'v'
+                            },{
+                                label: uiEditor.getString('editor.property.both'),
+                                value: 'both'
+                            },{
+                                label: uiEditor.getString('editor.property.nothing'),
+                                value: ''
+                            },],
+                            readOnly: true
+                        }
+                    },
+                    {
+                        name: 'resizeIcon',
+                        displayName: uiEditor.getString('editor.property.resizeicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'resizeIconWidth',
+                        displayName: uiEditor.getString('editor.property.resizeiconwidth'),
+                        type: 'int'
+                    },
+                    {
+                        name: 'resizeIconHeight',
+                        displayName: uiEditor.getString('editor.property.resizeiconheight'),
+                        type: 'int'
                     }
                 ]
             }

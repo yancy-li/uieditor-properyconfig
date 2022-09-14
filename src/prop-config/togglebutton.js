@@ -47,6 +47,11 @@ export default function(uiEditor) {
                                     type: 'color'
                                 },
                             'hTextPosition', 'vTextPosition', 
+                            {
+                                name: 'value',
+                                displayName: uiEditor.getString('editor.property.value'),
+                                type: 'string'
+                            },
                             'hoverBackground', 'activeBackground', 'disabledBackground',
                                 {
                                     name: 'selectBackground',
