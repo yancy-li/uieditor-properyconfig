@@ -142,6 +142,31 @@ export default function(uiEditor) {
                         }
                     },
                     {
+                        name: 'selectionMode',
+                        displayName: uiEditor.getString('editor.property.selectionmode'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.property.selection.single'),
+                                value: 'single'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.selection.multiple'),
+                                value: 'multiple'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.none'),
+                                value: 'none'
+                            }]
+                        },
+                        getValue: function (view) {
+                            return view.sm().getSelectionMode();
+                        },
+                        setValue: function (view, value, property, uiEditor) {
+                            view.sm().setSelectionMode(value);
+                        },
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.rowrenderer'),
                         name: 'rowRenderer',
                         type: 'rendererResource',

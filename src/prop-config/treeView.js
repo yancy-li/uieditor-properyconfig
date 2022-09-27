@@ -104,7 +104,8 @@ export default function(uiEditor) {
                             ],
                             hierarchic: true
                         }
-                    }, 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
+                        
+                    }, 'selectionMode', 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'labelFont',
                         'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 'focusRowBackground', 'stripeRowBackground',
                         'iconWidth', 'iconHeight', 'iconGap' ,'iconStretch', 'checkIcon', 'uncheckIcon', 'radioOnIcon', 'radioOffIcon',
                         {
