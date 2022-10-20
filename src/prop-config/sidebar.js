@@ -174,6 +174,11 @@ export default function(uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        name: 'popupRowBackground',
+                        displayName: uiEditor.getString('editor.property.popuprowbackground'),
+                        type: 'drawable'
+                    },
+                    {
                         name: 'hoverRowBackground',
                         displayName: uiEditor.getString('editor.property.hoverrowbackground'),
                         type: 'drawable'
