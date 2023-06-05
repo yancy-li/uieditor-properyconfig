@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.DateTimePicker',
         categories: [
@@ -11,7 +11,7 @@ export default function(uiEditor) {
                 }]
             },
             {
-    
+
                 id: 'DateTimePicker',
                 displayName: uiEditor.getString('toolkit.datetimepicker'),
                 extends: [{
@@ -23,7 +23,7 @@ export default function(uiEditor) {
                             name: 'dropDownView.boxShadow',
                             displayName: uiEditor.getString('editor.property.dropdownshaddow'),
                             type: 'shadow',
-                            setValue: function(view, value, property) {
+                            setValue: function (view, value, property) {
                                 var dropDownConfig = view.getDropDownConfig() || {};
                                 var newDropDownConfig = {};
                                 for (var key in dropDownConfig) {
@@ -41,7 +41,7 @@ export default function(uiEditor) {
                                     view.open();
                                 }
                             },
-                            getValue: function(view, property) {
+                            getValue: function (view, property) {
                                 var dropDownConfig = view.getDropDownConfig();
                                 if (!dropDownConfig) {
                                     return undefined;
@@ -81,7 +81,7 @@ export default function(uiEditor) {
                                 for (var key in dropDownConfig) {
                                     newDropDownConfig[key] = dropDownConfig[key];
                                 }
-                        
+
                                 if (value == null || value == '') {
                                     delete newDropDownConfig['dateTimePane.defaultTime'];
                                 }
@@ -103,7 +103,7 @@ export default function(uiEditor) {
                         },
                         'color', 'font', 'placeholder',
                         'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight',
-                        'is:readOnly', 'readOnlyBackground', 'hoverReadOnlyBackground', 'activeReadOnlyBackground'
+                        'is:readOnly'
                     ]
                 }]
             }

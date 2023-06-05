@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.ComboBox',
         categories: [
@@ -11,7 +11,7 @@ export default function(uiEditor) {
                 }]
             },
             {
-    
+
                 id: 'ComboBox',
                 displayName: uiEditor.getString('toolkit.combobox'),
                 properties: [
@@ -19,12 +19,12 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.dropdownviewrenderer'),
                         name: 'dropDownViewRenderer',
                         type: 'rendererResource',
-                        setValue: function(view, value, property, uiEditor) {
+                        setValue: function (view, value, property, uiEditor) {
                             view.setDropDownViewRenderer(value);
-                            
+
                             uiEditor && uiEditor.rebuildInspector();
                         },
-                        getValue: function(view, property) {
+                        getValue: function (view, property) {
                             return view.getDropDownViewRenderer();
                         }
                     },
@@ -33,7 +33,7 @@ export default function(uiEditor) {
                         name: 'is:expanded',
                         type: 'boolean',
                         getValue: function (view, property, checkValueChanged) {
-                           return view.isOpened();
+                            return view.isOpened();
                         },
                         setValue: function (view, value, property) {
                             if (value) {
@@ -101,7 +101,7 @@ export default function(uiEditor) {
                             else {
                                 newDropDownConfig['height'] = value;
                             }
-                            
+
                             view.setDropDownConfig(newDropDownConfig);
                             if (view.isOpened()) {
                                 view.close();
@@ -162,11 +162,11 @@ export default function(uiEditor) {
                         type: 'string',
                         getValue: function (view, property, checkValueChanged) {
                             return view.getValueField()
-                         },
-                         setValue: function (view, value, property) {
-                             if (value === '') value = undefined;
-                             view.setValueField(value)
-                         },
+                        },
+                        setValue: function (view, value, property) {
+                            if (value === '') value = undefined;
+                            view.setValueField(value)
+                        },
                     },
                     {
                         name: 'displayField',
@@ -193,30 +193,13 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.TextField',
                         categoryId: 'TextField',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap',
-                            'is:readOnly', 
-                            {
-                                name: 'readOnlyBackground',
-                                displayName: uiEditor.getString('editor.property.readonlybackground'),
-                                type: 'drawable'
-                            },
-                            {
-                                name: 'hoverReadOnlyBackground',
-                                displayName: uiEditor.getString('editor.property.hoverreadonlybackground'),
-                                type: 'drawable'
-                            },
-                            {
-                                name: 'activeReadOnlyBackground',
-                                displayName: uiEditor.getString('editor.property.activereadonlybackground'),
-                                type: 'drawable'
-                            }
-                        ]
+                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly']
                     }
                 ]
             },
             {
                 displayName: uiEditor.getString('editor.property.listdropdown'),
-                isVisible: function(selectViews) {
+                isVisible: function (selectViews) {
                     if (selectViews) {
                         for (var i = 0; i < selectViews.length; i++) {
                             var selectView = selectViews[i];
@@ -237,7 +220,7 @@ export default function(uiEditor) {
                     else {
                         return dropDownConfig['dropDownView.' + propertyName];
                     }
-                }, 
+                },
                 setValue: function (view, value, property) {
                     var dropDownConfig = view.getDropDownConfig() || {};
                     var newDropDownConfig = {};
@@ -263,7 +246,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.ListView',
                         categoryId: 'basic',
-                        filter: [ 
+                        filter: [
                             'background', 'border', 'padding', 'borderRadius', 'style', 'boxShadow', 'disabled', 'disabledBackground',
                             'scrollBarMode', 'scrollBarColor', 'scrollBarSize'
                         ]
@@ -272,10 +255,10 @@ export default function(uiEditor) {
                         rule: 'ht.ui.ListView',
                         categoryId: 'ListView',
                         filter: [
-                            'rowRenderer', 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'unselectableLabelColor', 
-                            'labelFont',  'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine',
-                            'pannable', 'iconGap', 'rowBackground', 'hoverRowBackground', 'selectRowBackground', 
-                            'iconWidth', 'iconHeight', 'iconStretch', 'rowIndent', 
+                            'rowRenderer', 'labelColor', 'hoverLabelColor', 'selectLabelColor', 'unselectableLabelColor',
+                            'labelFont', 'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine',
+                            'pannable', 'iconGap', 'rowBackground', 'hoverRowBackground', 'selectRowBackground',
+                            'iconWidth', 'iconHeight', 'iconStretch', 'rowIndent',
                             {
                                 name: 'childRelativeIndent',
                                 displayName: uiEditor.getString('editor.property.childrelativeindent'),

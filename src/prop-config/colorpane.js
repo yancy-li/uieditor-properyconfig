@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.ColorPane',
         categories: [
@@ -23,17 +23,17 @@ export default function(uiEditor) {
                             return view.a('dropdownFunc') === 'colorpane';
                         },
                         setValue: function (view, value) {
-                            view.a('dropdownFunc', value ? 'colorpane': null);
+                            view.a('dropdownFunc', value ? 'colorpane' : null);
                         },
                         isVisible: function (views) {
                             var visible = true;
-                            var inColorDropDown = function(v) {
+                            var inColorDropDown = function (v) {
                                 if (v instanceof ht.ui.RefViewGroup) {
                                     var child = v.getChildren().get(0);
-                                    
+
                                     if (!(child instanceof ht.ui.ColorPane)) return;
                                 }
-                                
+
                                 while (v) {
                                     if (v instanceof ht.ui.ColorDropDownView) {
                                         return true;
@@ -41,7 +41,7 @@ export default function(uiEditor) {
                                     v = v.getParent();
                                 }
                             }
-                            
+
                             for (var i = 0, length = views.length; i < length; i++) {
                                 var view = views[i];
                                 if (!inColorDropDown(view)) {
@@ -119,7 +119,7 @@ export default function(uiEditor) {
                 collapse: true,
                 getValue: function (view, property, checkValueChanged) {
                     var combobox = view.getPaletteComboBox();
- 
+
                     return combobox[ht.Default.prefixGetter(property.name)]();
                 },
                 setValue: function (view, value, property) {
@@ -134,8 +134,7 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.ComboBox',
                         categoryId: 'ComboBox',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconTextGap',
-                            'is:readOnly', 'readOnlyBackground', 'hoverReadOnlyBackground', 'activeReadOnlyBackground']
+                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconTextGap', 'is:readOnly']
                     }
                 ]
             },
@@ -153,7 +152,7 @@ export default function(uiEditor) {
                     else {
                         return dropDownConfig['dropDownView.' + propertyName];
                     }
-                }, 
+                },
                 setValue: function (view, value, property) {
                     view = view.getPaletteComboBox();
                     var dropDownConfig = view.getDropDownConfig() || {};
@@ -189,8 +188,8 @@ export default function(uiEditor) {
                         categoryId: 'ListView',
                         filter: [
                             'labelColor', 'hoverLabelColor', 'selectLabelColor',
-                            'labelFont',  'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine',
-                            'rowBackground', 'hoverRowBackground', 'selectRowBackground', 
+                            'labelFont', 'rowHeight', 'rowLineVisible', 'rowLineColor', 'rowLineSize', 'is:clipLastRowLine',
+                            'rowBackground', 'hoverRowBackground', 'selectRowBackground',
                             'rowIndent'
                         ]
                     }
