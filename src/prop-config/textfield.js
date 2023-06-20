@@ -50,18 +50,38 @@ export default function(uiEditor) {
                         type: 'boolean',
                     },
                     {
-                        name: 'icon',
-                        displayName: uiEditor.getString('editor.property.icon'),
+                        name: 'is:clearable',
+                        displayName: uiEditor.getString('editor.property.clearable'),
+                        type: 'boolean',
+                    },
+                    {
+                        name: 'prefixIcon',
+                        displayName: uiEditor.getString('editor.property.prefixicon'),
                         type: 'drawable'
                     },
                     {
-                        name: 'hoverIcon',
-                        displayName: uiEditor.getString('editor.property.hovericon'),
+                        name: 'hoverPrefixIcon',
+                        displayName: uiEditor.getString('editor.property.hoverprefixicon'),
                         type: 'drawable'
                     },
                     {
-                        name: 'activeIcon',
-                        displayName: uiEditor.getString('editor.property.activeicon'),
+                        name: 'activePrefixIcon',
+                        displayName: uiEditor.getString('editor.property.activeprefixicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'suffixIcon',
+                        displayName: uiEditor.getString('editor.property.suffixicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'hoverSuffixIcon',
+                        displayName: uiEditor.getString('editor.property.hoversuffixicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeSuffixIcon',
+                        displayName: uiEditor.getString('editor.property.activesuffixicon'),
                         type: 'drawable'
                     },
                     {

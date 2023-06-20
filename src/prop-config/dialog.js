@@ -90,6 +90,14 @@ export default function(uiEditor) {
                     //     type: 'int'
                     // },
                     {
+                        displayName: uiEditor.getString('editor.property.buttons'),
+                        name: 'buttons',
+                        type: 'code',
+                        editorParams: {
+                            language: 'javascript'
+                        }
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.closeicon'),
                         name: 'closeIcon',
                         type: 'drawable'
