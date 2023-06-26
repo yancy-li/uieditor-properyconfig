@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.Pagination',
         categories: [
@@ -33,7 +33,22 @@ export default function(uiEditor) {
                         name: 'hintText',
                         displayName: uiEditor.getString('editor.property.hinttext'),
                         type: 'bigstring'
-                    }
+                    },
+                    {
+                        name: 'mode',
+                        displayName: uiEditor.getString('editor.property.mode'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.property.mode.default'),
+                                value: undefined
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.mode.simple'),
+                                value: 'simple'
+                            }]
+                        }
+                    },
                 ]
             }
         ]
