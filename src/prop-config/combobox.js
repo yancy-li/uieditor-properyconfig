@@ -187,6 +187,21 @@ export default function (uiEditor) {
                         name: 'valueIconHeight',
                         displayName: uiEditor.getString('editor.property.valueiconheight'),
                         type: 'int'
+                    },
+                    {
+                        name: 'is:acceptInput',
+                        displayName: uiEditor.getString('editor.property.acceptinput'),
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:searchable',
+                        displayName: uiEditor.getString('editor.property.searchable'),
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'is:strict',
+                        displayName: uiEditor.getString('editor.property.strict'),
+                        type: 'boolean'
                     }
                 ],
                 extends: [
