@@ -124,7 +124,8 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('editor.property.width'),
                 type: 'enum',
                 editorParams: {
-                    datas: ['wrap_content', 'match_parent', 100]
+                    datas: ['wrap_content', 'match_parent', 100],
+                    acceptInput: true
                 },
                 getValue: function (view) {
                     return view.getLayoutParams('width');
@@ -164,7 +165,8 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('editor.property.height'),
                 type: 'enum',
                 editorParams: {
-                    datas: ['wrap_content', 'match_parent', 100]
+                    datas: ['wrap_content', 'match_parent', 100],
+                    acceptInput: true
                 },
                 getValue: function (view) {
                     return view.getLayoutParams('height');
