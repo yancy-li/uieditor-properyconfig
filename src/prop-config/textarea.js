@@ -63,6 +63,11 @@ export default function(uiEditor) {
                         name: 'resizeIconHeight',
                         displayName: uiEditor.getString('editor.property.resizeiconheight'),
                         type: 'int'
+                    },
+                    {
+                        name: 'wordLimitVisible',
+                        displayName: uiEditor.getString('editor.property.wordlimitvisible'),
+                        type: 'boolean'
                     }
                 ]
             }
