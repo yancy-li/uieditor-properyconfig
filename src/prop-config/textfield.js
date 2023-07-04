@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.TextField',
         categories: [
@@ -144,7 +144,26 @@ export default function(uiEditor) {
                         name: 'maskRe',
                         displayName: uiEditor.getString('editor.property.maskre'),
                         type: 'regexp'
-                    }
+                    },
+                    {
+                        name: 'align',
+                        displayName: uiEditor.getString('editor.property.align'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: undefined
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: 'center'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
+                    },
                 ]
             }
         ]

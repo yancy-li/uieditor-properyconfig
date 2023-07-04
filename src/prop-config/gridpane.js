@@ -482,7 +482,17 @@ export default function(uiEditor) {
                                 }
                             ]
                         }
-                    }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnPaddingLeft'),
+                        name: 'columnPaddingLeft',
+                        type: 'int'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.columnPaddingRight'),
+                        name: 'columnPaddingRight',
+                        type: 'int'
+                    },
                 ]
             },
             {

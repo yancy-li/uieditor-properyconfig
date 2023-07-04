@@ -68,7 +68,26 @@ export default function(uiEditor) {
                         name: 'wordLimitVisible',
                         displayName: uiEditor.getString('editor.property.wordlimitvisible'),
                         type: 'boolean'
-                    }
+                    },
+                    {
+                        name: 'align',
+                        displayName: uiEditor.getString('editor.property.align'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: undefined
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: 'center'
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
+                    },
                 ]
             }
         ]
