@@ -208,7 +208,7 @@ export default function (uiEditor) {
                     {
                         rule: 'ht.ui.TextField',
                         categoryId: 'TextField',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly']
+                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly', 'align']
                     }
                 ]
             },
