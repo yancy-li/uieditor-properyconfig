@@ -8,6 +8,11 @@ export default function(uiEditor) {
                     {
                         rule: 'ht.ui.Button',
                         categoryId: 'buttonBasic'
+                    },
+                    {
+                        rule: 'ht.ui.ToggleButton',
+                        categoryId: 'togglebutton',
+                        filter: ['hoverBorder', 'activeBorder', 'selectBorder']
                     }
                 ]
             },
