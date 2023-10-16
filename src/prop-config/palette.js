@@ -1,4 +1,4 @@
-export default function(uiEditor) {
+export default function (uiEditor) {
     return {
         rule: 'ht.ui.Palette',
         categories: [
@@ -34,16 +34,16 @@ export default function(uiEditor) {
                                 },
                                 {
                                     label: uiEditor.getString('editor.property.on'),
-                                value: 'on'
-                            },
-                            {
-                                label: uiEditor.getString('editor.property.off'),
-                                value: 'off'
-                            },
-                            {
-                                label: uiEditor.getString('editor.property.scrollbarhidden'),
-                                value: 'hidden'
-                            }],
+                                    value: 'on'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.off'),
+                                    value: 'off'
+                                },
+                                {
+                                    label: uiEditor.getString('editor.property.scrollbarhidden'),
+                                    value: 'hidden'
+                                }],
                         }
                     },
                     {
@@ -63,15 +63,40 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('toolkit.palette'),
                 properties: [
                     {
-                        displayName: uiEditor.getString('editor.property.dragenabled'),
-                        name: 'dragEnabled',
+                        displayName: uiEditor.getString('editor.property.checkmode'),
+                        name: 'is:checkMode',
                         type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.dragenabled'),
+                        name: 'is:dragEnabled',
+                        type: 'boolean'
+                    },
+                    {
+                        name: 'checkMask',
+                        type: 'drawable',
+                        displayName: uiEditor.getString('editor.property.checkmask')
+                    },
+                    {
+                        name: 'selectionMode',
+                        displayName: uiEditor.getString('editor.property.selectionmode'),
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.property.selection.single'),
+                                value: 'single'
+                            },
+                            {
+                                text: uiEditor.getString('editor.property.none'),
+                                value: 'none'
+                            }]
+                        },
                     },
                     {
                         displayName: uiEditor.getString('editor.property.items'),
                         name: 'items',
                         type: 'paletteItems'
-                    }
+                    },
                 ]
             },
             {
@@ -104,185 +129,228 @@ export default function(uiEditor) {
                 ]
             },
             {
-                displayName: uiEditor.getString('toolkit.palettebutton'),
+                displayName: uiEditor.getString('toolkit.palettecontent'),
                 getValue: function (view, property) {
-                    var templateButton = view.getTemplateButton();
-                    return templateButton[ht.Default.prefixGetter(property.name)]();
+                    var templateContent = view.getTemplateContent();
+                    return templateContent[ht.Default.prefixGetter(property.name)]();
                 },
                 setValue: function (view, value, property) {
-                    var templateButton = view.getTemplateButton();
-                    templateButton[ht.Default.prefixSetter(property.name)](value);
+                    var templateContent = view.getTemplateContent();
+                    templateContent[ht.Default.prefixSetter(property.name)](value);
                 },
-                extends: [
+                properties: [
                     {
-                        rule: 'ht.ui.View',
-                        categoryId: 'basic',
-                        filter: [
-                            'background', 'border', 'padding', 'borderRadius', 
-                            {
-                                name: 'preferredSize',
-                                displayName: uiEditor.getString('editor.property.preferredsize'),
-                                type: 'string',
-                                setValue: function(view, value, property) {
-                                    view = view.getTemplateButton();
-                                    if (value == null || value.trim() == '') {
-                                        view.setPreferredSize(undefined);
-                                    }
-                                    else {
-                                        value = value.split(',');
-                                        var width = value[0];
-                                        var height = value[1];
-                                        if (width != undefined && width.trim() != '' && !isNaN(width)) {
-                                            width = parseInt(width);
-                                        }
-                                        else {
-                                            width = undefined;
-                                        }
-            
-                                        if (height != undefined && height.trim() != '' && !isNaN(height)) {
-                                            height = parseInt(height);
-                                        }
-                                        else {
-                                            height = undefined;
-                                        }
-            
-                                        view.setPreferredSize(width, height);
-                                    }
-                                },
-                                getValue: function(view, property) {
-                                    view = view.getTemplateButton();
-                                    var preferredSize = view._preferredSize;
-                                    if (preferredSize && view.isPreferredSizeSet()) {
-                                        var str = '';
-                                        var width = preferredSize.width,
-                                            height = preferredSize.height;
-                                        if (width != null) {
-                                            str += width;
-                                        }
-                                        str += ',';
-            
-                                        if (height != null) {
-                                            str += height;
-                                        }
-                                        return str;
-                                    }
-                                }
-                            },
-                            {
-                                name: 'minSize',
-                                displayName: uiEditor.getString('editor.property.minsize'),
-                                type: 'string',
-                                setValue: function(view, value, property) {
-                                    view = view.getTemplateButton();
-                                    if (value == null || value.trim() == '') {
-                                        view.setMinSize(undefined);
-                                    }
-                                    else {
-                                        value = value.split(',');
-                                        var width = value[0];
-                                        var height = value[1];
-                                        if (width != undefined && width.trim() != '' && !isNaN(width)) {
-                                            width = parseInt(width);
-                                        }
-                                        else {
-                                            width = undefined;
-                                        }
-            
-                                        if (height != undefined && height.trim() != '' && !isNaN(height)) {
-                                            height = parseInt(height);
-                                        }
-                                        else {
-                                            height = undefined;
-                                        }
-            
-                                        view.setMinSize(width, height);
-                                    }
-                                },
-                                getValue: function(view, property) {
-                                    view = view.getTemplateButton();
-                                    var minSize = view._minSize;
-                                    if (minSize && view.isMinSizeSet()) {
-                                        var str = '';
-                                        var width = minSize.width,
-                                            height = minSize.height;
-                                        if (width != null) {
-                                            str += width;
-                                        }
-                                        str += ',';
-            
-                                        if (height != null) {
-                                            str += height;
-                                        }
-                                        return str;
-                                    }
-                                }
-                            },
-                            {
-                                name: 'maxSize',
-                                displayName: uiEditor.getString('editor.property.maxsize'),
-                                type: 'string',
-                                setValue: function(view, value, property) {
-                                    view = view.getTemplateButton();
-                                    if (value == null || value.trim() == '') {
-                                        view.setMaxSize(undefined);
-                                    }
-                                    else {
-                                        value = value.split(',');
-                                        var width = value[0];
-                                        var height = value[1];
-                                        if (width != undefined && width.trim() != '' && !isNaN(width)) {
-                                            width = parseInt(width);
-                                        }
-                                        else {
-                                            width = undefined;
-                                        }
-            
-                                        if (height != undefined && height.trim() != '' && !isNaN(height)) {
-                                            height = parseInt(height);
-                                        }
-                                        else {
-                                            height = undefined;
-                                        }
-            
-                                        view.setMaxSize(width, height);
-                                    }
-                                },
-                                getValue: function(view, property) {
-                                    view = view.getTemplateButton();
-                                    var maxSize = view._maxSize;
-                                    if (maxSize && view.isMaxSizeSet()) {
-                                        var str = '';
-                                        var width = maxSize.width,
-                                            height = maxSize.height;
-                                        if (width != null) {
-                                            str += width;
-                                        }
-                                        str += ',';
-            
-                                        if (height != null) {
-                                            str += height;
-                                        }
-                                        return str;
-                                    }
-                                }
-                            },
-                            'cursor',
-                             'boxShadow', 'disabled'
-                        ]
+                        displayName: uiEditor.getString('editor.property.itemwidth'),
+                        name: 'itemWidth',
+                        type: 'number'
                     },
                     {
-                        rule: 'ht.ui.ToggleButton',
-                        categoryId: 'togglebutton',
-                        filter: [
-                            'textFont', 'textColor', 'hoverTextColor', 'activeTextColor', 
-                            'selectTextColor', 'selectHoverTextColor', 'selectActiveTextColor', 
-                            'hTextPosition', 'vTextPosition', 
-                            'hoverBackground', 'activeBackground','selectBackground','selectHoverBackground',
-                            'selectActiveBackground',
-                            'hoverBorder','activeBorder', 'selectBorder', 'selectHoverBorder', 'selectActiveBorder', 'iconWidth', 'iconHeight', 'iconTextGap', 'iconStretch', 
-                            'toolTipEnabled', 'is:pixelPerfect',
-                            'align', 'vAlign'
-                        ]
+                        displayName: uiEditor.getString('editor.property.itemheight'),
+                        name: 'itemHeight',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itemgap'),
+                        name: 'itemGap',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itemborderradius'),
+                        name: 'itemBorderRadius',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.labelplacement'),
+                        name: 'labelPlacement',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.vertical'),
+                                value: 'vertical'
+                            },
+                            {
+                                text: uiEditor.getString('editor.horizontal'),
+                                value: 'horizontal'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itemalign'),
+                        name: 'itemAlign',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.left'),
+                                value: 'left'
+                            },
+                            {
+                                text: uiEditor.getString('editor.center'),
+                                value: undefined
+                            },
+                            {
+                                text: uiEditor.getString('editor.right'),
+                                value: 'right'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itemvalign'),
+                        name: 'itemVAlign',
+                        type: 'simpleEnum',
+                        editorParams: {
+                            datas: [{
+                                text: uiEditor.getString('editor.top'),
+                                value: 'top'
+                            },
+                            {
+                                text: uiEditor.getString('editor.middle'),
+                                value: undefined
+                            },
+                            {
+                                text: uiEditor.getString('editor.bottom'),
+                                value: 'bottom'
+                            }]
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itempadding'),
+                        name: 'itemPadding',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.itembackground'),
+                        name: 'itemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hoveritembackground'),
+                        name: 'hoverItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activeitembackground'),
+                        name: 'activeItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectitembackground'),
+                        name: 'selectItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selecthoveritembackground'),
+                        name: 'selectHoverItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectactiveitembackground'),
+                        name: 'selectActiveItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkitembackground'),
+                        name: 'checkItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkhoveritembackground'),
+                        name: 'checkHoverItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkactiveitembackground'),
+                        name: 'checkActiveItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconwidth'),
+                        name: 'iconWidth',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconheight'),
+                        name: 'iconHeight',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.iconstretch'),
+                        name: 'iconStretch',
+                        type: 'enum',
+                        editorParams: {
+                            datas: [uiEditor.getString('editor.property.stretch.fill'), uiEditor.getString('editor.property.stretch.uniform'),
+                            uiEditor.getString('editor.property.stretch.centeruniform'), uiEditor.getString('editor.property.stretch.center'), null],
+                            readOnly: true
+                        }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.icontextgap'),
+                        name: 'iconTextGap',
+                        type: 'number'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.icontint'),
+                        name: 'iconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovericontint'),
+                        name: 'hoverIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.activeicontint'),
+                        name: 'activeIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selecticontint'),
+                        name: 'selectIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selecthovericontint'),
+                        name: 'selectHoverIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectactiveicontint'),
+                        name: 'selectActiveIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkicontint'),
+                        name: 'checkIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkhovericontint'),
+                        name: 'checkHoverIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkactiveicontint'),
+                        name: 'checkActiveIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.textfont'),
+                        name: 'textFont',
+                        type: 'font'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.textcolor'),
+                        name: 'textColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selecttextcolor'),
+                        name: 'selectTextColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checktextcolor'),
+                        name: 'checkTextColor',
+                        type: 'color'
                     }
                 ]
             }
