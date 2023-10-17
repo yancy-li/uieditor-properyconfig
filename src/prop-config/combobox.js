@@ -202,13 +202,33 @@ export default function (uiEditor) {
                         name: 'is:strict',
                         displayName: uiEditor.getString('editor.property.strict'),
                         type: 'boolean'
-                    }
+                    },
+                    {
+                        name: 'suffixIcon',
+                        displayName: uiEditor.getString('editor.property.icon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'hoverSuffixIcon',
+                        displayName: uiEditor.getString('editor.property.hovericon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'activeSuffixIcon',
+                        displayName: uiEditor.getString('editor.property.activeicon'),
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'searchIcon',
+                        displayName: uiEditor.getString('editor.property.searchicon'),
+                        type: 'drawable'
+                    },
                 ],
                 extends: [
                     {
                         rule: 'ht.ui.TextField',
                         categoryId: 'TextField',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly', 'align', 'is:clearable']
+                        filter: ['value', 'color', 'font', 'placeholder', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly', 'align', 'is:clearable']
                     }
                 ]
             },

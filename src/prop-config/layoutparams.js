@@ -454,7 +454,8 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('editor.property.pagebuttonwidth'),
                 type: 'enum',
                 editorParams: {
-                    datas: ['wrap_content', 'match_parent', 100]
+                    datas: ['wrap_content', 'match_parent', 100],
+                    acceptInput: true
                 },
                 getValue: function (view) {
                     return view.getTemplateButton().getLayoutParams('width');
@@ -490,7 +491,8 @@ export default function(uiEditor) {
                 displayName: uiEditor.getString('editor.property.pagebuttonheight'),
                 type: 'enum',
                 editorParams: {
-                    datas: ['wrap_content', 'match_parent', 100]
+                    datas: ['wrap_content', 'match_parent', 100],
+                    acceptInput: true
                 },
                 getValue: function (view) {
                     return view.getTemplateButton().getLayoutParams('height');

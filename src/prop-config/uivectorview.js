@@ -18,10 +18,7 @@ export default function(uiEditor) {
                     {
                         name: 'url',
                         displayName: uiEditor.getString('editor.property.url'),
-                        type: 'urlResource',
-                        editorParams: {
-                            readOnly: true
-                        }
+                        type: 'urlResource'
                     },
                     {
                         name: 'is:gvAutoFitContent',

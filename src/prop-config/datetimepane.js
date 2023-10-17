@@ -64,7 +64,6 @@ export default function(uiEditor) {
                             view.a('dropdownFunc', value);
                         },
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.property.daterangepane_start'),
@@ -127,7 +126,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.type'),
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: ['date', 'datetime', 'month', 'year', 'time']
                         }
                     },

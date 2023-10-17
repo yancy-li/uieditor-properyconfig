@@ -88,7 +88,7 @@ export default function (uiEditor) {
                                 }
                             },
                             'color', 'font', 'placeholder',
-                            'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight'
+                            'suffixIcon', 'hoverSuffixIcon', 'activeSuffixIcon', 'iconWidth', 'iconHeight', 'iconTextGap'
                         ]
                     }
                 ]

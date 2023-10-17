@@ -134,7 +134,7 @@ export default function (uiEditor) {
                     {
                         rule: 'ht.ui.ComboBox',
                         categoryId: 'ComboBox',
-                        filter: ['value', 'color', 'font', 'placeholder', 'icon', 'hoverIcon', 'activeIcon', 'iconTextGap', 'is:readOnly']
+                        filter: ['value', 'color', 'font', 'placeholder', 'suffixIcon', 'hoverSuffixIcon', 'activeSuffixIcon', 'iconWidth', 'iconHeight', 'iconTextGap', 'is:readOnly']
                     }
                 ]
             },

@@ -105,6 +105,26 @@ export default function(uiEditor) {
                         name: 'controllerHeight',
                         type: 'int'
                     },
+                    {
+                        displayName: uiEditor.getString('editor.property.indicatoroutside'),
+                        name: 'is:indicatorOutside',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.card'),
+                        name: 'is:card',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.hovertrigger'),
+                        name: 'is:hoverTrigger',
+                        type: 'boolean'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.pauseonhover'),
+                        name: 'is:pauseOnHover',
+                        type: 'boolean'
+                    },
                 ]
             }
         ]

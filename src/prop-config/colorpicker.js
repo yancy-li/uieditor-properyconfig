@@ -68,7 +68,6 @@ export default function(uiEditor) {
                                     label: uiEditor.getString('editor.color'),
                                     value: 'color'
                                 }],
-                                readOnly: true
                             }
                         },
                         {
@@ -77,7 +76,7 @@ export default function(uiEditor) {
                             type: 'drawable'
                         },
                         'color', 'font',
-                        'is:readOnly', 'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight'
+                        'is:readOnly', 'suffixIcon', 'hoverSuffixIcon', 'activeSuffixIcon', 'iconWidth', 'iconHeight', 'iconTextGap'
                     ]
                 }],
             }

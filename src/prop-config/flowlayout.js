@@ -26,7 +26,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.scrollbarmode'),
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.property.auto'),
@@ -67,7 +66,6 @@ export default function(uiEditor) {
                         type: 'enum',
                         editorParams: {
                             datas: ['leftToRight', 'rightToLeft', 'topToDown', 'bottomToUp'],
-                            readOnly: true
                         }
                     }
                 ]

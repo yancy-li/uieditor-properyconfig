@@ -73,11 +73,6 @@ export default function (uiEditor) {
                         type: 'boolean'
                     },
                     {
-                        name: 'checkMask',
-                        type: 'drawable',
-                        displayName: uiEditor.getString('editor.property.checkmask')
-                    },
-                    {
                         name: 'selectionMode',
                         displayName: uiEditor.getString('editor.property.selectionmode'),
                         type: 'simpleEnum',
@@ -142,22 +137,54 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.itemwidth'),
                         name: 'itemWidth',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.itemheight'),
                         name: 'itemHeight',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.itemgap'),
                         name: 'itemGap',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.itemborderradius'),
                         name: 'itemBorderRadius',
-                        type: 'number'
+                        type: 'string',
+                        editorParams: {
+                            placeholder: '10,1,1,1 or 10'
+                        },
+                        getValue: function (view) {
+                            var itemBorderRadius = view.getItemBorderRadius();
+                            if (itemBorderRadius != null) {
+                                if (Array.isArray(itemBorderRadius)) {
+                                    return itemBorderRadius.join(',');
+                                }
+                                else {
+                                    return itemBorderRadius;
+                                }
+                            }
+                        },
+                        setValue: function (view, value) {
+                            if (value != null && value != '') {
+                                if (typeof value === 'string' && value.indexOf(',') > 0) {
+                                    var newValue = [];
+                                    value = value.split(',');
+                                    value.forEach(function (v) {
+                                        newValue.push(parseInt(v))
+                                    })
+                                    view.setItemBorderRadius(newValue)
+                                }
+                                else {
+                                    view.setItemBorderRadius(value);
+                                }
+                            }
+                            else {
+                                view.setItemBorderRadius(null)
+                            }
+                        },
                     },
                     {
                         displayName: uiEditor.getString('editor.property.labelplacement'),
@@ -215,7 +242,7 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.itempadding'),
                         name: 'itemPadding',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.itembackground'),
@@ -230,6 +257,11 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.activeitembackground'),
                         name: 'activeItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.disableditembackground'),
+                        name: 'disabledItemBackground',
                         type: 'drawable'
                     },
                     {
@@ -248,6 +280,11 @@ export default function (uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.selectdisableditembackground'),
+                        name: 'selectDisabledItemBackground',
+                        type: 'drawable'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.checkitembackground'),
                         name: 'checkItemBackground',
                         type: 'drawable'
@@ -263,14 +300,29 @@ export default function (uiEditor) {
                         type: 'drawable'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.checkdisableditembackground'),
+                        name: 'checkDisabledItemBackground',
+                        type: 'drawable'
+                    },
+                    {
+                        name: 'checkMask',
+                        type: 'drawable',
+                        displayName: uiEditor.getString('editor.property.checkmask')
+                    },
+                    {
+                        name: 'disabledCheckMask',
+                        type: 'drawable',
+                        displayName: uiEditor.getString('editor.property.disabledcheckmask')
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.iconwidth'),
                         name: 'iconWidth',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.iconheight'),
                         name: 'iconHeight',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.iconstretch'),
@@ -285,7 +337,7 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.icontextgap'),
                         name: 'iconTextGap',
-                        type: 'number'
+                        type: 'int'
                     },
                     {
                         displayName: uiEditor.getString('editor.property.icontint'),
@@ -300,6 +352,11 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.activeicontint'),
                         name: 'activeIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.disabledicontint'),
+                        name: 'disabledIconTint',
                         type: 'color'
                     },
                     {
@@ -318,6 +375,11 @@ export default function (uiEditor) {
                         type: 'color'
                     },
                     {
+                        displayName: uiEditor.getString('editor.property.selectdisabledicontint'),
+                        name: 'selectDisabledIconTint',
+                        type: 'color'
+                    },
+                    {
                         displayName: uiEditor.getString('editor.property.checkicontint'),
                         name: 'checkIconTint',
                         type: 'color'
@@ -330,6 +392,11 @@ export default function (uiEditor) {
                     {
                         displayName: uiEditor.getString('editor.property.checkactiveicontint'),
                         name: 'checkActiveIconTint',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkdisabledicontint'),
+                        name: 'checkDisabledIconTint',
                         type: 'color'
                     },
                     {
@@ -351,7 +418,22 @@ export default function (uiEditor) {
                         displayName: uiEditor.getString('editor.property.checktextcolor'),
                         name: 'checkTextColor',
                         type: 'color'
-                    }
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.disabledtextcolor'),
+                        name: 'disabledTextColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.selectdisabledtextcolor'),
+                        name: 'selectDisabledTextColor',
+                        type: 'color'
+                    },
+                    {
+                        displayName: uiEditor.getString('editor.property.checkdisabledtextcolor'),
+                        name: 'checkDisabledTextColor',
+                        type: 'color'
+                    },
                 ]
             }
         ]

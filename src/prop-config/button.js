@@ -22,7 +22,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.dropdownfunc'),
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.ok'),
@@ -76,7 +75,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.dropdownfunc'),
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.ok'),
@@ -133,7 +131,6 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.pagefunc'),
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.property.nothing'),
@@ -362,7 +359,6 @@ export default function(uiEditor) {
                                     value: null                                    
                                 }
                             ],
-                            readOnly: true
                         }
                     },
                     {

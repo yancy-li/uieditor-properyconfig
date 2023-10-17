@@ -46,7 +46,6 @@ export default function(uiEditor) {
                                 label: uiEditor.getString('editor.property.nothing'),
                                 value: ''
                             },],
-                            readOnly: true
                         }
                     },
                     {

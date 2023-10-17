@@ -64,6 +64,54 @@ export default function (uiEditor) {
                     },
                 },
                 {
+                    name: 'contentBorderRadius',
+                    displayName: uiEditor.getString('editor.property.contentborderradius'),
+                    type: 'string',
+                    editorParams: {
+                        placeholder: '10,1,1,1 or 10'
+                    },
+                    getValue: function (view) {
+                        var contentBorderRadius = view.getContentBorderRadius();
+                        if (contentBorderRadius != null) {
+                            if (Array.isArray(contentBorderRadius)) {
+                                return contentBorderRadius.join(',');
+                            }
+                            else {
+                                return contentBorderRadius;
+                            }
+                        }
+                    },
+                    setValue: function (view, value) {
+                        if (value != null && value != '') {
+                            if (typeof value === 'string' && value.indexOf(',') > 0) {
+                                var newValue = [];
+                                value = value.split(',');
+                                value.forEach(function(v) {
+                                    newValue.push(parseInt(v))
+                                })
+                                view.setContentBorderRadius(newValue)
+                            }
+                            else {
+                                view.setContentBorderRadius(value);
+                            }
+                        }
+                        else {
+                            view.setContentBorderRadius(null)
+                        }
+                    },
+                    isVisible: function (views) {
+                        var visible = true;
+                        for (var i = 0, length = views.length; i < length; i++) {
+                            var view = views[i];
+                            if (!(view instanceof ht.ui.ViewGroup)) {
+                                visible = false;
+                                break;
+                            }
+                        }
+                        return visible;
+                    }
+                },
+                {
                     name: 'preferredSize',
                     displayName: uiEditor.getString('editor.property.preferredsize'),
                     type: 'string',
@@ -209,7 +257,6 @@ export default function (uiEditor) {
                     displayName: uiEditor.getString('editor.property.cursor'),
                     type: 'enum',
                     editorParams: {
-                        readOnly: true,
                         datas: [
                             {
                                 label: 'auto',

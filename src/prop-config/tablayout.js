@@ -65,7 +65,6 @@ export default function (uiEditor) {
                                 }
                             ],
                             valueField: 'value',
-                            readOnly: true
                         }
                     },
                     {

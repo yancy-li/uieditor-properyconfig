@@ -102,7 +102,7 @@ export default function (uiEditor) {
                             type: 'string'
                         },
                         'color', 'font', 'placeholder',
-                        'icon', 'hoverIcon', 'activeIcon', 'iconWidth', 'iconHeight',
+                        'suffixIcon', 'hoverSuffixIcon', 'activeSuffixIcon', 'iconWidth', 'iconHeight', 'iconTextGap',
                         'is:readOnly'
                     ]
                 }]
