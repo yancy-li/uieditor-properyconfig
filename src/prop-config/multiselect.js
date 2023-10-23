@@ -148,7 +148,6 @@ export default function (uiEditor) {
                         editorParams: {
                             datas: [uiEditor.getString('editor.property.stretch.fill'), uiEditor.getString('editor.property.stretch.uniform'),
                             uiEditor.getString('editor.property.stretch.centeruniform'), uiEditor.getString('editor.property.stretch.center'), null],
-                            readOnly: true
                         }
                     },
                     {
@@ -156,7 +155,6 @@ export default function (uiEditor) {
                         name: 'defaultCursor',
                         type: 'enum',
                         editorParams: {
-                            readOnly: true,
                             datas: [
                                 {
                                     label: 'auto',
