@@ -108,7 +108,7 @@ export default function (uiEditor) {
                         rule: 'ht.ui.Panel',
                         categoryId: 'basic',
                         filter: [
-                            'background'
+                            'background', "border",
                         ]
                     },
                     {
@@ -156,7 +156,8 @@ export default function (uiEditor) {
                             placeholder: '10,1,1,1 or 10'
                         },
                         getValue: function (view) {
-                            var itemBorderRadius = view.getItemBorderRadius();
+                            var templateContent = view.getTemplateContent();
+                            var itemBorderRadius = templateContent.getItemBorderRadius();
                             if (itemBorderRadius != null) {
                                 if (Array.isArray(itemBorderRadius)) {
                                     return itemBorderRadius.join(',');
@@ -167,6 +168,7 @@ export default function (uiEditor) {
                             }
                         },
                         setValue: function (view, value) {
+                            var templateContent = view.getTemplateContent();
                             if (value != null && value != '') {
                                 if (typeof value === 'string' && value.indexOf(',') > 0) {
                                     var newValue = [];
@@ -174,14 +176,14 @@ export default function (uiEditor) {
                                     value.forEach(function (v) {
                                         newValue.push(parseInt(v))
                                     })
-                                    view.setItemBorderRadius(newValue)
+                                    templateContent.setItemBorderRadius(newValue)
                                 }
                                 else {
-                                    view.setItemBorderRadius(value);
+                                    templateContent.setItemBorderRadius(value);
                                 }
                             }
                             else {
-                                view.setItemBorderRadius(null)
+                                templateContent.setItemBorderRadius(null)
                             }
                         },
                     },
