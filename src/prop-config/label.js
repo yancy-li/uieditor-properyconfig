@@ -43,22 +43,14 @@ export default function(uiEditor) {
                         getValue: function(view) {
                             var text = view.getText();
                             if (text) {
-                                if (text instanceof ht.ui.LocaleString) {
-
-                                } else {
-                                    text = text.replace(/\\/g, '\\\\');
-                                    text = text.replace(/\n/g, '\\n')
-                                }
+                                text = text.replace(/\\/g, '\\\\');
+                                text = text.replace(/\n/g, '\\n')
                             }
                             return text;
                         },
                         setValue: function(view, value) {
                             if (value) {
-                                if (value instanceof ht.ui.LocaleString) {
-
-                                } else {
-                                    value = window.eval('({"a": "' + value + '"})').a;
-                                }
+                                value = window.eval('({"a": "' + value + '"})').a;
                             }
                             view.setText(value);
                         },
