@@ -22,6 +22,7 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.dropdownfunc'),
                         type: 'enum',
                         editorParams: {
+                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.ok'),
@@ -75,6 +76,7 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.dropdownfunc'),
                         type: 'enum',
                         editorParams: {
+                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.ok'),
@@ -131,6 +133,7 @@ export default function(uiEditor) {
                         displayName: uiEditor.getString('editor.property.pagefunc'),
                         type: 'enum',
                         editorParams: {
+                            readOnly: true,
                             datas: [
                                 {
                                     label: uiEditor.getString('editor.property.nothing'),
@@ -192,14 +195,22 @@ export default function(uiEditor) {
                         getValue: function(view) {
                             var text = view.getText();
                             if (text) {
-                                text = text.replace(/\\/g, '\\\\');
-                                text = text.replace(/\n/g, '\\n')
+                                if (text instanceof ht.ui.LocaleString) {
+
+                                } else {
+                                    text = text.replace(/\\/g, '\\\\');
+                                    text = text.replace(/\n/g, '\\n')
+                                }
                             }
                             return text;
                         },
                         setValue: function(view, value) {
                             if (value) {
-                                value = window.eval('({"a": "' + value + '"})').a;
+                                if (value instanceof ht.ui.LocaleString) {
+
+                                } else {
+                                    value = window.eval('({"a": "' + value + '"})').a;
+                                }
                             }
                             view.setText(value);
                         }
@@ -359,6 +370,7 @@ export default function(uiEditor) {
                                     value: null                                    
                                 }
                             ],
+                            readOnly: true
                         }
                     },
                     {
